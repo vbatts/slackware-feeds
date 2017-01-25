@@ -1,0 +1,2 @@
+#0 2 * * * ~/opt/bin/ruby ~/bin/changelog_alphageek.rb > /dev/null || echo "$(date): failed aphageek" | mail -s "[slackagg] alphageek's changelog failed $(date +%D)" vbatts@hashbangbash.com
+0 */2 * * * python ~/bin/changelog_http_poll.py >/dev/null || echo "$(date): failed to poll changelogs" | mail -s "[slackrss] changelog_http_poll failed $(date +%D)" vbatts@hashbangbash.com
