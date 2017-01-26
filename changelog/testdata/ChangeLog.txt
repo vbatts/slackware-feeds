@@ -1,0 +1,1430 @@
+Mon Jan 23 21:30:13 UTC 2017
+d/gdb-7.12.1-x86_64-1.txz:  Upgraded.
+xap/fvwm-2.6.7-x86_64-3.txz:  Rebuilt.
+  Fixed the broken symlinks in a better way.  Thanks to GazL for the patch.
+xap/mozilla-firefox-51.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
++--------------------------+
+Fri Jan 20 04:18:02 UTC 2017
+l/seamonkey-solibs-2.46-x86_64-3.txz:  Rebuilt.
+xap/fvwm-2.6.7-x86_64-2.txz:  Rebuilt.
+  Reverted an upstream patch that causes some broken symlinks to be installed.
+  Thanks to GazL.
+xap/seamonkey-2.46-x86_64-3.txz:  Rebuilt.
+  Recompiled with less aggressive optimization (-Os) to fix crashes.
++--------------------------+
+Wed Jan 18 20:39:17 UTC 2017
+ap/mariadb-10.0.29-x86_64-1.txz:  Upgraded.
+  This update fixes several security issues.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6664
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3238
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3243
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3244
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3257
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3258
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3265
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3291
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3312
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3317
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3318
+  (* Security fix *)
++--------------------------+
+Wed Jan 18 02:33:18 UTC 2017
+a/cryptsetup-1.7.3-x86_64-2.txz:  Rebuilt.
+  Recompiled with --enable-cryptsetup-reencrypt option.
+  Thanks to Jakub Jankowski for the suggestion.
+ap/screen-4.5.0-x86_64-1.txz:  Upgraded.
+l/libtasn1-4.10-x86_64-1.txz:  Upgraded.
+l/seamonkey-solibs-2.46-x86_64-2.txz:  Rebuilt.
+x/libinput-1.5.4-x86_64-1.txz:  Added.
+x/libwacom-0.22-x86_64-1.txz:  Added.
+  This is needed for libinput.
+x/xf86-input-libinput-0.23.0-x86_64-1.txz:  Added.
+  This is the new generic X.Org input driver which replaces evdev for most
+  purposes.  It does not (for now) replace xf86-input-synaptics or
+  xf86-input-vmmouse.  If this driver package is missing then X will fall
+  back to using xf86-input-evdev as before.
+  Thanks to Robby Workman.
+x/xorg-server-1.19.1-x86_64-2.txz:  Rebuilt.
+  Rename 90-keyboard-layout.conf to 90-keyboard-layout-evdev.conf.
+x/xorg-server-xephyr-1.19.1-x86_64-2.txz:  Rebuilt.
+x/xorg-server-xnest-1.19.1-x86_64-2.txz:  Rebuilt.
+x/xorg-server-xvfb-1.19.1-x86_64-2.txz:  Rebuilt.
+xap/seamonkey-2.46-x86_64-2.txz:  Rebuilt.
+  Restored missing nspr/obsolete headers.
++--------------------------+
+Sat Jan 14 05:34:32 UTC 2017
+a/util-linux-2.29-x86_64-2.txz:  Rebuilt.
+  Restored support for /etc/mtab.
+n/iw-4.9-x86_64-1.txz:  Upgraded.
+x/scim-1.4.17-x86_64-1.txz:  Upgraded.
+extra/tigervnc/tigervnc-1.7.0-x86_64-2.txz:  Rebuilt.
+  Recompiled for xorg-server-1.19.1.
++--------------------------+
+Fri Jan 13 01:10:05 UTC 2017
+a/grub-2.02_beta3-x86_64-2.txz:  Rebuilt.
+  Make the package version number more sane.
++--------------------------+
+Thu Jan 12 21:07:23 UTC 2017
+ap/cups-filters-1.13.2-x86_64-1.txz:  Upgraded.
+ap/nano-2.7.4-x86_64-2.txz:  Rebuilt.
+  Fixed /etc/nanorc.new.  Thanks to SeB.
+kde/calligra-2.9.11-x86_64-8.txz:  Rebuilt.
+l/poppler-0.50.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+xfce/tumbler-0.1.31-x86_64-9.txz:  Rebuilt.
++--------------------------+
+Thu Jan 12 01:15:52 UTC 2017
+a/aaa_elflibs-14.2-x86_64-27.txz:  Rebuilt.
+  Upgraded libcap.so.2.25, liblzma.so.5.2.3, and libz.so.1.2.10.
+a/bash-4.4.005-x86_64-2.txz:  Rebuilt.
+a/dialog-1.3_20160828-x86_64-1.txz:  Upgraded.
+a/ed-1.14.1-x86_64-1.txz:  Upgraded.
+a/elvis-2.2_0-x86_64-3.txz:  Rebuilt.
+a/file-5.29-x86_64-1.txz:  Upgraded.
+a/gawk-4.1.4-x86_64-2.txz:  Rebuilt.
+a/gettext-0.19.8.1-x86_64-2.txz:  Rebuilt.
+a/getty-ps-2.1.0b-x86_64-3.txz:  Rebuilt.
+a/gpm-1.20.7-x86_64-4.txz:  Rebuilt.
+a/gptfdisk-1.0.1-x86_64-1.txz:  Upgraded.
+a/grub-2.02~beta3-x86_64-1.txz:  Upgraded.
+  Thanks to Heinz Wiesinger.
+  Thanks to ReaperX7 for the updated dejavusansmono patch.
+a/hwdata-0.291-noarch-1.txz:  Upgraded.
+a/less-481-x86_64-2.txz:  Rebuilt.
+a/minicom-2.7-x86_64-1.txz:  Upgraded.
+a/procps-ng-3.3.12-x86_64-1.txz:  Upgraded.
+a/sed-4.3-x86_64-1.txz:  Upgraded.
+a/splitvt-1.6.6-x86_64-1.txz:  Upgraded.
+a/tcsh-6.20.00-x86_64-1.txz:  Upgraded.
+a/util-linux-2.29-x86_64-1.txz:  Upgraded.
+a/xfsprogs-4.8.0-x86_64-1.txz:  Upgraded.
+a/xz-5.2.3-x86_64-1.txz:  Upgraded.
+ap/alsa-utils-1.1.3-x86_64-1.txz:  Upgraded.
+ap/bc-1.06.95-x86_64-4.txz:  Rebuilt.
+ap/bpe-2.01.00-x86_64-3.txz:  Rebuilt.
+ap/ghostscript-9.20-x86_64-2.txz:  Rebuilt.
+  Restored /usr/bin/ijs-config.
+ap/gphoto2-2.5.11-x86_64-1.txz:  Upgraded.
+ap/gutenprint-5.2.11-x86_64-3.txz:  Rebuilt.
+ap/htop-2.0.2-x86_64-1.txz:  Upgraded.
+ap/ispell-3.4.00-x86_64-1.txz:  Upgraded.
+ap/joe-4.3-x86_64-1.txz:  Upgraded.
+ap/jove-4.16.0.73-x86_64-2.txz:  Rebuilt.
+ap/mariadb-10.0.28-x86_64-2.txz:  Rebuilt.
+ap/mc-4.8.18-x86_64-1.txz:  Upgraded.
+ap/moc-2.5.2-x86_64-1.txz:  Upgraded.
+ap/nano-2.7.4-x86_64-1.txz:  Upgraded.
+ap/pamixer-1.3.1-x86_64-3.txz:  Rebuilt.
+ap/powertop-2.8-x86_64-2.txz:  Rebuilt.
+ap/sc-7.16-x86_64-5.txz:  Rebuilt.
+ap/screen-4.4.0-x86_64-3.txz:  Rebuilt.
+ap/sqlite-3.16.1-x86_64-1.txz:  Upgraded.
+ap/texinfo-6.3-x86_64-2.txz:  Rebuilt.
+ap/vim-8.0.0161-x86_64-1.txz:  Upgraded.
+ap/xfsdump-3.1.6-x86_64-2.txz:  Rebuilt.
+ap/zsh-5.3.1-x86_64-1.txz:  Upgraded.
+d/clisp-2.49.20161111-x86_64-1.txz:  Upgraded.
+d/cmake-3.7.1-x86_64-1.txz:  Upgraded.
+d/cscope-15.8b-x86_64-2.txz:  Rebuilt.
+d/flex-2.6.3-x86_64-1.txz:  Upgraded.
+d/gdb-7.12-x86_64-2.txz:  Rebuilt.
+d/gettext-tools-0.19.8.1-x86_64-2.txz:  Rebuilt.
+d/gnu-cobol-1.1-x86_64-2.txz:  Rebuilt.
+d/gperf-3.1-x86_64-1.txz:  Upgraded.
+d/guile-2.0.13-x86_64-2.txz:  Rebuilt.
+d/m4-1.4.18-x86_64-1.txz:  Upgraded.
+d/make-4.2.1-x86_64-1.txz:  Upgraded.
+d/perl-5.24.0-x86_64-1.txz:  Upgraded.
+  Also upgraded to DBD-mysql-4.041 and TermReadKey-2.37.
+d/ruby-2.4.0-x86_64-1.txz:  Upgraded.
+d/subversion-1.9.5-x86_64-1.txz:  Upgraded.
+e/emacs-25.1-x86_64-2.txz:  Rebuilt.
+kde/analitza-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/calligra-2.9.11-x86_64-7.txz:  Rebuilt.
+kde/kdelibs-4.14.27-x86_64-1.txz:  Upgraded.
+kde/kig-4.14.3-x86_64-5.txz:  Rebuilt.
+kde/korundum-4.14.3-x86_64-4.txz:  Rebuilt.
+kde/lokalize-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/perlkde-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/perlqt-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/qtruby-4.14.3-x86_64-5.txz:  Rebuilt.
+l/akonadi-1.13.0-x86_64-4.txz:  Rebuilt.
+l/alsa-lib-1.1.3-x86_64-1.txz:  Upgraded.
+l/aspell-0.60.6.1-x86_64-2.txz:  Rebuilt.
+l/boost-1.63.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/enchant-1.6.0-x86_64-2.txz:  Rebuilt.
+l/hunspell-1.6.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/libcaca-0.99.beta19-x86_64-1.txz:  Upgraded.
+l/libcap-2.25-x86_64-1.txz:  Upgraded.
+l/libcdio-0.94-x86_64-2.txz:  Rebuilt.
+l/libgphoto2-2.5.11-x86_64-1.txz:  Upgraded.
+l/libnjb-2.2.7-x86_64-1.txz:  Upgraded.
+l/libproxy-0.4.13-x86_64-1.txz:  Upgraded.
+l/parted-3.2-x86_64-3.txz:  Rebuilt.
+l/pilot-link-0.12.5-x86_64-12.txz:  Rebuilt.
+l/taglib-1.11.1-x86_64-1.txz:  Upgraded.
+l/virtuoso-ose-6.1.8-x86_64-4.txz:  Rebuilt.
+l/vte-0.28.2-x86_64-5.txz:  Rebuilt.
+l/wavpack-5.0.0-x86_64-1.txz:  Upgraded.
+l/zlib-1.2.10-x86_64-1.txz:  Upgraded.
+n/NetworkManager-1.2.6-x86_64-2.txz:  Rebuilt.
+n/alpine-2.20-x86_64-3.txz:  Rebuilt.
+n/bind-9.11.0_P2-x86_64-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  An error in handling
+  certain queries can cause an assertion failure when a server is using the
+  nxdomain-redirect feature to cover a zone for which it is also providing
+  authoritative service.  A vulnerable server could be intentionally stopped
+  by an attacker if it was using a configuration that met the criteria for
+  the vulnerability and if the attacker could cause it to accept a query
+  that possessed the required attributes.
+  Please note: This vulnerability affects the "nxdomain-redirect" feature,
+  which is one of two methods of handling NXDOMAIN redirection, and is only
+  available in certain versions of BIND.  Redirection using zones of type
+  "redirect" is not affected by this vulnerability.
+  For more information, see:
+    https://kb.isc.org/article/AA-01442
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9778
+  (* Security fix *)
+n/bluez-5.43-x86_64-1.txz:  Upgraded.
+n/elm-2.5.8-x86_64-4.txz:  Rebuilt.
+n/epic5-2.0.1-x86_64-1.txz:  Upgraded.
+n/gnupg-1.4.21-x86_64-2.txz:  Rebuilt.
+n/gnupg2-2.0.30-x86_64-2.txz:  Rebuilt.
+n/gnutls-3.5.8-x86_64-1.txz:  Upgraded.
+  This update fixes some bugs and security issues.
+  For more information, see:
+    https://gnutls.org/security.html#GNUTLS-SA-2017-1
+    https://gnutls.org/security.html#GNUTLS-SA-2017-2
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5334
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5335
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5336
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5337
+  (* Security fix *)
+n/iftop-1.0pre4-x86_64-1.txz:  Upgraded.
+n/imapd-2.20-x86_64-3.txz:  Rebuilt.
+n/iptraf-ng-1.1.4-x86_64-2.txz:  Rebuilt.
+n/irssi-0.8.21-x86_64-1.txz:  Upgraded.
+  Fixed security issues that may result in a denial of service.
+  For more information, see:
+    https://irssi.org/security/irssi_sa_2017_01.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5193
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5194
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
+  (* Security fix *)
+n/lftp-4.7.5-x86_64-1.txz:  Upgraded.
+n/libnftnl-1.0.7-x86_64-1.txz:  Upgraded.
+n/links-2.14-x86_64-1.txz:  Upgraded.
+n/lynx-2.8.8rel.2-x86_64-2.txz:  Rebuilt.
+n/mcabber-1.0.4-x86_64-2.txz:  Rebuilt.
+n/metamail-2.7-x86_64-6.txz:  Rebuilt.
+n/mtr-0.87-x86_64-1.txz:  Upgraded.
+n/mutt-1.7.2-x86_64-1.txz:  Upgraded.
+n/ncftp-3.2.6-x86_64-1.txz:  Upgraded.
+n/net-snmp-5.7.3-x86_64-4.txz:  Rebuilt.
+n/netkit-ftp-0.17-x86_64-3.txz:  Rebuilt.
+n/netkit-ntalk-0.17-x86_64-4.txz:  Rebuilt.
+n/netwatch-1.3.1_2-x86_64-2.txz:  Rebuilt.
+n/nftables-0.7-x86_64-1.txz:  Upgraded.
+n/nn-6.7.3-x86_64-4.txz:  Rebuilt.
+n/ntp-4.2.8p9-x86_64-2.txz:  Rebuilt.
+n/obexftp-0.24.2-x86_64-1.txz:  Upgraded.
+n/openobex-1.7.2-x86_64-1.txz:  Upgraded.
+n/pinentry-1.0.0-x86_64-2.txz:  Rebuilt.
+n/proftpd-1.3.5b-x86_64-2.txz:  Rebuilt.
+n/snownews-1.5.12-x86_64-3.txz:  Rebuilt.
+n/telnet-0.17-x86_64-3.txz:  Rebuilt.
+n/tftp-hpa-5.2-x86_64-3.txz:  Rebuilt.
+n/tin-2.4.1-x86_64-1.txz:  Upgraded.
+n/trn-3.6-x86_64-2.txz:  Removed.
+n/wpa_supplicant-2.6-x86_64-1.txz:  Upgraded.
+n/ytalk-3.3.0-x86_64-3.txz:  Rebuilt.
+x/xf86-video-intel-git_20170103_028c946d-x86_64-1.txz:  Upgraded.
+x/xorg-server-1.19.1-x86_64-1.txz:  Upgraded.
+x/xorg-server-xephyr-1.19.1-x86_64-1.txz:  Upgraded.
+x/xorg-server-xnest-1.19.1-x86_64-1.txz:  Upgraded.
+x/xorg-server-xvfb-1.19.1-x86_64-1.txz:  Upgraded.
+x/xterm-327-x86_64-1.txz:  Upgraded.
+xap/MPlayer-1.2_20160125-x86_64-4.txz:  Rebuilt.
+  Upgraded to ffmpeg-2.8.10.
+xap/ddd-3.3.12-x86_64-5.txz:  Rebuilt.
+xap/fvwm-2.6.7-x86_64-1.txz:  Upgraded.
+xap/gftp-2.0.19-x86_64-5.txz:  Rebuilt.
+xap/gnuchess-6.2.4-x86_64-2.txz:  Rebuilt.
+xap/gparted-0.27.0-x86_64-1.txz:  Upgraded.
+xap/hexchat-2.12.4-x86_64-1.txz:  Upgraded.
+xap/imagemagick-6.9.7_3-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+xap/pidgin-2.11.0-x86_64-2.txz:  Rebuilt.
+xap/vim-gvim-8.0.0161-x86_64-1.txz:  Upgraded.
+xap/xine-lib-1.2.6-x86_64-9.txz:  Rebuilt.
+  Upgraded to ffmpeg-2.8.10.
+xap/xine-ui-0.99.9-x86_64-2.txz:  Rebuilt.
+xap/xlockmore-5.50-x86_64-1.txz:  Upgraded.
+extra/brltty/brltty-5.4-x86_64-2.txz:  Rebuilt.
+  Patched /lib/udev/rules.d/40-usb-brltty.rules to fix a syntax error.
+  Thanks to Willy Sudiarto Raharjo.
++--------------------------+
+Fri Dec 30 19:29:13 UTC 2016
+a/aaa_elflibs-14.2-x86_64-26.txz:  Rebuilt.
+a/btrfs-progs-v4.9-x86_64-1.txz:  Upgraded.
+ap/hplip-3.16.11-x86_64-1.txz:  Upgraded.
+ap/tmux-2.3-x86_64-1.txz:  Upgraded.
+l/elfutils-0.168-x86_64-1.txz:  Upgraded.
+l/libpng-1.6.27-x86_64-1.txz:  Upgraded.
+  This release fixes an old NULL pointer dereference bug in png_set_text_2()
+  discovered and patched by Patrick Keshishian.  The potential "NULL
+  dereference" bug has existed in libpng since version 0.71 of June 26, 1995.
+  To be vulnerable, an application has to load a text chunk into the png
+  structure, then delete all text, then add another text chunk to the same
+  png structure, which seems to be an unlikely sequence, but it has happened.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10087
+  (* Security fix *)
+l/seamonkey-solibs-2.46-x86_64-1.txz:  Upgraded.
+n/openvpn-2.4.0-x86_64-1.txz:  Upgraded.
+x/libXpm-3.5.12-x86_64-1.txz:  Upgraded.
+x/libdrm-2.4.74-x86_64-1.txz:  Upgraded.
+x/mesa-13.0.2-x86_64-1.txz:  Upgraded.
+x/xf86-video-dummy-0.3.8-x86_64-1.txz:  Upgraded.
+x/xf86-video-intel-git_20161117_169c74fa-x86_64-1.txz:  Upgraded.
+xap/mozilla-thunderbird-45.6.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9899
+  (* Security fix *)
+xap/seamonkey-2.46-x86_64-1.txz:  Upgraded.
+  This update contains security fixes and improvements.
+  For more information, see:
+    http://www.seamonkey-project.org/releases/seamonkey2.46
+  (* Security fix *)
+xfce/xfce4-panel-4.12.1-x86_64-1.txz:  Upgraded.
+xfce/xfce4-settings-4.12.1-x86_64-1.txz:  Upgraded.
+xfce/xfconf-4.12.1-x86_64-1.txz:  Upgraded.
++--------------------------+
+Wed Dec 28 21:05:19 UTC 2016
+ap/nano-2.7.3-x86_64-1.txz:  Upgraded.
+d/python-2.7.13-x86_64-1.txz:  Upgraded.
+  This release fixes security issues:
+  Issue #27850: Remove 3DES from ssl module's default cipher list to counter
+  measure sweet32 attack (CVE-2016-2183).
+  Issue #27568: Prevent HTTPoxy attack (CVE-2016-1000110). Ignore the
+  HTTP_PROXY variable when REQUEST_METHOD environment is set, which indicates
+  that the script is in CGI mode.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2183
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1000110
+  (* Security fix *)
+n/samba-4.5.3-x86_64-1.txz:  Upgraded.
+  This release fixes security issues:
+  CVE-2016-2123 (Samba NDR Parsing ndr_pull_dnsp_name Heap-based Buffer
+    Overflow Remote Code Execution Vulnerability).
+  CVE-2016-2125 (Unconditional privilege delegation to Kerberos servers
+    in trusted realms).
+  CVE-2016-2126 (Flaws in Kerberos PAC validation can trigger privilege
+    elevation).
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2123
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2125
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2126
+  (* Security fix *)
++--------------------------+
+Sat Dec 24 18:14:51 UTC 2016
+a/aaa_elflibs-14.2-x86_64-25.txz:  Upgraded.
+l/expat-2.2.0-x86_64-1.txz:  Upgraded.
+  This update fixes bugs and security issues:
+  Multiple integer overflows in XML_GetBuffer.
+  Fix crash on malformed input.
+  Improve insufficient fix to CVE-2015-1283 / CVE-2015-2716.
+  Use more entropy for hash initialization.
+  Resolve troublesome internal call to srand.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1283
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0718
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4472
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5300
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6702
+  (* Security fix *)
+l/ncurses-6.0-x86_64-2.txz:  Rebuilt.
+  Fixed install script to correctly remove "lint" from the 5.x package.
++--------------------------+
+Sat Dec 24 02:36:05 UTC 2016
+a/aaa_elflibs-14.2-x86_64-24.txz:  Rebuilt.
+  Added libform.so.6.0, libformw.so.6.0, libhistory.so.7.0, libmenu.so.6.0,
+  libmenuw.so.6.0, libncurses.so.6.0, libncursesw.so.6.0, libpanel.so.6.0,
+  libpanelw.so.6.0, libreadline.so.7.0, and libtinfo.so.6.0.
+l/libtermcap-1.2.3-x86_64-7.txz:  Removed.
+  Replaced by equivalent functionality in the ncurses package.
+l/ncurses-6.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+  Rebuild of linked binaries pending, but the old library versions are
+  in the aaa_elflibs package.
+l/readline-7.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+  Rebuild of linked binaries pending, but the old library versions are
+  in the aaa_elflibs package.
+n/curl-7.52.1-x86_64-1.txz:  Upgraded.
+n/gpa-0.9.10-x86_64-1.txz:  Upgraded.
+n/gpgme-1.7.1-x86_64-1.txz:  Upgraded.
+n/httpd-2.4.25-x86_64-1.txz:  Upgraded.
+  This update fixes the following security issues:
+  * CVE-2016-8740: mod_http2: Mitigate DoS memory exhaustion via endless
+    CONTINUATION frames.
+  * CVE-2016-5387: core: Mitigate [f]cgi "httpoxy" issues.
+  * CVE-2016-2161: mod_auth_digest: Prevent segfaults during client entry
+    allocation when the shared memory space is exhausted.
+  * CVE-2016-0736: mod_session_crypto: Authenticate the session data/cookie
+    with a MAC (SipHash) to prevent deciphering or tampering with a padding
+    oracle attack.
+  * CVE-2016-8743: Enforce HTTP request grammar corresponding to RFC7230 for
+    request lines and request headers, to prevent response splitting and
+    cache pollution by malicious clients or downstream proxies.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8740
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5387
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2161
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0736
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8743
+  (* Security fix *)
+n/lftp-4.7.4-x86_64-1.txz:  Upgraded.
+n/libassuan-2.4.3-x86_64-1.txz:  Upgraded.
+n/libgcrypt-1.7.5-x86_64-1.txz:  Upgraded.
+n/libksba-1.3.5-x86_64-1.txz:  Upgraded.
+n/nettle-3.3-x86_64-1.txz:  Upgraded.
+n/nmap-7.40-x86_64-1.txz:  Upgraded.
+n/openssh-7.4p1-x86_64-1.txz:  Upgraded.
+  This is primarily a bugfix release, and also addresses security issues.
+  ssh-agent(1): Will now refuse to load PKCS#11 modules from paths outside
+    a trusted whitelist.
+  sshd(8): When privilege separation is disabled, forwarded Unix-domain
+    sockets would be created by sshd(8) with the privileges of 'root'.
+  sshd(8): Avoid theoretical leak of host private key material to
+    privilege-separated child processes via realloc().
+  sshd(8): The shared memory manager used by pre-authentication compression
+    support had a bounds checks that could be elided by some optimising
+    compilers to potentially allow attacks against the privileged monitor.
+    process from the sandboxed privilege-separation process.
+  sshd(8): Validate address ranges for AllowUser and DenyUsers directives at
+    configuration load time and refuse to accept invalid ones.  It was
+    previously possible to specify invalid CIDR address ranges
+    (e.g. user@127.1.2.3/55) and these would always match, possibly resulting
+    in granting access where it was not intended.
+  For more information, see:
+    https://www.openssh.com/txt/release-7.4
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10009
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10010
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10011
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10012
+  (* Security fix *)
+n/pinentry-1.0.0-x86_64-1.txz:  Upgraded.
+xfce/xfce4-weather-plugin-0.8.8-x86_64-1.txz:  Upgraded.
+  Package upgraded to fix the API used to fetch weather data.
+  Thanks to Robby Workman.
+testing/packages/gcc-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-g++-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-gfortran-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-gnat-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-go-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-java-6.3.0-x86_64-1.txz:  Upgraded.
+testing/packages/gcc-objc-6.3.0-x86_64-1.txz:  Upgraded.
++--------------------------+
+Sun Dec 18 05:20:25 UTC 2016
+a/glibc-zoneinfo-2016j-noarch-1.txz:  Upgraded.
++--------------------------+
+Tue Dec 13 22:14:13 UTC 2016
+Thanks to Robby Workman for most of these updates.
+a/acpid-2.0.28-x86_64-1.txz:  Upgraded.
+a/cryptsetup-1.7.3-x86_64-1.txz:  Upgraded.
+a/dbus-1.10.14-x86_64-1.txz:  Upgraded.
+a/lvm2-2.02.168-x86_64-1.txz:  Upgraded.
+ap/alsa-utils-1.1.2-x86_64-1.txz:  Upgraded.
+ap/man-pages-4.09-noarch-1.txz:  Upgraded.
+d/git-2.11.0-x86_64-1.txz:  Upgraded.
+l/alsa-lib-1.1.2-x86_64-1.txz:  Upgraded.
+l/dbus-glib-0.108-x86_64-1.txz:  Upgraded.
+n/NetworkManager-1.2.6-x86_64-1.txz:  Upgraded.
+n/bluez-5.42-x86_64-1.txz:  Upgraded.
+n/conntrack-tools-1.4.4-x86_64-1.txz:  Upgraded.
+n/libnetfilter_acct-1.0.3-x86_64-1.txz:  Upgraded.
+n/libnetfilter_conntrack-1.0.6-x86_64-1.txz:  Upgraded.
+n/nfacct-1.0.2-x86_64-1.txz:  Upgraded.
+xap/mozilla-firefox-50.1.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/network-manager-applet-1.2.6-x86_64-1.txz:  Upgraded.
+extra/source/flashplayer-plugin/flashplayer-plugin.SlackBuild:  Updated.
+  Fixed filename and URL for new version 24.  Thanks to alienBOB.
++--------------------------+
+Mon Dec 12 21:25:50 UTC 2016
+a/coreutils-8.26-x86_64-1.txz:  Upgraded.
+a/grep-2.27-x86_64-1.txz:  Upgraded.
+a/kernel-firmware-20161211git-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.38-x86_64-1.txz:  Upgraded.
+  This kernel fixes a security issue with a race condition in
+  net/packet/af_packet.c that can be exploited to gain kernel code execution
+  from unprivileged processes.
+  Thanks to Philip Pettersson for discovering the bug and providing a patch.
+  Be sure to upgrade your initrd after upgrading the kernel packages.
+  If you use lilo to boot your machine, be sure lilo.conf points to the correct
+  kernel and initrd and run lilo as root to update the bootloader.
+  If you use elilo to boot your machine, you should run eliloconfig to copy the
+  kernel and initrd to the EFI System Partition.
+  For more information, see:
+    https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=84ac7260236a49c79eede91617700174c2c19b0c
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8655
+  (* Security fix *)
+a/kernel-huge-4.4.38-x86_64-1.txz:  Upgraded.
+  (* Security fix *)
+a/kernel-modules-4.4.38-x86_64-1.txz:  Upgraded.
+ap/nano-2.7.2-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.38-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.38-noarch-1.txz:  Upgraded.
+  (* Security fix *)
+l/gsl-2.3-x86_64-1.txz:  Upgraded.
+l/loudmouth-1.5.3-x86_64-1.txz:  Upgraded.
+n/mcabber-1.0.4-x86_64-1.txz:  Upgraded.
+  This update fixes a security issue which can lead to a malicious actor
+  MITMing a conversation, or adding themselves as an entity on a third
+  parties roster (thereby granting themselves the associated priviledges
+  such as observing when the user is online).
+  For more information, see:
+    https://gultsch.de/gajim_roster_push_and_message_interception.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9928
+  (* Security fix *)
+n/php-5.6.29-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.29
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9933
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9934
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9935
+  (* Security fix *)
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Thu Dec  1 08:49:20 UTC 2016
+d/intltool-0.51.0-x86_64-3.txz:  Rebuilt.
+  Added a patch to fix issues when $(builddir) != $(srcdir).  This avoids
+  possible build failures when intltool is used with automake >= 1.15.
+  Thanks to Willy Sudiarto Raharjo.
+xap/mozilla-firefox-50.0.2-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9078
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9079
+  (* Security fix *)
+xap/mozilla-thunderbird-45.5.1-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9079
+  (* Security fix *)
++--------------------------+
+Mon Nov 21 19:21:22 UTC 2016
+n/ntp-4.2.8p9-x86_64-1.txz:  Upgraded.
+  In addition to bug fixes and enhancements, this release fixes the
+  following 1 high- (Windows only :-), 2 medium-, 2 medium-/low, and
+  5 low-severity vulnerabilities, and provides 28 other non-security
+  fixes and improvements.
+  CVE-2016-9311: Trap crash
+  CVE-2016-9310: Mode 6 unauthenticated trap info disclosure and DDoS vector
+  CVE-2016-7427: Broadcast Mode Replay Prevention DoS
+  CVE-2016-7428: Broadcast Mode Poll Interval Enforcement DoS
+  CVE-2016-9312: Windows: ntpd DoS by oversized UDP packet
+  CVE-2016-7431: Regression: 010-origin: Zero Origin Timestamp Bypass
+  CVE-2016-7434: Null pointer dereference in _IO_str_init_static_internal()
+  CVE-2016-7429: Interface selection attack
+  CVE-2016-7426: Client rate limiting and server responses
+  CVE-2016-7433: Reboot sync calculation problem
+  For more information, see:
+    https://www.kb.cert.org/vuls/id/633847
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9311
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9310
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7427
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7428
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9312
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7431
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7434
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7429
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7426
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7433
+  (* Security fix *)
++--------------------------+
+Sat Nov 19 22:45:38 UTC 2016
+a/grep-2.26-x86_64-2.txz:  Rebuilt.
+  Reverted a speedup patch that is causing regressions when output is directed
+  to /dev/null.  Thanks to SeB.
++--------------------------+
+Sat Nov 19 03:33:33 UTC 2016
+a/bash-4.4.005-x86_64-1.txz:  Upgraded.
+a/kernel-firmware-20161118git-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.32-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.32-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.32-x86_64-1.txz:  Upgraded.
+ap/ghostscript-9.20-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.32-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.32-noarch-1.txz:  Upgraded.
+n/nmap-7.31-x86_64-1.txz:  Upgraded.
+n/samba-4.5.1-x86_64-1.txz:  Upgraded.
+x/freeglut-3.0.0-x86_64-1.txz:  Upgraded.
+x/libXfont2-2.0.1-x86_64-1.txz:  Added.
+x/libdrm-2.4.73-x86_64-1.txz:  Upgraded.
+x/libxcb-1.12-x86_64-1.txz:  Upgraded.
+x/mesa-13.0.1-x86_64-1.txz:  Upgraded.
+x/xcb-proto-1.12-x86_64-1.txz:  Upgraded.
+x/xcb-util-cursor-0.1.3-x86_64-1.txz:  Upgraded.
+x/xf86-input-acecad-1.5.0-x86_64-10.txz:  Rebuilt.
+x/xf86-input-evdev-2.10.4-x86_64-1.txz:  Upgraded.
+x/xf86-input-joystick-1.6.3-x86_64-1.txz:  Upgraded.
+x/xf86-input-keyboard-1.9.0-x86_64-1.txz:  Upgraded.
+x/xf86-input-mouse-1.9.2-x86_64-1.txz:  Upgraded.
+x/xf86-input-penmount-1.5.0-x86_64-10.txz:  Rebuilt.
+x/xf86-input-synaptics-1.9.0-x86_64-1.txz:  Upgraded.
+x/xf86-input-vmmouse-13.1.0-x86_64-5.txz:  Rebuilt.
+x/xf86-input-void-1.4.0-x86_64-10.txz:  Rebuilt.
+x/xf86-input-wacom-0.33.0-x86_64-2.txz:  Rebuilt.
+x/xf86-video-amdgpu-1.2.0-x86_64-1.txz:  Upgraded.
+x/xf86-video-apm-1.2.5-x86_64-9.txz:  Rebuilt.
+x/xf86-video-ark-0.7.5-x86_64-9.txz:  Rebuilt.
+x/xf86-video-ast-1.1.5-x86_64-3.txz:  Rebuilt.
+x/xf86-video-ati-7.8.0-x86_64-1.txz:  Upgraded.
+x/xf86-video-chips-1.2.6-x86_64-2.txz:  Removed.
+x/xf86-video-cirrus-1.5.3-x86_64-3.txz:  Rebuilt.
+x/xf86-video-dummy-0.3.7-x86_64-6.txz:  Rebuilt.
+x/xf86-video-glint-1.2.8-x86_64-8.txz:  Removed.
+x/xf86-video-i128-1.3.6-x86_64-9.txz:  Rebuilt.
+x/xf86-video-i740-1.3.5-x86_64-3.txz:  Removed.
+x/xf86-video-intel-git_20161115_a1a0f76-x86_64-1.txz:  Upgraded.
+x/xf86-video-mach64-6.9.5-x86_64-3.txz:  Rebuilt.
+x/xf86-video-mga-1.6.4-x86_64-3.txz:  Removed.
+x/xf86-video-neomagic-1.2.9-x86_64-3.txz:  Rebuilt.
+x/xf86-video-nouveau-1.0.13-x86_64-1.txz:  Upgraded.
+x/xf86-video-nv-2.1.20-x86_64-9.txz:  Removed.
+x/xf86-video-openchrome-0.5.0-x86_64-2.txz:  Rebuilt.
+x/xf86-video-r128-6.10.1-x86_64-1.txz:  Removed.
+x/xf86-video-rendition-4.2.6-x86_64-2.txz:  Rebuilt.
+x/xf86-video-s3-0.6.5-x86_64-9.txz:  Rebuilt.
+x/xf86-video-s3virge-1.10.7-x86_64-3.txz:  Rebuilt.
+x/xf86-video-savage-2.3.8-x86_64-2.txz:  Removed.
+x/xf86-video-siliconmotion-1.7.8-x86_64-2.txz:  Removed.
+x/xf86-video-sis-0.10.8-x86_64-2.txz:  Removed.
+x/xf86-video-sisusb-0.9.6-x86_64-9.txz:  Rebuilt.
+x/xf86-video-tdfx-1.4.6-x86_64-3.txz:  Removed.
+x/xf86-video-tga-1.2.2-x86_64-9.txz:  Rebuilt.
+x/xf86-video-trident-1.3.7-x86_64-3.txz:  Removed.
+x/xf86-video-tseng-1.2.5-x86_64-9.txz:  Rebuilt.
+x/xf86-video-v4l-0.2.0-x86_64-14.txz:  Rebuilt.
+x/xf86-video-vesa-2.3.4-x86_64-3.txz:  Rebuilt.
+x/xf86-video-vmware-13.2.1-x86_64-1.txz:  Upgraded.
+x/xf86-video-voodoo-1.2.5-x86_64-10.txz:  Rebuilt.
+x/xf86-video-xgi-1.6.1-x86_64-2.txz:  Removed.
+x/xf86-video-xgixp-1.8.1-x86_64-8.txz:  Removed.
+x/xorg-server-1.19.0-x86_64-1.txz:  Upgraded.
+x/xorg-server-xephyr-1.19.0-x86_64-1.txz:  Upgraded.
+x/xorg-server-xnest-1.19.0-x86_64-1.txz:  Upgraded.
+x/xorg-server-xvfb-1.19.0-x86_64-1.txz:  Upgraded.
+x/xproto-7.0.31-noarch-1.txz:  Upgraded.
+x/xterm-326-x86_64-1.txz:  Upgraded.
+xap/mozilla-firefox-50.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+extra/tigervnc/tigervnc-1.7.0-x86_64-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Fri Nov  4 03:31:38 UTC 2016
+a/glibc-zoneinfo-2016i-noarch-1.txz:  Upgraded.
+ap/nano-2.7.1-x86_64-1.txz:  Upgraded.
+ap/vim-8.0.0055-x86_64-1.txz:  Upgraded.
+l/libcdio-paranoia-10.2+0.93+1-x86_64-2.txz:  Rebuilt.
+n/bind-9.10.4_P4-x86_64-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  A defect in BIND's
+  handling of responses containing a DNAME answer can cause a resolver to exit
+  after encountering an assertion failure in db.c or resolver.c.  A server
+  encountering either of these error conditions will stop, resulting in denial
+  of service to clients.  The risk to authoritative servers is minimal;
+  recursive servers are chiefly at risk.
+  For more information, see:
+    https://kb.isc.org/article/AA-01434
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8864
+  (* Security fix *)
+n/curl-7.51.0-x86_64-1.txz:  Upgraded.
+  This release fixes security issues:
+  CVE-2016-8615: cookie injection for other servers
+  CVE-2016-8616: case insensitive password comparison
+  CVE-2016-8617: OOB write via unchecked multiplication
+  CVE-2016-8618: double-free in curl_maprintf
+  CVE-2016-8619: double-free in krb5 code
+  CVE-2016-8620: glob parser write/read out of bounds
+  CVE-2016-8621: curl_getdate read out of bounds
+  CVE-2016-8622: URL unescape heap overflow via integer truncation
+  CVE-2016-8623: Use-after-free via shared cookies
+  CVE-2016-8624: invalid URL parsing with '#'
+  CVE-2016-8625: IDNA 2003 makes curl use wrong host
+  For more information, see:
+    https://curl.haxx.se/docs/adv_20161102A.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8615
+    https://curl.haxx.se/docs/adv_20161102B.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8616
+    https://curl.haxx.se/docs/adv_20161102C.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8617
+    https://curl.haxx.se/docs/adv_20161102D.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8618
+    https://curl.haxx.se/docs/adv_20161102E.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8619
+    https://curl.haxx.se/docs/adv_20161102F.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8620
+    https://curl.haxx.se/docs/adv_20161102G.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8621
+    https://curl.haxx.se/docs/adv_20161102H.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8622
+    https://curl.haxx.se/docs/adv_20161102I.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8623
+    https://curl.haxx.se/docs/adv_20161102J.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8624
+    https://curl.haxx.se/docs/adv_20161102K.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8625
+  (* Security fix *)
+xap/gnuchess-6.2.4-x86_64-1.txz:  Upgraded.
+xap/vim-gvim-8.0.0055-x86_64-1.txz:  Upgraded.
++--------------------------+
+Mon Oct 31 23:38:24 UTC 2016
+a/grep-2.26-x86_64-1.txz:  Upgraded.
+a/kernel-generic-4.4.29-x86_64-1.txz:  Upgraded.
+  Fixes a security issue (Dirty COW).
+  (* Security fix *)
+a/kernel-huge-4.4.29-x86_64-1.txz:  Upgraded.
+  Fixes a security issue (Dirty COW).
+  (* Security fix *)
+a/kernel-modules-4.4.29-x86_64-1.txz:  Upgraded.
+ap/mariadb-10.0.28-x86_64-1.txz:  Upgraded.
+  This update fixes several security issues.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5616
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5624
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5626
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3492
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5629
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8283
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7440
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5584
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6663
+  (* Security fix *)
+d/gdb-7.12-x86_64-1.txz:  Upgraded.
+d/guile-2.0.13-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.29-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.29-noarch-1.txz:  Upgraded.
+  This kernel fixes a security issue known as "Dirty COW".  A race
+  condition was found in the way the Linux kernel's memory subsystem
+  handled the copy-on-write (COW) breakage of private read-only
+  memory mappings.  An unprivileged local user could use this flaw to
+  gain write access to otherwise read-only memory mappings and thus
+  increase their privileges on the system.
+  For more information, see:
+    https://dirtycow.ninja/
+    https://www.kb.cert.org/vuls/id/243144
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5195
+  (* Security fix *)
+l/libcdio-0.94-x86_64-1.txz:  Upgraded.
+n/nmap-7.30-x86_64-1.txz:  Upgraded.
+n/php-5.6.27-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.27
+  (* Security fix *)
+x/libX11-1.6.4-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory read in XGetImage() or write in XListFonts().
+  Affected versions libX11 <= 1.6.3.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7942
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7943
+  (* Security fix *)
+x/libXfixes-5.0.3-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause an integer
+  overflow on 32 bit architectures.
+  Affected versions : libXfixes <= 5.0.2.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7944
+  (* Security fix *)
+x/libXi-1.7.8-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory access or endless loops (Denial of Service).
+  Affected versions libXi <= 1.7.6.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7945
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7946
+  (* Security fix *)
+x/libXrandr-1.5.1-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory writes.
+  Affected versions: libXrandr <= 1.5.0.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7947
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7948
+  (* Security fix *)
+x/libXrender-0.9.10-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory writes.
+  Affected version: libXrender <= 0.9.9.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7949
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7950
+  (* Security fix *)
+x/libXtst-1.2.3-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory access or endless loops (Denial of Service).
+  Affected version libXtst <= 1.2.2. 
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7951
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7952
+  (* Security fix *)
+x/libXv-1.0.11-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory and memory corruption.
+  Affected version libXv <= 1.0.10.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5407
+  (* Security fix *)
+x/libXvMC-1.0.10-x86_64-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause a one byte buffer
+  read underrun.
+  Affected version: libXvMC <= 1.0.9.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7953 
+  (* Security fix *)
+xap/mozilla-firefox-49.0.2-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/xscreensaver-5.36-x86_64-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Sat Oct  1 17:11:13 UTC 2016
+a/kernel-firmware-20161001git-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.23-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.23-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.23-x86_64-1.txz:  Upgraded.
+a/lvm2-2.02.166-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.23-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.23-noarch-1.txz:  Upgraded.
+n/mutt-1.7.0-x86_64-1.txz:  Upgraded.
+xap/mozilla-thunderbird-45.4.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+  (* Security fix *)
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Wed Sep 28 23:24:37 UTC 2016
+a/glibc-zoneinfo-2016g-noarch-1.txz:  Upgraded.
+  This package provides the latest timezone updates.
+l/mpfr-3.1.5-x86_64-1.txz:  Upgraded.
++--------------------------+
+Tue Sep 27 19:16:56 UTC 2016
+ap/hplip-3.16.9-x86_64-1.txz:  Upgraded.
+  Reenabled parallel port support.  Thanks to Jas for the bug report.
+n/bind-9.10.4_P3-x86_64-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  Testing by ISC has
+  uncovered a critical error condition which can occur when a nameserver is
+  constructing a response.  A defect in the rendering of messages into
+  packets can cause named to exit with an assertion failure in buffer.c while
+  constructing a response to a query that meets certain criteria.
+  For more information, see:
+    https://kb.isc.org/article/AA-01419/0
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2776
+  (* Security fix *)
+xap/gnuchess-6.2.3-x86_64-1.txz:  Upgraded.
+  Upgraded to gnuchess-6.2.3 and xboard-4.9.1.
++--------------------------+
+Mon Sep 26 18:14:08 UTC 2016
+a/openssl-solibs-1.0.2j-x86_64-1.txz:  Upgraded.
+a/pkgtools-14.2-noarch-13.txz:  Rebuilt.
+  removepkg:  Fixed removing filenames containing "%".
+  Thanks to SeB for the bug report, and to Jim Hawkins for the patch.
+n/openssl-1.0.2j-x86_64-1.txz:  Upgraded.
+  This update fixes a security issue:
+  Missing CRL sanity check (CVE-2016-7052)
+  For more information, see:
+    https://www.openssl.org/news/secadv/20160926.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7052
+  (* Security fix *)
++--------------------------+
+Sun Sep 25 02:32:25 UTC 2016
+a/kernel-firmware-20160924git-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.22-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.22-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.22-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.22-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.22-noarch-1.txz:  Upgraded.
+n/sshfs-2.8-x86_64-1.txz:  Added.
+  Thanks to Heinz Wiesinger.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Fri Sep 23 23:30:53 UTC 2016
+n/php-5.6.26-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.26
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7416
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7412
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7414
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7417
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7411
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7413
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7418
+  (* Security fix *)
++--------------------------+
+Thu Sep 22 18:38:07 UTC 2016
+a/openssl-solibs-1.0.2i-x86_64-1.txz:  Upgraded.
+n/openssl-1.0.2i-x86_64-1.txz:  Upgraded.
+  This update fixes denial-of-service and other security issues.
+  For more information, see:
+    https://www.openssl.org/news/secadv/20160922.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6304
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6305
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2183
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6303
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6302
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2182
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2180
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2177
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2178
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2179
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2181
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6306
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6307
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6308
+  (* Security fix *)
++--------------------------+
+Wed Sep 21 21:10:52 UTC 2016
+n/irssi-0.8.20-x86_64-1.txz:  Upgraded.
+  This update fixes two remote crash and heap corruption vulnerabilites
+  in Irssi's format parsing code.  Impact:  Remote crash and heap
+  corruption.  Remote code execution seems difficult since only Nuls are
+  written.  Bugs discovered by, and patches provided by Gabriel Campana
+  and Adrien Guinet from Quarkslab.
+  For more information, see:
+    https://irssi.org/security/irssi_sa_2016.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7044
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7045
+  (* Security fix *)
++--------------------------+
+Wed Sep 21 15:54:06 UTC 2016
+a/mkinitrd-1.4.8-x86_64-9.txz:  Rebuilt.
+  When generating the initrd, include dmsetup whenever LUKS is requested.
+  Thanks to TracyTiger for the bug report and Eric Hameleers for the patch.
+e/emacs-25.1-x86_64-1.txz:  Upgraded.
+l/qt-4.8.7-x86_64-5.txz:  Rebuilt.
+  In the .prl files, make sure to use -L/usr/X11R6/lib64 on 64-bit to avoid
+  ld warnings when using qmake on a multilib system.
+  Thanks to Jonathan Woithe for the bug report and fix.
+n/network-scripts-14.2-noarch-4.txz:  Rebuilt.
+  rc.inet1.new:  Use return (not continue) to leave the if_up() function.
+  Thanks to Tim Thomas for the bug report.
+xap/mozilla-firefox-49.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/pidgin-2.11.0-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://www.pidgin.im/news/security/
+  (* Security fix *)
++--------------------------+
+Thu Sep 15 22:54:52 UTC 2016
+a/bash-4.4.0-x86_64-1.txz:  Upgraded.
+a/btrfs-progs-v4.7.2-x86_64-1.txz:  Upgraded.
+a/e2fsprogs-1.43.3-x86_64-1.txz:  Upgraded.
+a/pkgtools-14.2-noarch-12.txz:  Rebuilt.
+  removepkg:  Fixed removing packages with >= 3 hyphens in the package name
+  when using just the package name rather than the full name including
+  version, arch, and build.
+  Thanks to coralfang for the bug report, Jim Hawkins and Stuart Winter for
+  the patch, and SeB for testing and feedback.
+  removepkg:  Handle filenames that contain backslashes.
+  Thanks to aaazen for the bug report and patch.
+ap/vim-8.0.0005-x86_64-1.txz:  Upgraded.
+n/curl-7.50.3-x86_64-1.txz:  Upgraded.
+  Fixed heap overflows in four libcurl functions: curl_escape(),
+  curl_easy_escape(), curl_unescape() and curl_easy_unescape().
+  For more information, see:
+    https://curl.haxx.se/docs/adv_20160914.html
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7167
+  (* Security fix *)
+xap/vim-gvim-8.0.0005-x86_64-1.txz:  Upgraded.
++--------------------------+
+Tue Sep 13 18:13:32 UTC 2016
+ap/mariadb-10.0.27-x86_64-1.txz:  Upgraded.
+  This update fixes a critical vulnerability which can allow local and
+  remote attackers to inject malicious settings into MySQL configuration
+  files (my.cnf).  A successful exploitation could allow attackers to
+  execute arbitrary code with root privileges which would then allow them
+  to fully compromise the server.  
+  This issue was discovered and reported by Dawid Golunski.
+  For more information, see:
+    http://legalhackers.com/advisories/MySQL-Exploit-Remote-Root-Code-Execution-Privesc-CVE-2016-6662.html
+    https://jira.mariadb.org/browse/MDEV-10465
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6662
+  (* Security fix *)
+ap/vim-8.0.0003-x86_64-1.txz:  Upgraded.
+xap/vim-gvim-8.0.0003-x86_64-1.txz:  Upgraded.
++--------------------------+
+Mon Sep 12 18:39:03 UTC 2016
+ap/texinfo-6.3-x86_64-1.txz:  Upgraded.
+d/guile-2.0.12-x86_64-2.txz:  Rebuilt.
+  Match timestamps across all $ARCH on *.go and *.scm files, otherwise
+  on multilib systems the compiled (go) files may be detected as older
+  than the source (scm) files, causing guile to attempt to recompile
+  itself with every use.
+l/sdl-1.2.15-x86_64-5.txz:  Rebuilt.
+  Fixed a regression that broke MOD support.  Thanks to B Watson.
+x/libXfont-1.5.2-x86_64-1.txz:  Upgraded.
+x/mesa-12.0.2-x86_64-1.txz:  Upgraded.
++--------------------------+
+Sat Sep 10 18:04:42 UTC 2016
+l/gtk+2-2.24.31-x86_64-1.txz:  Upgraded.
+  This update fixes a security issue:  Integer overflow in the
+  gdk_cairo_set_source_pixbuf function in gdk/gdkcairo.c allows remote
+  attackers to cause a denial of service (crash) via a large image file,
+  which triggers a large memory allocation.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7447
+  (* Security fix *)
+n/gnutls-3.4.15-x86_64-1.txz:  Upgraded.
+  libgnutls: Corrected the comparison of the serial size in OCSP response.
+  Previously the OCSP certificate check wouldn't verify the serial length
+  and could succeed in cases it shouldn't (GNUTLS-SA-2016-3).
+  Reported by Stefan Buehler.
+  For more information, see:
+    https://www.gnutls.org/security.html
+  (* Security fix *)
++--------------------------+
+Thu Sep  8 21:35:02 UTC 2016
+a/kernel-generic-4.4.20-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.20-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.20-x86_64-1.txz:  Upgraded.
+a/kmod-23-x86_64-2.txz:  Rebuilt.
+a/util-linux-2.28.2-x86_64-1.txz:  Upgraded.
+ap/hplip-3.16.8-x86_64-1.txz:  Upgraded.
+ap/nano-2.7.0-x86_64-1.txz:  Upgraded.
+ap/pamixer-1.3.1-x86_64-2.txz:  Rebuilt.
+ap/rpm-4.12.0.1-x86_64-2.txz:  Rebuilt.
+ap/vim-7.4.2342-x86_64-1.txz:  Upgraded.
+d/Cython-0.24.1-x86_64-1.txz:  Upgraded.
+d/gdb-7.11.1-x86_64-2.txz:  Rebuilt.
+d/kernel-headers-4.4.20-x86-1.txz:  Upgraded.
+d/mercurial-3.9.1-x86_64-1.txz:  Upgraded.
+d/python-2.7.12-x86_64-1.txz:  Upgraded.
+  Compiled using --enable-unicode=ucs4.
+  The upstream default for Python Unicode is ucs2, but ucs4 is more widely
+  used and recommended now.  Any Python scripts or binaries that use UCS-2
+  will need to be recompiled.  These can be identified with the following
+  grep command:  grep -r -l PyUnicodeUCS2 /usr 2> /dev/null
+k/kernel-source-4.4.20-noarch-1.txz:  Upgraded.
+kde/calligra-2.9.11-x86_64-6.txz:  Rebuilt.
+kde/kate-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/kdev-python-1.7.2-x86_64-2.txz:  Rebuilt.
+kde/kig-4.14.3-x86_64-4.txz:  Rebuilt.
+kde/kross-interpreters-4.14.3-x86_64-3.txz:  Rebuilt.
+kde/pykde4-4.14.3-x86_64-4.txz:  Rebuilt.
+kde/superkaramba-4.14.3-x86_64-3.txz:  Rebuilt.
+l/PyQt-4.11.4-x86_64-2.txz:  Rebuilt.
+l/akonadi-1.13.0-x86_64-3.txz:  Rebuilt.
+l/boost-1.61.0-x86_64-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/dbus-python-1.2.4-x86_64-2.txz:  Rebuilt.
+l/gdbm-1.12-x86_64-2.txz:  Rebuilt.
+l/glib2-2.46.2-x86_64-4.txz:  Rebuilt.
+l/gobject-introspection-1.46.0-x86_64-2.txz:  Rebuilt.
+l/libxml2-2.9.4-x86_64-3.txz:  Rebuilt.
+l/pilot-link-0.12.5-x86_64-11.txz:  Rebuilt.
+l/pycups-1.9.73-x86_64-2.txz:  Rebuilt.
+l/pycurl-7.43.0-x86_64-2.txz:  Rebuilt.
+l/pygobject-2.28.6-x86_64-3.txz:  Rebuilt.
+l/pygobject3-3.18.2-x86_64-2.txz:  Rebuilt.
+l/pygtk-2.24.0-x86_64-3.txz:  Rebuilt.
+l/python-pillow-3.0.0-x86_64-2.txz:  Rebuilt.
+l/sip-4.18.1-x86_64-1.txz:  Upgraded.
+n/php-5.6.25-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    http://php.net/ChangeLog-5.php#5.6.25
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7125
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7126
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7127
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7128
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7129
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7130
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7131
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7132
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7133
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7134
+  (* Security fix *)
+n/samba-4.5.0-x86_64-1.txz:  Upgraded.
+xap/blueman-2.0.4-x86_64-2.txz:  Rebuilt.
+xap/gimp-2.8.18-x86_64-2.txz:  Rebuilt.
+xap/vim-gvim-7.4.2342-x86_64-1.txz:  Upgraded.
+extra/brltty/brltty-5.4-x86_64-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Wed Aug 31 20:43:10 UTC 2016
+l/gsl-2.2.1-x86_64-1.txz:  Upgraded.
+xap/mozilla-thunderbird-45.3.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+  (* Security fix *)
++--------------------------+
+Tue Aug 30 22:10:31 UTC 2016
+testing/packages/gcc-6.2.0-x86_64-1.txz:  Added.
+testing/packages/gcc-g++-6.2.0-x86_64-1.txz:  Added.
+testing/packages/gcc-gfortran-6.2.0-x86_64-1.txz:  Added.
+testing/packages/gcc-gnat-6.2.0-x86_64-1.txz:  Added.
+testing/packages/gcc-go-6.2.0-x86_64-1.txz:  Added.
+testing/packages/gcc-java-6.2.0-x86_64-1.txz:  Added.
+  Please note that if you install this package, gettext (specifically the
+  gettext-tools package) will need to be recompiled.
+testing/packages/gcc-objc-6.2.0-x86_64-1.txz:  Added.
++--------------------------+
+Mon Aug 29 22:51:27 UTC 2016
+a/gawk-4.1.4-x86_64-1.txz:  Upgraded.
+l/gsl-2.2-x86_64-1.txz:  Upgraded.
++--------------------------+
+Wed Aug 24 19:37:40 UTC 2016
+xap/mozilla-firefox-48.0.2-x86_64-1.txz:  Upgraded.
++--------------------------+
+Tue Aug 23 19:45:33 UTC 2016
+a/glibc-solibs-2.24-x86_64-2.txz:  Rebuilt.
+a/kernel-firmware-20160823git-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.19-x86_64-1.txz:  Upgraded.
+  A flaw was found in the implementation of the Linux kernels handling of
+  networking challenge ack where an attacker is able to determine the shared
+  counter.  This may allow an attacker located on different subnet to inject
+  or take over a TCP connection between a server and client without having to
+  be a traditional Man In the Middle (MITM) style attack.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5389
+  (* Security fix *)
+a/kernel-huge-4.4.19-x86_64-1.txz:  Upgraded.
+  A flaw was found in the implementation of the Linux kernels handling of
+  networking challenge ack where an attacker is able to determine the shared
+  counter.  This may allow an attacker located on different subnet to inject
+  or take over a TCP connection between a server and client without having to
+  be a traditional Man In the Middle (MITM) style attack.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5389
+  (* Security fix *)
+a/kernel-modules-4.4.19-x86_64-1.txz:  Upgraded.
+ap/diffutils-3.5-x86_64-1.txz:  Upgraded.
+ap/linuxdoc-tools-0.9.72-x86_64-1.txz:  Upgraded.
+  Thanks to Stuart Winter.
+ap/screen-4.4.0-x86_64-2.txz:  Rebuilt.
+  Reverted a change to /etc/screenrc.new that prevented the console from being
+  cleared when a screen session was detached.  Thanks to Stuart Winter.
+d/binutils-2.27-x86_64-2.txz:  Rebuilt.
+  Recompiled with --disable-compressed-debug-sections, since other tools are
+  not yet capable of parsing that.
+  Thanks to Vincent Batts, Heinz Wiesinger, and Stuart Winter.
+d/kernel-headers-4.4.19-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.19-noarch-1.txz:  Upgraded.
+  A flaw was found in the implementation of the Linux kernels handling of
+  networking challenge ack where an attacker is able to determine the shared
+  counter.  This may allow an attacker located on different subnet to inject
+  or take over a TCP connection between a server and client without having to
+  be a traditional Man In the Middle (MITM) style attack.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5389
+  (* Security fix *)
+l/glib2-2.46.2-x86_64-3.txz:  Rebuilt.
+  Applied upstream patch to fix a use-before-allocate bug in libgio.  Without
+  this fix, Thunar will crash if $HOME is on an NFS volume.
+  Thanks to Jonathan Woithe.
+l/glibc-2.24-x86_64-2.txz:  Rebuilt.
+  If libm.so is a linker script, don't clobber it with a symlink.
+  Thanks to guanx.
+l/glibc-i18n-2.24-x86_64-2.txz:  Rebuilt.
+l/glibc-profile-2.24-x86_64-2.txz:  Rebuilt.
+n/gnupg-1.4.21-x86_64-1.txz:  Upgraded.
+  Fix critical security bug in the RNG [CVE-2016-6313].  An attacker who
+  obtains 580 bytes from the standard RNG can trivially predict the next
+  20 bytes of output.  (This is according to the NEWS file included in the
+  source.  According to the annoucement linked below, an attacker who obtains
+  4640 bits from the RNG can trivially predict the next 160 bits of output.)
+  Problem detected by Felix Doerre and Vladimir Klebanov, KIT.
+  For more information, see:
+    https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6313
+  (* Security fix *)
+n/libgcrypt-1.7.3-x86_64-1.txz:  Upgraded.
+  Fix critical security bug in the RNG [CVE-2016-6313].  An attacker who
+  obtains 580 bytes from the standard RNG can trivially predict the next
+  20 bytes of output.  (This is according to the NEWS file included in the
+  source.  According to the annoucement linked below, an attacker who obtains
+  4640 bits from the RNG can trivially predict the next 160 bits of output.)
+  Problem detected by Felix Doerre and Vladimir Klebanov, KIT.
+  For more information, see:
+    https://lists.gnupg.org/pipermail/gnupg-announce/2016q3/000395.html
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6313
+  (* Security fix *)
+n/network-scripts-14.2-noarch-3.txz:  Rebuilt.
+  In rc.inet1, skip interfaces that are not configured in rc.inet1.conf
+  to speed up the boot time slightly.
+  Thanks to Amritpal Bath.
+n/stunnel-5.35-x86_64-2.txz:  Rebuilt.
+  Fixed incorrect config file name in generate-stunnel-key.sh.
+  Thanks to Ebben Aries.
+xap/mozilla-firefox-48.0.1-x86_64-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Thu Aug 11 18:24:29 UTC 2016
+a/glibc-solibs-2.24-x86_64-1.txz:  Upgraded.
+a/glibc-zoneinfo-2016f-noarch-1.txz:  Upgraded.
+a/kernel-generic-4.4.17-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.17-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.17-x86_64-1.txz:  Upgraded.
+ap/diffutils-3.4-x86_64-1.txz:  Upgraded.
+ap/vim-7.4.2196-x86_64-1.txz:  Upgraded.
+d/binutils-2.27-x86_64-1.txz:  Upgraded.
+d/gcc-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-g++-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-gfortran-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-gnat-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-go-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-java-5.4.0-x86_64-1.txz:  Upgraded.
+d/gcc-objc-5.4.0-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.17-x86-1.txz:  Upgraded.
+d/llvm-3.8.1-x86_64-1.txz:  Upgraded.
+d/oprofile-1.1.0-x86_64-2.txz:  Rebuilt.
+k/kernel-source-4.4.17-noarch-1.txz:  Upgraded.
+l/glibc-2.24-x86_64-1.txz:  Upgraded.
+l/glibc-i18n-2.24-x86_64-1.txz:  Upgraded.
+l/glibc-profile-2.24-x86_64-1.txz:  Upgraded.
+xap/mozilla-firefox-48.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/vim-gvim-7.4.2196-x86_64-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Sat Aug  6 19:29:16 UTC 2016
+n/curl-7.50.1-x86_64-1.txz:  Upgraded.
+  This release fixes security issues:
+  TLS: switch off SSL session id when client cert is used
+  TLS: only reuse connections with the same client cert
+  curl_multi_cleanup: clear connection pointer for easy handles
+  For more information, see:
+    https://curl.haxx.se/docs/adv_20160803A.html
+    https://curl.haxx.se/docs/adv_20160803B.html
+    https://curl.haxx.se/docs/adv_20160803C.html
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5419
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5420
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5421
+  (* Security fix *)
+n/mutt-1.6.2-x86_64-1.txz:  Upgraded.
+n/openssh-7.3p1-x86_64-1.txz:  Upgraded.
+  This is primarily a bugfix release, and also addresses security issues.
+  sshd(8): Mitigate a potential denial-of-service attack against the system's
+  crypt(3) function via sshd(8).
+  sshd(8): Mitigate timing differences in password authentication that could
+  be used to discern valid from invalid account names when long passwords were
+  sent and particular password hashing algorithms are in use on the server.
+  ssh(1), sshd(8): Fix observable timing weakness in the CBC padding oracle
+  countermeasures. 
+  ssh(1), sshd(8): Improve operation ordering of MAC verification for
+  Encrypt-then-MAC (EtM) mode transport MAC algorithms to verify the MAC
+  before decrypting any ciphertext. 
+  sshd(8): (portable only) Ignore PAM environment vars when UseLogin=yes.
+  For more information, see:
+    http://www.openssh.com/txt/release-7.3
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6210
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8325
+  (* Security fix *)
+n/stunnel-5.35-x86_64-1.txz:  Upgraded.
+  Fixes security issues:
+  Fixed malfunctioning "verify = 4".
+  Fixed incorrectly enforced client certificate requests.
+  (* Security fix *)
++--------------------------+
+Thu Jul 28 19:44:25 UTC 2016
+a/kernel-generic-4.4.16-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.16-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.16-x86_64-1.txz:  Upgraded.
+d/kernel-headers-4.4.16-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.16-noarch-1.txz:  Upgraded.
+l/libidn-1.33-x86_64-1.txz:  Upgraded.
+  Fixed out-of-bounds read bugs.  Fixed crashes on invalid UTF-8.
+  Thanks to Hanno Böck.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-8948
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6261
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6262
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6263
+  (* Security fix *)
+l/libtasn1-4.9-x86_64-1.txz:  Upgraded.
+n/bluez-5.41-x86_64-1.txz:  Upgraded.
+extra/tigervnc/tigervnc-1.6.0-x86_64-4.txz:  Rebuilt.
+  Recompiled for xorg-server-1.18.4.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Mon Jul 25 19:59:06 UTC 2016
+a/pkgtools-14.2-noarch-11.txz:  Rebuilt.
+  Changes to pkgtool:
+  Remove option to install from floppy disks.
+  Don't use the --file option, which appears to be broken in the latest version
+  of dialog.  The only reason --file was ever used in the first place was to
+  work around the Linux ARG_MAX limit of 131072 bytes, and since Linux 2.6.23 a
+  much larger limit is in place making it unlikely to become an issue again.
+  So we'll go back to passing the package list on the command line.
+  Thanks to David Miller for the bug report.
++--------------------------+
+Fri Jul 22 20:51:23 UTC 2016
+a/dialog-1.3_20160424-x86_64-1.txz:  Upgraded.
+a/kmod-23-x86_64-1.txz:  Upgraded.
+a/lvm2-2.02.161-x86_64-1.txz:  Upgraded.
+d/git-2.9.2-x86_64-1.txz:  Upgraded.
+l/desktop-file-utils-0.23-x86_64-1.txz:  Upgraded.
+l/freetype-2.6.5-x86_64-1.txz:  Upgraded.
+l/harfbuzz-1.3.0-x86_64-1.txz:  Upgraded.
+n/bind-9.10.4_P2-x86_64-1.txz:  Upgraded.
+  Fixed a security issue:
+  getrrsetbyname with a non absolute name could trigger an infinite
+    recursion bug in lwresd and named with lwres configured if when
+    combined with a search list entry the resulting name is too long.
+    (CVE-2016-2775) [RT #42694]
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2775
+  (* Security fix *)
+n/httpd-2.4.23-x86_64-1.txz:  Upgraded.
+n/lftp-4.7.3-x86_64-1.txz:  Upgraded.
+n/links-2.13-x86_64-1.txz:  Upgraded.
+x/xf86-video-openchrome-0.5.0-x86_64-1.txz:  Upgraded.
+x/xkeyboard-config-2.18-noarch-1.txz:  Upgraded.
+x/xorg-server-1.18.4-x86_64-1.txz:  Upgraded.
+x/xorg-server-xephyr-1.18.4-x86_64-1.txz:  Upgraded.
+x/xorg-server-xnest-1.18.4-x86_64-1.txz:  Upgraded.
+x/xorg-server-xvfb-1.18.4-x86_64-1.txz:  Upgraded.
++--------------------------+
+Thu Jul 21 23:25:54 UTC 2016
+ap/tmux-2.2-x86_64-2.txz:  Upgraded.
+  Moved from /testing.
+d/guile-2.0.12-x86_64-1.txz:  Upgraded.
+l/freetype-2.6.4-x86_64-1.txz:  Upgraded.
+n/libgcrypt-1.7.2-x86_64-1.txz:  Upgraded.
+n/network-scripts-14.2-noarch-2.txz:  Rebuilt.
+  In rc.inet1.new, use -L option to dhcpcd to disable Zeroconf.  This is
+  (almost) never going to be wanted, and ends up used accidentally on slower
+  systems (such as some ARM platforms), preventing a proper DHCP lease.
+  Thanks to Stuart Winter.
+n/php-5.6.24-x86_64-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    http://php.net/ChangeLog-5.php#5.6.24
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5385
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6207
+  (* Security fix *)
+xap/gimp-2.8.18-x86_64-1.txz:  Upgraded.
+  This release fixes a security issue:
+  Use-after-free vulnerability in the xcf_load_image function in
+  app/xcf/xcf-load.c in GIMP allows remote attackers to cause a denial of
+  service (program crash) or possibly execute arbitrary code via a crafted
+  XCF file.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4994
+  (* Security fix *)
++--------------------------+
+Tue Jul 12 03:48:34 UTC 2016
+a/etc-14.2-x86_64-8.txz:  Rebuilt.
+  In /etc/profile.d/lang.{csh,sh}.new, make en_US.UTF-8 the default locale.
+a/kernel-generic-4.4.15-x86_64-1.txz:  Upgraded.
+a/kernel-huge-4.4.15-x86_64-1.txz:  Upgraded.
+a/kernel-modules-4.4.15-x86_64-1.txz:  Upgraded.
+a/lilo-24.2-x86_64-3.txz:  Rebuilt.
+  In liloconfig:  Skip the menu asking if the user wants a UTF-8 virtual
+  console, and use the kernel default (currently this is UTF-8 active).
+d/kernel-headers-4.4.15-x86-1.txz:  Upgraded.
+k/kernel-source-4.4.15-noarch-1.txz:  Upgraded.
+isolinux/initrd.img:  Rebuilt.
+kernels/*:  Upgraded.
+usb-and-pxe-installers/usbboot.img:  Rebuilt.
++--------------------------+
+Sat Jul  9 18:35:56 UTC 2016
+x/mesa-12.0.1-x86_64-1.txz:  Upgraded.
++--------------------------+
+Fri Jul  8 23:17:22 UTC 2016
+x/mesa-12.0.0-x86_64-1.txz:  Upgraded.
++--------------------------+
+Thu Jul  7 19:52:36 UTC 2016
+n/samba-4.4.5-x86_64-1.txz:  Upgraded.
+  This release fixes a security issue:
+  Client side SMB2/3 required signing can be downgraded.
+  It's possible for an attacker to downgrade the required signing for an
+  SMB2/3 client connection, by injecting the SMB2_SESSION_FLAG_IS_GUEST or
+  SMB2_SESSION_FLAG_IS_NULL flags.  This means that the attacker can
+  impersonate a server being connected to by Samba, and return malicious
+  results.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2119
+  (* Security fix *)
++--------------------------+
+Tue Jul  5 04:52:45 UTC 2016
+xap/mozilla-thunderbird-45.2.0-x86_64-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+  (* Security fix *)
++--------------------------+
+Sun Jul  3 19:29:33 UTC 2016
+a/file-5.28-x86_64-1.txz:  Upgraded.
+a/util-linux-2.28-x86_64-1.txz:  Upgraded.
+xap/mozilla-firefox-47.0.1-x86_64-1.txz:  Upgraded.
++--------------------------+
+Thu Jun 30 20:26:57 UTC 2016
+Slackware 14.2 x86_64 stable is released!
+
+The long development cycle (the Linux community has lately been living in
+"interesting times", as they say) is finally behind us, and we're proud to
+announce the release of Slackware 14.2.  The new release brings many updates
+and modern tools, has switched from udev to eudev (no systemd), and adds
+well over a hundred new packages to the system.  Thanks to the team, the
+upstream developers, the dedicated Slackware community, and everyone else
+who pitched in to help make this release a reality.
+
+The ISOs are off to be replicated, a 6 CD-ROM 32-bit set and a dual-sided
+32-bit/64-bit x86/x86_64 DVD.  Please consider supporting the Slackware
+project by picking up a copy from store.slackware.com.  We're taking
+pre-orders now, and offer a discount if you sign up for a subscription.
+
+Have fun!  :-)
