@@ -8,6 +8,7 @@ import (
 	"../changelog"
 )
 
+// Repo represents a remote slackware software repo
 type Repo struct {
 	URL string
 }
@@ -16,6 +17,8 @@ func (r Repo) get(file string) (*http.Response, error) {
 	return http.Get(r.URL + "/" + file)
 }
 
+// ChangeLog fetches the ChangeLog.txt for this remote Repo, along with the
+// last-modified (for comparisons).
 func (r Repo) ChangeLog() (e []changelog.Entry, mtime time.Time, err error) {
 	resp, err := r.get("ChangeLog.txt")
 	if err != nil {

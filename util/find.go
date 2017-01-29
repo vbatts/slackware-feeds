@@ -5,6 +5,8 @@ import (
 	"path/filepath"
 )
 
+// FindFiles is a convenience for walk a directory tree for a particular file
+// name.
 func FindFiles(root, name string) (paths []string, err error) {
 	paths = []string{}
 	err = filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
