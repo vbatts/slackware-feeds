@@ -31,6 +31,7 @@ func main() {
 		},
 	}
 
+	// This is the main/default application
 	app.Action = func(c *cli.Context) error {
 		if c.Bool("sample-config") {
 			c := Config{
@@ -40,8 +41,7 @@ func main() {
 			return nil
 		}
 
-		fmt.Println("boom! I say!")
-		fmt.Println(config)
+		fmt.Println(config.Dest)
 		return nil
 	}
 
@@ -56,6 +56,9 @@ func main() {
 		}
 		if _, err := toml.Decode(string(data), &config); err != nil {
 			return err
+		}
+		if c.String("dest") != "" {
+			config.Dest = c.String("dest")
 		}
 		return nil
 	}
