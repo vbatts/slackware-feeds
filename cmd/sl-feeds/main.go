@@ -30,6 +30,10 @@ func main() {
 			Usage: "Output RSS files to `DIR`",
 		},
 		cli.BoolFlag{
+			Name:  "quiet, q",
+			Usage: "Less output",
+		},
+		cli.BoolFlag{
 			Name:  "sample-config",
 			Usage: "Output sample config file to stdout",
 		},
@@ -39,7 +43,8 @@ func main() {
 	app.Action = func(c *cli.Context) error {
 		if c.Bool("sample-config") {
 			c := Config{
-				Dest: "$HOME/public_html/feeds/",
+				Dest:  "$HOME/public_html/feeds/",
+				Quiet: false,
 				Mirrors: []Mirror{
 					Mirror{
 						URL: "http://slackware.osuosl.org/",
@@ -76,7 +81,9 @@ func main() {
 		}
 
 		dest := os.ExpandEnv(config.Dest)
-		fmt.Printf("Writing to: %q\n", dest)
+		if !c.Bool("quiet") {
+			fmt.Printf("Writing to: %q\n", dest)
+		}
 		/*
 			for each mirror in Mirrors
 				if there is not a $release.RSS file, then fetch the whole ChangeLog
@@ -90,7 +97,9 @@ func main() {
 					Release: release,
 				}
 
-				log.Printf("processing %q", repo.URL+"/"+repo.Release)
+				if !c.Bool("quiet") {
+					log.Printf("processing %q", repo.URL+"/"+repo.Release)
+				}
 
 				stat, err := os.Stat(filepath.Join(dest, mirror.Prefix+release+".rss"))
 				if err != nil && !os.IsNotExist(err) {
@@ -111,7 +120,9 @@ func main() {
 					// compare times
 					entries, mtime, err = repo.NewerChangeLog(stat.ModTime())
 					if err != nil {
-						log.Println(release, err)
+						if !(err == fetch.ErrNotNewer && c.Bool("quiet")) {
+							log.Println(release, err)
+						}
 						continue
 					}
 				}
@@ -167,6 +178,7 @@ func main() {
 // Config is read in to point to where RSS are written to, and the Mirrors to
 // be fetched from
 type Config struct {
+	Quiet   bool
 	Dest    string
 	Mirrors []Mirror
 }
