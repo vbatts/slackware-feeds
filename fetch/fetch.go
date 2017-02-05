@@ -10,16 +10,19 @@ import (
 
 // Repo represents a remote slackware software repo
 type Repo struct {
-	URL string
+	URL     string
+	Release string
 }
 
 func (r Repo) head(file string) (*http.Response, error) {
-	return http.Head(r.URL + "/" + file)
+	return http.Head(r.URL + "/" + r.Release + "/" + file)
 }
 func (r Repo) get(file string) (*http.Response, error) {
-	return http.Get(r.URL + "/" + file)
+	return http.Get(r.URL + "/" + r.Release + "/" + file)
 }
 
+// NewerChangeLog checks the last-modified time of the remote ChangeLog.txt and
+// only fetches it if the remote is newer than the provided time.
 func (r Repo) NewerChangeLog(than time.Time) (e []changelog.Entry, mtime time.Time, err error) {
 	resp, err := r.head("ChangeLog.txt")
 	if err != nil {
