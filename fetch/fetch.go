@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"../changelog"
+	"github.com/vbatts/sl-feeds/changelog"
 )
 
 // Repo represents a remote slackware software repo
@@ -42,11 +42,11 @@ func (r Repo) NewerChangeLog(than time.Time) (e []changelog.Entry, mtime time.Ti
 	if mtime.After(than) {
 		return r.ChangeLog()
 	}
-	return nil, time.Unix(0, 0), NotNewer
+	return nil, time.Unix(0, 0), ErrNotNewer
 }
 
-// NotNewer is a status error usage to indicate that the remote file is not newer
-var NotNewer = fmt.Errorf("Remote file is not newer than provided time")
+// ErrNotNewer is a status error usage to indicate that the remote file is not newer
+var ErrNotNewer = fmt.Errorf("Remote file is not newer than provided time")
 
 // ChangeLog fetches the ChangeLog.txt for this remote Repo, along with the
 // last-modified (for comparisons).

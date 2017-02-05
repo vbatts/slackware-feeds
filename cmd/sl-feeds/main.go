@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"../../changelog"
-	"../../fetch"
 	"github.com/BurntSushi/toml"
 	"github.com/urfave/cli"
+	"github.com/vbatts/sl-feeds/changelog"
+	"github.com/vbatts/sl-feeds/fetch"
 )
 
 func main() {
@@ -164,11 +164,14 @@ func main() {
 	app.Run(os.Args)
 }
 
+// Config is read in to point to where RSS are written to, and the Mirrors to
+// be fetched from
 type Config struct {
 	Dest    string
 	Mirrors []Mirror
 }
 
+// Mirror is where the release/ChangeLog.txt will be fetched from
 type Mirror struct {
 	URL      string
 	Releases []string
