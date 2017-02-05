@@ -11,8 +11,14 @@ Ultimately ending up at http://www.slackware.com/~vbatts/feeds/
 go get github.com/vbatts/sl-feeds
 ```
 
+Create a configuration from the sample
+
+```bash
+sl-feeds --sample-config > ~/.sl-feeds.toml
+```
+
 crontab like:
 
 ```
-0 */2 * * * ~/bin/sl-feeds -q || echo "$(date): failed to poll changelogs" | mail -s "[slackrss] changelog_http_poll failed $(date +%D)" me@example.com
+0 */2 * * * ~/bin/sl-feeds -c ~/.sl-feeds.toml -q || echo "$(date): failed to poll changelogs" | mail -s "[slackrss] changelog_http_poll failed $(date +%D)" me@example.com
 ```
