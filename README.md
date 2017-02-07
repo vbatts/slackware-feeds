@@ -3,7 +3,7 @@
 This is for proccessing Slackware ChangeLog.txt -> RSS feeds that folks can
 subscribed to.
 
-Ultimately ending up at http://www.slackware.com/~vbatts/feeds/
+Ultimately ending up at http://www.slackware.com/~vbatts/feeds/ or http://mirrors.slackware.com/feeds/
 
 ## Usage
 
