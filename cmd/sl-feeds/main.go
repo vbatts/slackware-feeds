@@ -62,7 +62,6 @@ func main() {
 					Mirror{
 						URL: "http://ftp.arm.slackware.com/slackwarearm/",
 						Releases: []string{
-							"slackwarearm-14.1",
 							"slackwarearm-14.2",
 							"slackwarearm-current",
 						},
