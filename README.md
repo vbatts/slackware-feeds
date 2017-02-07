@@ -20,5 +20,5 @@ sl-feeds --sample-config > ~/.sl-feeds.toml
 crontab like:
 
 ```
-0 */2 * * * ~/bin/sl-feeds -c ~/.sl-feeds.toml -q || echo "$(date): failed to poll changelogs" | mail -s "[slackrss] changelog_http_poll failed $(date +%D)" me@example.com
+0 */2 * * * ~/bin/sl-feeds -c ~/.sl-feeds.toml -q || mail -s "[sl-feeds] failed $(date +%D)" me@example.com
 ```
