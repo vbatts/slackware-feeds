@@ -30,11 +30,12 @@ func ToFeed(link string, entries []Entry) (*feeds.Feed, error) {
 	}
 	feed.Items = make([]*feeds.Item, len(entries))
 	for i, e := range entries {
+		url := fmt.Sprintf("%s/ChangeLog.txt#src=feeds&time=%d", link, e.Date.Unix())
 		feed.Items[i] = &feeds.Item{
 			Created:     e.Date,
-			Link:        &feeds.Link{Href: fmt.Sprintf("%s/ChangeLog.txt#src=feeds&time=%d", link, e.Date.Unix())},
+			Link:        &feeds.Link{Href: url},
 			Description: e.ToHTML(),
-			Id:          fmt.Sprintf("%d", e.Date.Unix()),
+			Id:          url,
 		}
 
 		updateWord := "updates"
