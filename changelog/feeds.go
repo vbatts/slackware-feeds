@@ -32,7 +32,7 @@ func ToFeed(link string, entries []Entry) (*feeds.Feed, error) {
 	for i, e := range entries {
 		feed.Items[i] = &feeds.Item{
 			Created:     e.Date,
-			Link:        &feeds.Link{Href: ""},
+			Link:        &feeds.Link{Href: fmt.Sprintf("%s/ChangeLog.txt#src=feeds&time=%d", link, e.Date.Unix())},
 			Description: e.ToChangeLog(),
 		}
 
