@@ -94,6 +94,11 @@ func (e Entry) SecurityFix() bool {
 	return false
 }
 
+// ToHTML reformats the struct as the text for HTML output
+func (e Entry) ToHTML() string {
+	return "<pre><blockquote>" + strings.Replace(e.ToChangeLog(), "\n", "<br>", -1) + "</blockquote></pre>"
+}
+
 // ToChangeLog reformats the struct as the text for ChangeLog.txt output
 func (e Entry) ToChangeLog() string {
 	str := e.Date.Format(time.UnixDate) + "\n"
