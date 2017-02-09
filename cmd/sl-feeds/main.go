@@ -132,6 +132,7 @@ func main() {
 					log.Println(release, err)
 					continue
 				}
+				feeds.Title = fmt.Sprintf("ChangeLog.txt for %s%s", mirror.Prefix, release)
 				fh, err := os.Create(filepath.Join(dest, mirror.Prefix+release+".rss"))
 				if err != nil {
 					log.Println(release, err)
