@@ -34,6 +34,7 @@ func ToFeed(link string, entries []Entry) (*feeds.Feed, error) {
 			Created:     e.Date,
 			Link:        &feeds.Link{Href: fmt.Sprintf("%s/ChangeLog.txt#src=feeds&time=%d", link, e.Date.Unix())},
 			Description: e.ToHTML(),
+			Id:          fmt.Sprintf("%d", e.Date.Unix()),
 		}
 
 		updateWord := "updates"
