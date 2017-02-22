@@ -44,8 +44,10 @@ func ToFeed(link string, entries []Entry) (*feeds.Feed, error) {
 		}
 		if e.SecurityFix() {
 			feed.Items[i].Title = fmt.Sprintf("%d %s. Including a %s!", len(e.Updates), updateWord, securityFixStr)
+		} else if len(e.Updates) == 0 {
+			feed.Items[i].Title = ""
 		} else {
-			feed.Items[i].Title = fmt.Sprintf("%d %s.", len(e.Updates), updateWord)
+			feed.Items[i].Title = fmt.Sprintf("%d %s", len(e.Updates), updateWord)
 		}
 	}
 
