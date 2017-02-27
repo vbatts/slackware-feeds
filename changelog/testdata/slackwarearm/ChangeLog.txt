@@ -1,0 +1,2950 @@
+Fri Feb 24 23:23:24 UTC 2017
+
+The mini root filesystem for -current has been updated:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+
+/INSTALL_ORANGEPI.TXT:  Added.
+  Added installation documentation for the Orange Pi (Allwinner H3) Plus v1.1
+  and Orange Pi PC v1.2.
+
+  Installation method requires U-Boot on a Micro SD card and eSATA.
+  If you'd like to help extend the documentation, please reply to the discussion
+  thread on the Slackware ARM LinuxQuestions forum:
+  http://www.linuxquestions.org/questions/slackware-arm-108/orange-pi-h3-support-now-available-in-current-4175600523/
+
+  Thanks to the kind folks at www.orangepi.org for donating the hardware used to
+  develop this support.
+
+  Big thanks to Corentin Labbe who has been developing the 'stmmac' Ethernet
+  driver and has been helping me get it working on the Orange Pi's.
+
+  Consider this 'alpha' stage support: Read the '# Issues & To Do list:' section
+  at the head of the document.
+
+  I'll be developing an installer image that can be dd'd to a USB stick, avoiding
+  the necessity to set up a tftp server and so on.  This support will be extended
+  for all devices (Banana Pi, Tegra, etc.).
+
+a/kernel-modules-armv7-4.10.0next20170224_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.10.0next20170224-arm-1.txz:  Upgraded.
+  Added Allwinner H3 support (amongst other features) to enable the 'Orange Pi'.
+k/kernel-source-4.10.0next20170224-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Mon Feb 20 19:20:21 UTC 2017
+a/aaa_elflibs-14.2-arm-5.txz:  Rebuilt.
+a/coreutils-8.26-arm-2.txz:  Rebuilt.
+  Added a few more file extensions to /etc/DIR_COLORS, including .lz.
+a/grep-3.0-arm-1.txz:  Upgraded.
+a/hdparm-9.51-arm-1.txz:  Upgraded.
+a/kernel-modules-armv7-4.10.0rc8_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.10.0rc8-arm-1.txz:  Upgraded.
+a/openssl-solibs-1.0.2k-arm-1.txz:  Upgraded.
+a/sed-4.4-arm-1.txz:  Upgraded.
+a/util-linux-2.29.1-arm-1.txz:  Upgraded.
+ap/ddrescue-1.22-arm-1.txz:  Upgraded.
+ap/flac-1.3.2-arm-1.txz:  Upgraded.
+ap/sqlite-3160200-arm-1.txz:  Upgraded.
+ap/tmux-2.3-arm-2.txz:  Rebuilt.
+  Recompiled against libevent-2.1.8.
+d/guile-2.0.14-arm-1.txz:  Upgraded.
+d/llvm-3.9.1-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+  Added support for lldb and openmp to the package.
+  Thanks to Heinz Wiesinger.
+d/opencl-headers-2.1-arm-1.txz:  Added.
+d/scons-2.5.1-arm-1.txz:  Upgraded.
+k/kernel-source-4.10.0rc8-arm-1.txz:  Upgraded.
+l/ffmpeg-3.2.3-arm-1.txz:  Added.
+  Thanks to Heinz Wiesinger.
+l/gmime-2.6.23-arm-1.txz:  Upgraded.
+l/gst-plugins-base-1.10.3-arm-1.txz:  Upgraded.
+l/gst-plugins-good-1.10.3-arm-1.txz:  Upgraded.
+l/gst-plugins-libav-1.10.3-arm-1.txz:  Added.
+  Thanks to alienBOB.
+l/gstreamer-1.10.3-arm-1.txz:  Upgraded.
+l/json-c-0.12-arm-1.txz:  Removed.
+  This had been a required dep for PulseAudio, but has become optional.  Since
+  being added to Slackware, a few other packages had begun to use it
+  (NetworkManager, BIND), but it's not really critical there either so we're
+  removing it from the main tree.  If you require json-c for something, it is
+  expected that SBo will be picking it up.
+l/libclc-20160921_520743b-arm-1.txz:  Added.
+  Thanks to Heinz Wiesinger.
+l/libedit-20160903_3.1-arm-1.txz:  Added.
+  This is needed by lldb.
+l/libevent-2.1.8-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/libjpeg-turbo-1.5.1-arm-1.txz:  Upgraded.
+l/libnl3-3.2.29-arm-1.txz:  Upgraded.
+l/libpcap-1.8.1-arm-1.txz:  Upgraded.
+l/libvpx-1.6.1-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/libzip-1.1.3-arm-1.txz:  Upgraded.
+l/ocl-icd-2.2.11-arm-1.txz:  Added.
+l/openjpeg-2.1.2-arm-1.txz:  Upgraded.
+l/pulseaudio-10.0-arm-1.txz:  Upgraded.
+l/python-six-1.10.0-arm-1.txz:  Added.
+  This is needed by lldb.
+l/rasqal-0.9.33-arm-1.txz:  Upgraded.
+l/redland-1.0.17-arm-1.txz:  Upgraded.
+l/serf-1.3.9-arm-1.txz:  Upgraded.
+n/NetworkManager-1.6.0-arm-1.txz:  Upgraded.
+n/bind-9.11.0_P3-arm-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  Under some conditions
+  when using both DNS64 and RPZ to rewrite query responses, query processing
+  can resume in an inconsistent state leading to either an INSIST assertion
+  failure or an attempt to read through a NULL pointer.
+  For more information, see:
+    https://kb.isc.org/article/AA-01453
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3135
+  (* Security fix *)
+n/iproute2-4.9.0-arm-1.txz:  Upgraded.
+n/iptables-1.6.1-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+n/links-2.14-arm-2.txz:  Rebuilt.
+  Recompiled against libevent-2.1.8.
+n/mutt-1.7.2-arm-2.txz:  Rebuilt.
+  Recompiled with --enable-sidebar option.  Thanks to Corrado Franco.
+n/nftables-0.7-arm-2.txz:  Rebuilt.
+  Recompiled against iptables-1.6.1.  Added libxtables support.
+n/ntp-4.2.8p9-arm-3.txz:  Rebuilt.
+  Recompiled against libevent-2.1.8.
+n/openssl-1.0.2k-arm-1.txz:  Upgraded.
+  This update fixes security issues:
+  Truncated packet could crash via OOB read (CVE-2017-3731)
+  BN_mod_exp may produce incorrect results on x86_64 (CVE-2017-3732)
+  Montgomery multiplication may produce incorrect results (CVE-2016-7055)
+  For more information, see:
+    https://www.openssl.org/news/secadv/20170126.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3731
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3732
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7055
+  (* Security fix *)
+n/php-5.6.30-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.30
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10158
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10167
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10168
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10159
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10160
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10161
+  (* Security fix *)
+n/samba-4.5.5-arm-1.txz:  Upgraded.
+n/tcpdump-4.9.0-arm-1.txz:  Upgraded.
+  Fixed bugs which allow an attacker to crash tcpdump (denial of service).
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7922
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7923
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7924
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7925
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7926
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7927
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7928
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7929
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7930
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7931
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7932
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7933
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7934
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7935
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7936
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7937
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7938
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7939
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7940
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7973
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7974
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7975
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7983
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7984
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7985
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7986
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7992
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7993
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8574
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8575
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5202
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5203
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5204
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5205
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5341
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5342
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5482
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5483
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5484
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5485
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5486
+  (* Security fix *)
+n/wget-1.19.1-arm-1.txz:  Upgraded.
+n/zd1211-firmware-1.5-fw-1.txz:  Upgraded.
+x/fontconfig-2.12.1-arm-1.txz:  Upgraded.
+x/libdrm-2.4.75-arm-1.txz:  Upgraded.
+x/libinput-1.6.0-arm-1.txz:  Upgraded.
+x/mesa-13.0.4-arm-1.txz:  Upgraded.
+x/xf86-video-vmware-13.2.1-arm-2.txz:  Rebuilt.
+xap/MPlayer-20170208-arm-1.txz:  Upgraded.
+  Upgraded to 1.3 branch, compiled against system ffmpeg-3.2.3.
+  Thanks to Heinz Wiesinger.
+xap/mozilla-thunderbird-45.7.1-arm-1.txz:  Upgraded.
+  Fixed crash when viewing certain IMAP messages (introduced in 45.7.0)
+xap/network-manager-applet-1.4.4-arm-1.txz:  Upgraded.
+xap/xine-lib-1.2.6-arm-3.txz:  Rebuilt.
+  Recompiled against system ffmpeg-3.2.3.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Jan 31 12:12:12 UTC 2017
+a/kernel-modules-armv7-4.10.0rc6_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.10.0rc6-arm-1.txz:  Upgraded.
+k/kernel-source-4.10.0rc6-arm-1.txz:  Upgraded.
+x/xf86-input-libinput-0.23.0-arm-1.txz:  Added.
+xap/mozilla-firefox-51.0.1-arm-1.txz:  Upgraded.
+  Fixed geolocation problems with Firefox 51.0.
+xap/mozilla-thunderbird-45.7.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5375
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5376
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5378
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5380
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5390
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5396
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5383
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5386
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5373
+  (* Security fix *)
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Jan 24 19:19:19 UTC 2017
+a/kernel-modules-armv7-4.10.0rc5_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.10.0rc5-arm-1.txz:  Upgraded.
+d/gdb-7.12.1-arm-1.txz:  Upgraded.
+k/kernel-source-4.10.0rc5-arm-1.txz:  Upgraded.
+xap/fvwm-2.6.7-arm-2.txz:  Rebuilt.
+  Reverted an upstream patch that causes some broken symlinks to be installed.
+  Thanks to GazL.
+xap/mozilla-firefox-51.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Thu Jan 19 22:22:22 UTC 2017
+a/kernel-modules-armv7-4.10.0rc4_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.10.0rc4-arm-1.txz:  Upgraded.
+k/kernel-source-4.10.0rc4-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Wed Jan 18 23:32:23 UTC 2017
+
+The mini root filesystem for -current has been updated:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+
+a/aaa_elflibs-14.2-arm-4.txz:  Rebuilt.
+  Upgraded libcap.so.2.25, liblzma.so.5.2.3, and libz.so.1.2.10.
+a/bash-4.4.005-arm-2.txz:  Rebuilt.
+a/btrfs-progs-4.9-arm-1.txz:  Upgraded.
+a/cryptsetup-1.7.3-arm-2.txz:  Rebuilt.
+  Recompiled with --enable-cryptsetup-reencrypt option.
+  Thanks to Jakub Jankowski for the suggestion.
+a/dialog-1.3_20160828-arm-1.txz:  Upgraded.
+a/ed-1.14.1-arm-1.txz:  Upgraded.
+a/elvis-2.2_0-arm-1.txz:  Upgraded.
+a/file-5.29-arm-1.txz:  Upgraded.
+a/gawk-4.1.4-arm-2.txz:  Rebuilt.
+a/gettext-0.19.8.1-arm-2.txz:  Rebuilt.
+a/getty-ps-2.1.0b-arm-2.txz:  Rebuilt.
+a/gpm-1.20.7-arm-2.txz:  Rebuilt.
+a/gptfdisk-1.0.1-arm-1.txz:  Upgraded.
+a/hwdata-0.291-arm-1.txz:  Upgraded.
+a/less-481-arm-2.txz:  Rebuilt.
+a/minicom-2.7-arm-1.txz:  Upgraded.
+a/procps-ng-3.3.12-arm-1.txz:  Upgraded.
+a/sed-4.3-arm-1.txz:  Upgraded.
+a/splitvt-1.6.6-arm-1.txz:  Upgraded.
+a/tcsh-6.20.00-arm-1.txz:  Upgraded.
+a/util-linux-2.29-arm-1.txz:  Upgraded.
+a/xfsprogs-4.8.0-arm-1.txz:  Upgraded.
+a/xz-5.2.3-arm-1.txz:  Upgraded.
+ap/alsa-utils-1.1.3-arm-1.txz:  Upgraded.
+ap/bc-1.06.95-arm-2.txz:  Rebuilt.
+ap/bpe-2.01.00-arm-2.txz:  Rebuilt.
+ap/cups-filters-1.13.2-arm-1.txz:  Upgraded.
+ap/ghostscript-9.20-arm-2.txz:  Rebuilt.
+  Restored /usr/bin/ijs-config.
+ap/gphoto2-2.5.11-arm-1.txz:  Upgraded.
+ap/gutenprint-5.2.11-arm-2.txz:  Rebuilt.
+ap/hplip-3.16.11-arm-1.txz:  Upgraded.
+ap/htop-2.0.2-arm-1.txz:  Upgraded.
+ap/ispell-3.4.00-arm-2.txz:  Rebuilt.
+ap/joe-4.3-arm-1.txz:  Upgraded.
+ap/jove-4.16.0.73-arm-2.txz:  Rebuilt.
+ap/mariadb-10.0.29-arm-1.txz:  Upgraded.
+  This update fixes several security issues.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6664
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3238
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3243
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3244
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3257
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3258
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3265
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3291
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3312
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3317
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3318
+  (* Security fix *)
+ap/mc-4.8.18-arm-1.txz:  Upgraded.
+ap/moc-2.5.2-arm-1.txz:  Upgraded.
+ap/nano-2.7.4-arm-1.txz:  Upgraded.
+ap/pamixer-1.3.1-arm-3.txz:  Rebuilt.
+ap/powertop-2.8-arm-2.txz:  Rebuilt.
+ap/sc-7.16-arm-2.txz:  Rebuilt.
+ap/screen-4.5.0-arm-1.txz:  Upgraded.
+ap/sqlite-3160100-arm-1.txz:  Upgraded.
+ap/texinfo-6.3-arm-2.txz:  Rebuilt.
+ap/tmux-2.3-arm-1.txz:  Upgraded.
+ap/vim-8.0.0161-arm-1.txz:  Upgraded.
+ap/xfsdump-3.1.6-arm-2.txz:  Rebuilt.
+ap/zsh-5.3.1-arm-1.txz:  Upgraded.
+d/clisp-2.49.20161111hg-arm-1.txz:  Upgraded.
+d/cmake-3.7.1-arm-1.txz:  Upgraded.
+d/cscope-15.8b-arm-2.txz:  Rebuilt.
+d/flex-2.6.3-arm-1.txz:  Upgraded.
+d/gdb-7.12-arm-2.txz:  Rebuilt.
+d/gettext-tools-0.19.8.1-arm-2.txz:  Rebuilt.
+d/gnu-cobol-1.1-arm-2.txz:  Rebuilt.
+d/gperf-3.1-arm-1.txz:  Upgraded.
+d/guile-2.0.13-arm-2.txz:  Rebuilt.
+d/m4-1.4.18-arm-1.txz:  Upgraded.
+d/make-4.2.1-arm-1.txz:  Upgraded.
+d/perl-5.24.0-arm-1.txz:  Upgraded.
+  Also upgraded to DBD-mysql-4.041 and TermReadKey-2.37.
+d/ruby-2.4.0-arm-1.txz:  Upgraded.
+d/subversion-1.9.5-arm-1.txz:  Upgraded.
+e/emacs-25.1-arm-2.txz:  Rebuilt.
+kde/analitza-4.14.3-arm-2.txz:  Rebuilt.
+kde/calligra-2.9.11-arm-5.txz:  Rebuilt.
+kde/kdelibs-4.14.27-arm-1.txz:  Upgraded.
+kde/kig-4.14.3-arm-3.txz:  Rebuilt.
+kde/korundum-4.14.3-arm-2.txz:  Rebuilt.
+kde/lokalize-4.14.3-arm-2.txz:  Rebuilt.
+kde/perlkde-4.14.3-arm-2.txz:  Rebuilt.
+kde/perlqt-4.14.3-arm-2.txz:  Rebuilt.
+kde/qtruby-4.14.3-arm-2.txz:  Rebuilt.
+l/akonadi-1.13.0-arm-4.txz:  Rebuilt.
+l/alsa-lib-1.1.3-arm-1.txz:  Upgraded.
+l/aspell-0.60.6.1-arm-2.txz:  Rebuilt.
+l/boost-1.63.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/elfutils-0.168-arm-1.txz:  Upgraded.
+l/enchant-1.6.0-arm-2.txz:  Rebuilt.
+l/hunspell-1.6.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/libcaca-0.99.beta19-arm-1.txz:  Upgraded.
+l/libcap-2.25-arm-1.txz:  Upgraded.
+l/libcdio-0.94-arm-2.txz:  Rebuilt.
+l/libgphoto2-2.5.11-arm-1.txz:  Upgraded.
+l/libnjb-2.2.7-arm-1.txz:  Upgraded.
+l/libpng-1.6.27-arm-1.txz:  Upgraded.
+ This release fixes an old NULL pointer dereference bug in png_set_text_2()
+  discovered and patched by Patrick Keshishian.  The potential "NULL
+  dereference" bug has existed in libpng since version 0.71 of June 26, 1995.
+  To be vulnerable, an application has to load a text chunk into the png
+  structure, then delete all text, then add another text chunk to the same
+  png structure, which seems to be an unlikely sequence, but it has happened.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10087
+  (* Security fix *)
+l/libproxy-0.4.13-arm-1.txz:  Upgraded.
+l/libtasn1-4.10-arm-1.txz:  Upgraded.
+l/parted-3.2-arm-3.txz:  Rebuilt.
+l/pilot-link-0.12.5-arm-3.txz:  Rebuilt.
+l/poppler-0.50.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/seamonkey-solibs-2.46-arm-1.txz:  Upgraded.
+  This update contains security fixes and improvements.
+  For more information, see:
+    http://www.seamonkey-project.org/releases/seamonkey2.46
+  (* Security fix *)
+l/taglib-1.11.1-arm-1.txz:  Upgraded.
+l/virtuoso-ose-6.1.8-arm-2.txz:  Rebuilt.
+l/vte-0.28.2-arm-2.txz:  Rebuilt.
+l/wavpack-5.0.0-arm-1.txz:  Upgraded.
+l/zlib-1.2.10-arm-1.txz:  Upgraded.
+n/NetworkManager-1.2.6-arm-2.txz:  Rebuilt.
+n/alpine-2.20-arm-2.txz:  Rebuilt.
+n/bind-9.11.0_P2-arm-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  An error in handling
+  certain queries can cause an assertion failure when a server is using the
+  nxdomain-redirect feature to cover a zone for which it is also providing
+  authoritative service.  A vulnerable server could be intentionally stopped
+  by an attacker if it was using a configuration that met the criteria for
+  the vulnerability and if the attacker could cause it to accept a query
+  that possessed the required attributes.
+  Please note: This vulnerability affects the "nxdomain-redirect" feature,
+  which is one of two methods of handling NXDOMAIN redirection, and is only
+  available in certain versions of BIND.  Redirection using zones of type
+  "redirect" is not affected by this vulnerability.
+  For more information, see:
+    https://kb.isc.org/article/AA-01442
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9778
+  (* Security fix *)
+n/bluez-5.43-arm-1.txz:  Upgraded.
+n/elm-2.5.8-arm-2.txz:  Rebuilt.
+n/epic5-2.0.1-arm-1.txz:  Upgraded.
+n/gnupg-1.4.21-arm-2.txz:  Rebuilt.
+n/gnupg2-2.0.30-arm-2.txz:  Rebuilt.
+n/gnutls-3.5.8-arm-1.txz:  Upgraded.
+  This update fixes some bugs and security issues.
+  For more information, see:
+    https://gnutls.org/security.html#GNUTLS-SA-2017-1
+    https://gnutls.org/security.html#GNUTLS-SA-2017-2
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5334
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5335
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5336
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5337
+  (* Security fix *)
+n/iftop-1.0pre4-arm-1.txz:  Upgraded.
+n/imapd-2.20-arm-2.txz:  Rebuilt.
+n/iptraf-ng-1.1.4-arm-2.txz:  Rebuilt.
+n/irssi-0.8.21-arm-1.txz:  Upgraded.
+  Fixed security issues that may result in a denial of service.
+  For more information, see:
+    https://irssi.org/security/irssi_sa_2017_01.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5193
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5194
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
+  (* Security fix *)
+n/iw-4.9-arm-1.txz:  Upgraded.
+n/lftp-4.7.5-arm-1.txz:  Upgraded.
+n/libnftnl-1.0.7-arm-1.txz:  Upgraded.
+n/links-2.14-arm-1.txz:  Upgraded.
+n/lynx-2.8.8rel.2-arm-2.txz:  Rebuilt.
+n/mcabber-1.0.4-arm-2.txz:  Rebuilt.
+n/metamail-2.7-arm-2.txz:  Rebuilt.
+n/mtr-0.87-arm-1.txz:  Upgraded.
+n/mutt-1.7.2-arm-1.txz:  Upgraded.
+n/ncftp-3.2.6-arm-1.txz:  Upgraded.
+n/net-snmp-5.7.3-arm-2.txz:  Rebuilt.
+n/netkit-ftp-0.17-arm-2.txz:  Rebuilt.
+n/netkit-ntalk-0.17-arm-2.txz:  Rebuilt.
+n/netwatch-1.3.1_2-arm-2.txz:  Rebuilt.
+n/nftables-0.7-arm-1.txz:  Upgraded.
+n/nn-6.7.3-arm-1.txz:  Upgraded.
+n/ntp-4.2.8p9-arm-2.txz:  Rebuilt.
+n/obexftp-0.24.2-arm-1.txz:  Upgraded.
+n/openobex-1.7.2-arm-1.txz:  Upgraded.
+n/openvpn-2.4.0-arm-1.txz:  Upgraded.
+n/pinentry-1.0.0-arm-2.txz:  Rebuilt.
+n/proftpd-1.3.5b-arm-2.txz:  Rebuilt.
+n/snownews-1.5.12-arm-2.txz:  Rebuilt.
+n/tftp-hpa-5.2-arm-2.txz:  Rebuilt.
+n/tin-2.4.1-arm-1.txz:  Upgraded.
++n/trn-3.6-arm-1.txz:  Removed.
+n/wpa_supplicant-2.6-arm-1.txz:  Upgraded.
+n/ytalk-3.3.0-arm-2.txz:  Rebuilt.
+x/libdrm-2.4.74-arm-1.txz:  Upgraded.
+x/libinput-1.5.4-arm-1.txz:  Added.
+  This is the new generic X.Org input driver which replaces evdev for most
+  purposes.  It does not (for now) replace xf86-input-synaptics or
+  xf86-input-vmmouse.  If this driver package is missing then X will fall
+  back to using xf86-input-evdev as before.
+  Thanks to Robby Workman.
+x/libwacom-0.22-arm-1.txz:  Added.
+  This is needed for libinput.
+x/mesa-13.0.2-arm-1.txz:  Upgraded.
+x/scim-1.4.17-arm-1.txz:  Upgraded.
+x/xf86-video-armsoc-1.4.1-arm-2.txz:  Rebuilt.
+x/xf86-video-fbdev-0.4.4-arm-3.txz:  Rebuilt.
+x/xf86-video-fbturbo-199.f9a6ed7-arm-3.txz:  Rebuilt.
+x/xf86-video-opentegra-0.7.0-arm-2.txz:  Rebuilt.
+x/xorg-server-1.19.1-arm-1.txz:  Upgraded.
+  Rename 90-keyboard-layout.conf to 90-keyboard-layout-evdev.conf.
+x/xorg-server-xephyr-1.19.1-arm-1.txz:  Upgraded.
+x/xorg-server-xnest-1.19.1-arm-1.txz:  Upgraded.
+x/xorg-server-xvfb-1.19.1-arm-1.txz:  Upgraded.
+x/xterm-327-arm-1.txz:  Upgraded.
+xap/MPlayer-20160125-arm-2.txz:  Rebuilt.
+  Upgraded to ffmpeg-2.8.10.
+xap/ddd-3.3.12-arm-2.txz:  Rebuilt.
+xap/fvwm-2.6.7-arm-1.txz:  Upgraded.
+xap/gftp-2.0.19-arm-2.txz:  Rebuilt.
+xap/gparted-0.27.0-arm-1.txz:  Upgraded.
+xap/hexchat-2.12.4-arm-1.txz:  Upgraded.
+xap/imagemagick-6.9.7_3-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+xap/mozilla-thunderbird-45.6.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9899
+  (* Security fix *)
+xap/pidgin-2.11.0-arm-2.txz:  Rebuilt.
+xap/seamonkey-2.46-arm-1.txz:  Upgraded.
+  This update contains security fixes and improvements.
+  For more information, see:
+    http://www.seamonkey-project.org/releases/seamonkey2.46
+  (* Security fix *)
+xap/vim-gvim-8.0.0161-arm-1.txz:  Upgraded.
+xap/xine-lib-1.2.6-arm-2.txz:  Rebuilt.
+  Upgraded to ffmpeg-2.8.10.
+xap/xine-ui-0.99.9-arm-2.txz:  Rebuilt.
+xap/xlockmore-5.50-arm-1.txz:  Upgraded.
+xfce/tumbler-0.1.31-arm-2.txz:  Rebuilt.
+xfce/xfce4-panel-4.12.1-arm-1.txz:  Upgraded.
+xfce/xfce4-settings-4.12.1-arm-1.txz:  Upgraded.
+xfce/xfconf-4.12.1-arm-1.txz:  Upgraded.
+extra/brltty/brltty-5.4-arm-2.txz:  Rebuilt.
+  Patched /lib/udev/rules.d/40-usb-brltty.rules to fix a syntax error.
+  Thanks to Willy Sudiarto Raharjo.
+extra/tigervnc/tigervnc-1.7.0-arm-2.txz:  Rebuilt.
+  Recompiled for xorg-server-1.19.1.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Thu Dec 29 19:20:21 UTC 2016
+
+The mini root filesystem for -current has been updated:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+
+The tested upgrade path for this batch is:
+  # upgradepkg a/aaa_elflibs-*.t?z
+  # upgradepkg l/ncurses-*.t?z
+  # removepkg libtermcap
+  # ldconfig
+Then upgrade the rest of them as you would usually.
+
+a/aaa_elflibs-14.2-arm-2.txz:  Rebuilt.
+  Added libform.so.6.0, libformw.so.6.0, libhistory.so.7.0, libmenu.so.6.0,
+  libmenuw.so.6.0, libncurses.so.6.0, libncursesw.so.6.0, libpanel.so.6.0,
+  libpanelw.so.6.0, libreadline.so.7.0, and libtinfo.so.6.0.
+a/kernel-modules-armv7-4.8.15_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.8.15-arm-1.txz:  Upgraded.
+ap/nano-2.7.3-arm-1.txz:  Upgraded.
+d/kernel-headers-4.8.15-arm-1.txz:  Upgraded.
+d/python-2.7.13-arm-1.txz:  Upgraded.
+  This release fixes security issues:
+  Issue #27850: Remove 3DES from ssl module's default cipher list to counter
+  measure sweet32 attack (CVE-2016-2183).
+  Issue #27568: Prevent HTTPoxy attack (CVE-2016-1000110). Ignore the
+  HTTP_PROXY variable when REQUEST_METHOD environment is set, which indicates
+  that the script is in CGI mode.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2183
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-1000110
+  (* Security fix *)
+k/kernel-source-4.8.15-arm-1.txz:  Upgraded.
+l/expat-2.2.0-arm-1.txz:  Upgraded.
+  This update fixes bugs and security issues:
+  Multiple integer overflows in XML_GetBuffer.
+  Fix crash on malformed input.
+  Improve insufficient fix to CVE-2015-1283 / CVE-2015-2716.
+  Use more entropy for hash initialization.
+  Resolve troublesome internal call to srand.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-1283
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0718
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4472
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5300
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6702
+  (* Security fix *)
+l/libtermcap-1.2.3-arm-1.txz:  Removed.
+  Replaced by equivalent functionality in the ncurses package.
+l/ncurses-6.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+  Rebuild of linked binaries pending, but the old library versions are
+  in the aaa_elflibs package.
+l/readline-7.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+  Rebuild of linked binaries pending, but the old library versions are
+  in the aaa_elflibs package.
+n/curl-7.52.1-arm-1.txz:  Upgraded.
+n/gpa-0.9.10-arm-1.txz:  Upgraded.
+n/gpgme-1.7.1-arm-1.txz:  Upgraded.
+n/httpd-2.4.25-arm-1.txz:  Upgraded.
+  This update fixes the following security issues:
+  * CVE-2016-8740: mod_http2: Mitigate DoS memory exhaustion via endless
+    CONTINUATION frames.
+  * CVE-2016-5387: core: Mitigate [f]cgi "httpoxy" issues.
+  * CVE-2016-2161: mod_auth_digest: Prevent segfaults during client entry
+    allocation when the shared memory space is exhausted.
+  * CVE-2016-0736: mod_session_crypto: Authenticate the session data/cookie
+    with a MAC (SipHash) to prevent deciphering or tampering with a padding
+    oracle attack.
+  * CVE-2016-8743: Enforce HTTP request grammar corresponding to RFC7230 for
+    request lines and request headers, to prevent response splitting and
+    cache pollution by malicious clients or downstream proxies.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8740
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5387
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2161
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0736
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8743
+  (* Security fix *)
+n/lftp-4.7.4-arm-1.txz:  Upgraded.
+n/libassuan-2.4.3-arm-1.txz:  Upgraded.
+n/libgcrypt-1.7.5-arm-1.txz:  Upgraded.
+n/libksba-1.3.5-arm-1.txz:  Upgraded.
+n/nettle-3.3-arm-1.txz:  Upgraded.
+n/nmap-7.40-arm-1.txz:  Upgraded.
+n/openssh-7.4p1-arm-1.txz:  Upgraded.
+  This is primarily a bugfix release, and also addresses security issues.
+  ssh-agent(1): Will now refuse to load PKCS#11 modules from paths outside
+    a trusted whitelist.
+  sshd(8): When privilege separation is disabled, forwarded Unix-domain
+    sockets would be created by sshd(8) with the privileges of 'root'.
+  sshd(8): Avoid theoretical leak of host private key material to
+    privilege-separated child processes via realloc().
+  sshd(8): The shared memory manager used by pre-authentication compression
+    support had a bounds checks that could be elided by some optimising
+    compilers to potentially allow attacks against the privileged monitor.
+    process from the sandboxed privilege-separation process.
+  sshd(8): Validate address ranges for AllowUser and DenyUsers directives at
+    configuration load time and refuse to accept invalid ones.  It was
+    previously possible to specify invalid CIDR address ranges
+    (e.g. user@127.1.2.3/55) and these would always match, possibly resulting
+    in granting access where it was not intended.
+  For more information, see:
+    https://www.openssh.com/txt/release-7.4
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10009
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10010
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10011
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-10012
+  (* Security fix *)
+n/pinentry-1.0.0-arm-1.txz:  Upgraded.
+n/samba-4.5.3-arm-1.txz:  Upgraded.
+  This release fixes security issues:
+  CVE-2016-2123 (Samba NDR Parsing ndr_pull_dnsp_name Heap-based Buffer
+    Overflow Remote Code Execution Vulnerability).
+  CVE-2016-2125 (Unconditional privilege delegation to Kerberos servers
+    in trusted realms).
+  CVE-2016-2126 (Flaws in Kerberos PAC validation can trigger privilege
+    elevation).
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2123
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2125
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2126
+  (* Security fix *)
+xfce/xfce4-weather-plugin-0.8.8-arm-1.txz:  Upgraded.
+  Package upgraded to fix the API used to fetch weather data.
+  Thanks to Robby Workman.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Dec 20 12:13:14 UTC 2016
+a/u-boot-tools-2016.11-arm-1.txz:  Upgraded.
++--------------------------+
+Sun Dec 18 19:03:45 UTC 2016
+a/glibc-zoneinfo-2016j-arm-1.txz:  Upgraded.
++--------------------------+
+Thu Dec 15 02:03:04 UTC 2016
+
+The mini root filesystem for -current has been updated:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+
+Thanks to Robby Workman for most of these updates.
+a/acpid-2.0.28-arm-1.txz:  Upgraded.
+a/cryptsetup-1.7.3-arm-1.txz:  Upgraded.
+a/dbus-1.10.14-arm-1.txz:  Upgraded.
+a/lvm2-2.02.168-arm-1.txz:  Upgraded.
+ap/alsa-utils-1.1.2-arm-1.txz:  Upgraded.
+ap/man-pages-4.09-noarch-1.txz:  Upgraded.
+d/device-tree-compiler-1.4.2-arm-1.txz:  Upgraded.
+d/git-2.11.0-arm-1.txz:  Upgraded.
+l/alsa-lib-1.1.2-arm-1.txz:  Upgraded.
+l/dbus-glib-0.108-arm-1.txz:  Upgraded.
+n/NetworkManager-1.2.6-arm-1.txz:  Upgraded.
+n/bluez-5.42-arm-1.txz:  Upgraded.
+n/conntrack-tools-1.4.4-arm-1.txz:  Upgraded.
+n/libnetfilter_acct-1.0.3-arm-1.txz:  Upgraded.
+n/libnetfilter_conntrack-1.0.6-arm-1.txz:  Upgraded.
+n/nfacct-1.0.2-arm-1.txz:  Upgraded.
+xap/mozilla-firefox-50.1.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/network-manager-applet-1.2.6-arm-1.txz:  Upgraded.
++--------------------------+
+Wed Dec 14 05:06:07 UTC 2016
+a/coreutils-8.26-arm-1.txz:  Upgraded.
+a/grep-2.27-arm-1.txz:  Upgraded.
+a/kernel-firmware-20161211git-noarch-1.txz:  Upgraded.
+a/kernel-modules-armv7-4.8.14_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.8.14-arm-1.txz:  Upgraded.
+  This kernel fixes a security issue with a race condition in
+  net/packet/af_packet.c that can be exploited to gain kernel code execution
+  from unprivileged processes.
+  Thanks to Philip Pettersson for discovering the bug and providing a patch.
+  For more information, see:
+    https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=84ac7260236a49c79eede91617700174c2c19b0c
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8655
+  (* Security fix *)
+ap/nano-2.7.2-arm-1.txz:  Upgraded.
+k/kernel-source-4.8.14-arm-1.txz:  Upgraded.
+l/loudmouth-1.5.3-arm-1.txz:  Upgraded.
+n/mcabber-1.0.4-arm-1.txz:  Upgraded.
+  This update fixes a security issue which can lead to a malicious actor
+  MITMing a conversation, or adding themselves as an entity on a third
+  parties roster (thereby granting themselves the associated priviledges
+  such as observing when the user is online).
+  For more information, see:
+    https://gultsch.de/gajim_roster_push_and_message_interception.html
+  (* Security fix *)
+n/php-5.6.29-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.29
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9933
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9934
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9935
+  (* Security fix *)
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Dec  6 21:22:23 UTC 2016
+a/mtd-utils-061216-arm-1.txz:  Upgraded.
+isolinux/u-boot_tftp/bananapi:  Added.
+isolinux/u-boot_tftp/bananapipro:  Added.
+isolinux/u-boot_tftp/trimslicepro:  Added.
+isolinux/u-boot_tftp/build_tftp_uboot_scripts.sh:  Added.
+  Added Slackware Installer boot scripts that can be sourced via tftp and will
+  boot in to the installer using the same settings found in the INSTALL_<system>
+  documentation.
+  Currently the purpose of this is purely to save pasting so many commands in to
+  the U-Boot console, which on the Banana Pi has irritated me for a long time due
+  to the small amount of text that can be pasted in to it in one go (contrasted
+  with the Trimslice where I can paste paragraphs of commands separated by semi
+  colons).
+
+  I may extend this to set more configuration so that you can follow a
+  pre-defined model of how your system should be, and have less work to do at
+  the U-Boot console.  It'd be not too dissimilar to the "images" that other
+  distributions supply, in the sense that you don't need as much experience to
+  get a known configuration on a supported device working for you.
+
+  Currently there is no mention of this in the INSTALL_ documentation, but I'll add
+  that in later once I figure out what else I might do in this space.
+
+  Thanks to the contributors of this thread for inspiration and research:
+http://www.linuxquestions.org/questions/slackware-arm-108/tftp-u-boot-script-4175591119/
+
+  A few people have emailed me expressing an interest in this (please don't email
+  me about development ideas - post on the forum -- I do read it), and expanding
+  it to make U-Boot automatically find the OS configuration (contained
+  within one of these U-Boot scripts) and boot it.  Most of the U-Boot configurations
+  by default attempt to locate such a script and boot it, so it's quite possible
+  to make a 'liloconfig' type script for the known devices, but will require
+  some research and coding.
+
+  If you're interested, please post on that forum.
++--------------------------+
+Sun Dec  4 18:19:20 UTC 2016
+d/intltool-0.51.0-arm-2.txz:  Rebuilt.
+  Added a patch to fix issues when $(builddir) != $(srcdir).  This avoids
+  possible build failures when intltool is used with automake >= 1.15.
+  Thanks to Willy Sudiarto Raharjo.
+xap/mozilla-firefox-50.0.2-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/firefox.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9078
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9079
+  (* Security fix *)
+xap/mozilla-thunderbird-45.5.1-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    https://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9079
+  (* Security fix *)
++--------------------------+
+Wed Nov 30 21:22:23 UTC 2016
+a/kernel-modules-armv7-4.8.11_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.8.11-arm-1.txz:  Upgraded.
+k/kernel-source-4.8.11-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Nov 22 23:23:23 UTC 2016
+a/bash-4.4.005-arm-1.txz:  Upgraded.
+a/grep-2.26-arm-2.txz:  Rebuilt.
+  Reverted a speedup patch that is causing regressions when output is directed
+  to /dev/null.  Thanks to SeB.
+a/kernel-firmware-20161118git-noarch-1.txz:  Upgraded.
+ap/ghostscript-9.20-arm-1.txz:  Upgraded.
+n/nmap-7.31-arm-1.txz:  Upgraded.
+n/ntp-4.2.8p9-arm-1.txz:  Upgraded.
+  In addition to bug fixes and enhancements, this release fixes the
+  following 1 high- (Windows only :-), 2 medium-, 2 medium-/low, and
+  5 low-severity vulnerabilities, and provides 28 other non-security
+  fixes and improvements.
+  CVE-2016-9311: Trap crash
+  CVE-2016-9310: Mode 6 unauthenticated trap info disclosure and DDoS vector
+  CVE-2016-7427: Broadcast Mode Replay Prevention DoS
+  CVE-2016-7428: Broadcast Mode Poll Interval Enforcement DoS
+  CVE-2016-9312: Windows: ntpd DoS by oversized UDP packet
+  CVE-2016-7431: Regression: 010-origin: Zero Origin Timestamp Bypass
+  CVE-2016-7434: Null pointer dereference in _IO_str_init_static_internal()
+  CVE-2016-7429: Interface selection attack
+  CVE-2016-7426: Client rate limiting and server responses
+  CVE-2016-7433: Reboot sync calculation problem
+  For more information, see:
+    https://www.kb.cert.org/vuls/id/633847
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9311
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9310
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7427
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7428
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9312
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7431
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7434
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7429
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7426
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7433
+  (* Security fix *)
+n/samba-4.5.1-arm-1.txz:  Upgraded.
+x/freeglut-3.0.0-arm-1.txz:  Upgraded.
+x/libXfont2-2.0.1-arm-1.txz:  Added.
+x/libdrm-2.4.73-arm-1.txz:  Upgraded.
+x/libxcb-1.12-arm-1.txz:  Upgraded.
+x/mesa-13.0.1-arm-1.txz:  Upgraded.
+x/xcb-proto-1.12-arm-1.txz:  Upgraded.
+x/xcb-util-cursor-0.1.3-arm-1.txz:  Upgraded.
+x/xf86-input-acecad-1.5.0-arm-2.txz:  Rebuilt.
+x/xf86-input-evdev-2.10.4-arm-1.txz:  Upgraded.
+x/xf86-input-joystick-1.6.3-arm-1.txz:  Upgraded.
+x/xf86-input-keyboard-1.9.0-arm-1.txz:  Upgraded.
+x/xf86-input-mouse-1.9.2-arm-1.txz:  Upgraded.
+x/xf86-input-penmount-1.5.0-arm-2.txz:  Rebuilt.
+x/xf86-input-synaptics-1.9.0-arm-1.txz:  Upgraded.
+x/xf86-input-void-1.4.0-arm-2.txz:  Rebuilt.
+x/xf86-input-wacom-0.33.0-arm-2.txz:  Rebuilt.
+x/xf86-video-amdgpu-1.2.0-arm-1.txz:  Upgraded.
+x/xf86-video-apm-1.2.5-arm-2.txz:  Rebuilt.
+x/xf86-video-ark-0.7.5-arm-2.txz:  Rebuilt.
+x/xf86-video-armsoc-1.4.1-arm-1.txz:  Upgraded.
+x/xf86-video-ast-1.1.5-arm-2.txz:  Rebuilt.
+x/xf86-video-ati-7.8.0-arm-1.txz:  Upgraded.
+x/xf86-video-cirrus-1.5.3-arm-2.txz:  Rebuilt.
+x/xf86-video-dummy-0.3.7-arm-2.txz:  Rebuilt.
+x/xf86-video-fbdev-0.4.4-arm-2.txz:  Rebuilt.
+x/xf86-video-fbturbo-199.f9a6ed7-arm-2.txz:  Rebuilt.
+x/xf86-video-i128-1.3.6-arm-2.txz:  Rebuilt.
+x/xf86-video-mach64-6.9.5-arm-2.txz:  Rebuilt.
+x/xf86-video-neomagic-1.2.9-arm-2.txz:  Rebuilt.
+x/xf86-video-nouveau-1.0.13-arm-1.txz:  Upgraded.
+x/xf86-video-openchrome-0.5.0-arm-2.txz:  Rebuilt.
+x/xf86-video-opentegra-0.7.0-arm-1.txz:  Upgraded.
+x/xf86-video-rendition-4.2.6-arm-2.txz:  Rebuilt.
+x/xf86-video-s3-0.6.5-arm-2.txz:  Rebuilt.
+x/xf86-video-s3virge-1.10.7-arm-2.txz:  Rebuilt.
+x/xf86-video-sisusb-0.9.6-arm-2.txz:  Rebuilt.
+x/xf86-video-tga-1.2.2-arm-2.txz:  Rebuilt.
+x/xf86-video-tseng-1.2.5-arm-2.txz:  Rebuilt.
+x/xf86-video-v4l-0.2.0-arm-2.txz:  Rebuilt.
+x/xf86-video-vesa-2.3.4-arm-2.txz:  Rebuilt.
+x/xf86-video-vmware-13.2.1-arm-1.txz:  Upgraded.
+x/xf86-video-voodoo-1.2.5-arm-2.txz:  Rebuilt.
+x/xf86-video-chips-1.2.6-arm-1.txz:  Removed.
+x/xf86-video-glint-1.2.8-arm-1.txz:  Removed.
+x/xf86-video-i740-1.3.5-arm-1.txz:  Removed.
+x/xf86-video-mga-1.6.4-arm-1.txz:  Removed.
+x/xf86-video-nv-2.1.20-arm-1.txz:  Removed.
+x/xf86-video-r128-6.10.1-arm-1.txz:  Removed.
+x/xf86-video-savage-2.3.8-arm-1.txz:  Removed.
+x/xf86-video-siliconmotion-1.7.8-arm-1.txz:  Removed.
+x/xf86-video-sis-0.10.8-arm-1.txz:  Removed.
+x/xf86-video-tdfx-1.4.6-arm-1.txz:  Removed.
+x/xf86-video-trident-1.3.7-arm-1.txz:  Removed.
+x/xf86-video-xgi-1.6.0git_2012_08_06-arm-1.txz:  Removed.
+  This had been kept patched in Slackware ARM 14.2 for the armv5 OpenRD Client system,
+  but is now redundant.
+x/xf86-video-xgixp-1.8.1-arm-1.txz:  Removed.
+x/xorg-server-1.19.0-arm-1.txz:  Upgraded.
+x/xorg-server-xephyr-1.19.0-arm-1.txz:  Upgraded.
+x/xorg-server-xnest-1.19.0-arm-1.txz:  Upgraded.
+x/xorg-server-xvfb-1.19.0-arm-1.txz:  Upgraded.
+x/xproto-7.0.31-arm-1.txz:  Upgraded.
+x/xterm-326-arm-1.txz:  Upgraded.
+xap/mozilla-firefox-50.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+extra/tigervnc/tigervnc-1.7.0-arm-1.txz:  Upgraded.
++--------------------------+
+Fri Nov  4 13:31:13 UTC 2016
+a/glibc-zoneinfo-2016i-arm-1.txz:  Upgraded.
+ap/nano-2.7.1-arm-1.txz:  Upgraded.
+ap/vim-8.0.0055-arm-1.txz:  Upgraded.
+l/libcdio-paranoia-10.2+0.93+1-arm-2.txz:  Rebuilt.
+n/bind-9.10.4_P4-arm-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  A defect in BIND's
+  handling of responses containing a DNAME answer can cause a resolver to exit
+  after encountering an assertion failure in db.c or resolver.c.  A server
+  encountering either of these error conditions will stop, resulting in denial
+  of service to clients.  The risk to authoritative servers is minimal;
+  recursive servers are chiefly at risk.
+  For more information, see:
+    https://kb.isc.org/article/AA-01434
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8864
+  (* Security fix *)
+n/curl-7.51.0-arm-1.txz:  Upgraded.
+  This release fixes security issues:
+  CVE-2016-8615: cookie injection for other servers
+  CVE-2016-8616: case insensitive password comparison
+  CVE-2016-8617: OOB write via unchecked multiplication
+  CVE-2016-8618: double-free in curl_maprintf
+  CVE-2016-8619: double-free in krb5 code
+  CVE-2016-8620: glob parser write/read out of bounds
+  CVE-2016-8621: curl_getdate read out of bounds
+  CVE-2016-8622: URL unescape heap overflow via integer truncation
+  CVE-2016-8623: Use-after-free via shared cookies
+  CVE-2016-8624: invalid URL parsing with '#'
+  CVE-2016-8625: IDNA 2003 makes curl use wrong host
+  For more information, see:
+    https://curl.haxx.se/docs/adv_20161102A.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8615
+    https://curl.haxx.se/docs/adv_20161102B.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8616
+    https://curl.haxx.se/docs/adv_20161102C.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8617
+    https://curl.haxx.se/docs/adv_20161102D.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8618
+    https://curl.haxx.se/docs/adv_20161102E.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8619
+    https://curl.haxx.se/docs/adv_20161102F.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8620
+    https://curl.haxx.se/docs/adv_20161102G.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8621
+    https://curl.haxx.se/docs/adv_20161102H.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8622
+    https://curl.haxx.se/docs/adv_20161102I.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8623
+    https://curl.haxx.se/docs/adv_20161102J.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8624
+    https://curl.haxx.se/docs/adv_20161102K.html
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8625
+  (* Security fix *)
+xap/gnuchess-6.2.4-arm-1.txz:  Upgraded.
+xap/vim-gvim-8.0.0055-arm-1.txz:  Upgraded.
+xap/xscreensaver-5.36-arm-1.txz:  Upgraded.
++--------------------------+
+Tue Nov  1 18:19:20 UTC 2016
+ap/mariadb-10.0.28-arm-1.txz:  Upgraded.
+  This update fixes several security issues.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5616
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5624
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5626
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3492
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5629
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8283
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7440
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5584
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6663
+  (* Security fix *)
+l/libcdio-0.94-arm-1.txz:  Upgraded.
+n/php-5.6.27-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.27
+  (* Security fix *)
+x/libX11-1.6.4-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory read in XGetImage() or write in XListFonts().
+  Affected versions libX11 <= 1.6.3.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7942
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7943
+  (* Security fix *)
+x/libXfixes-5.0.3-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause an integer
+  overflow on 32 bit architectures.
+  Affected versions : libXfixes <= 5.0.2.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7944
+  (* Security fix *)
+x/libXi-1.7.8-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory access or endless loops (Denial of Service).
+  Affected versions libXi <= 1.7.6.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7945
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7946
+  (* Security fix *)
+x/libXrandr-1.5.1-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory writes.
+  Affected versions: libXrandr <= 1.5.0.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7947
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7948
+  (* Security fix *)
+x/libXrender-0.9.10-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory writes.
+  Affected version: libXrender <= 0.9.9.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7949
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7950
+  (* Security fix *)
+x/libXtst-1.2.3-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory access or endless loops (Denial of Service).
+  Affected version libXtst <= 1.2.2.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7951
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7952
+  (* Security fix *)
+x/libXv-1.0.11-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause out of boundary
+  memory and memory corruption.
+  Affected version libXv <= 1.0.10.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5407
+  (* Security fix *)
+x/libXvMC-1.0.10-arm-1.txz:  Upgraded.
+  Insufficient validation of data from the X server can cause a one byte buffer
+  read underrun.
+  Affected version: libXvMC <= 1.0.9.
+  For more information, see:
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7953
+  (* Security fix *)
+xap/mozilla-firefox-49.0.2-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
++--------------------------+
+Mon Oct 24 17:18:19 UTC 2016
+a/grep-2.26-arm-1.txz:  Upgraded.
+a/kernel-modules-armv7-4.8.4_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.8.4-arm-1.txz:  Upgraded.
+  A race condition was found in the way the Linux kernel's memory subsystem
+  handled the copy-on-write (COW) breakage of private read-only memory mappings.
+  An unprivileged local user could use this flaw to gain write access to
+  otherwise read-only memory mappings and thus increase their privileges on
+  the system.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-5195
+  (* Security fix *)
+d/gdb-7.12-arm-1.txz:  Upgraded.
+d/guile-2.0.13-arm-1.txz:  Upgraded.
+k/kernel-source-4.8.4-arm-1.txz:  Upgraded.
+n/nmap-7.30-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Fri Oct 14 16:17:18 UTC 2016
+a/kernel-modules-armv7-4.8.1_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.8.1-arm-1.txz:  Upgraded.
+  Re-added AXP20 power regulator and USB support to enable USB on the Banana Pi.
+  Thanks to SCerovec on LQ for the report.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Tue Oct  4 19:20:21 UTC 2016
+a/kernel-firmware-20161001git-noarch-1.txz:  Upgraded.
+a/kernel-modules-armv7-4.7.6_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.7.6-arm-1.txz:  Upgraded.
+  Added CONFIG_DRM_VC4=m for RPi3 support.
+  Added CONFIG_ARCH_BCM2835=y for RPi3 video.
+  Thanks to franzen on LQ.
+a/lvm2-2.02.166-arm-1.txz:  Upgraded.
+k/kernel-source-4.7.6-arm-1.txz:  Upgraded.
+n/mutt-1.7.0-arm-1.txz:  Upgraded.
+x/mesa-12.0.2-arm-2.txz:  Rebuilt.
+  Added vc4 gallium driver for RPi3.
+  Thanks to franzen on LQ.
+xap/mozilla-thunderbird-45.4.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+  (* Security fix *)
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Fri Sep 30 01:02:03 UTC 2016
+a/glibc-zoneinfo-2016g-arm-1.txz:  Upgraded.
+  This package provides the latest timezone updates.
+ap/hplip-3.16.9-arm-1.txz:  Upgraded.
+  Reenabled parallel port support.  Thanks to Jas for the bug report.
+l/mpfr-3.1.5-arm-1.txz:  Upgraded.
+n/bind-9.10.4_P3-arm-1.txz:  Upgraded.
+  This update fixes a denial-of-service vulnerability.  Testing by ISC has
+  uncovered a critical error condition which can occur when a nameserver is
+  constructing a response.  A defect in the rendering of messages into
+  packets can cause named to exit with an assertion failure in buffer.c while
+  constructing a response to a query that meets certain criteria.
+  For more information, see:
+    https://kb.isc.org/article/AA-01419/0
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2776
+  (* Security fix *)
+xap/gnuchess-6.2.3-arm-1.txz:  Upgraded.
+  Upgraded to gnuchess-6.2.3 and xboard-4.9.1.
++--------------------------+
+Tue Sep 27 08:04:02 UTC 2016
+a/aaa_base-14.2-arm-2.txz:  Rebuilt.
+  /boot/README-kernels.txt:  Updated and removed ARMv5/Kirkwood.
+a/kernel-firmware-20160924git-noarch-1.txz:  Upgraded.
+a/kernel-modules-armv7-4.7.5_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.7.5-arm-1.txz:  Upgraded.
+a/mkinitrd-1.4.8-arm-3.txz:  Rebuilt.
+  /usr/doc/mkinitrd-<version>/README.initrd:  Updated and removed ARMv5/Kirkwood.
+  Thanks to Davide for the report.
+a/openssl-solibs-1.0.2j-arm-1.txz:  Upgraded.
+a/pkgtools-14.2-noarch-3.txz:  Rebuilt.
+  removepkg:  Fixed removing filenames containing "%".
+  Thanks to SeB for the bug report, and to Jim Hawkins for the patch.
+k/kernel-source-4.7.5-arm-1.txz:  Upgraded.
+n/openssl-1.0.2j-arm-1.txz:  Upgraded.
+  This update fixes a security issue:
+  Missing CRL sanity check (CVE-2016-7052)
+  For more information, see:
+    https://www.openssl.org/news/secadv/20160926.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7052
+  (* Security fix *)
+n/sshfs-2.8-arm-1.txz:  Added.
+  Thanks to Heinz Wiesinger.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Sat Sep 24 16:18:17 UTC 2016
+n/php-5.6.26-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://php.net/ChangeLog-5.php#5.6.26
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7416
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7412
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7414
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7417
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7411
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7413
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7418
+  (* Security fix *)
++--------------------------+
+Fri Sep 23 17:18:19 UTC 2016
+a/mkinitrd-1.4.8-arm-2.txz:  Rebuilt.
+  When generating the initrd, include dmsetup whenever LUKS is requested.
+  Thanks to TracyTiger for the bug report and Eric Hameleers for the patch.
+a/openssl-solibs-1.0.2i-arm-1.txz:  Upgraded.
+e/emacs-25.1-arm-1.txz:  Upgraded.
+n/irssi-0.8.20-arm-1.txz:  Upgraded.
+  This update fixes two remote crash and heap corruption vulnerabilites
+  in Irssi's format parsing code.  Impact:  Remote crash and heap
+  corruption.  Remote code execution seems difficult since only Nuls are
+  written.  Bugs discovered by, and patches provided by Gabriel Campana
+  and Adrien Guinet from Quarkslab.
+  For more information, see:
+    https://irssi.org/security/irssi_sa_2016.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7044
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7045
+  (* Security fix *)
+n/network-scripts-14.2-noarch-2.txz:  Rebuilt.
+  rc.inet1.new:  Use return (not continue) to leave the if_up() function.
+  Thanks to Tim Thomas for the bug report.
+n/openssl-1.0.2i-arm-1.txz:  Upgraded.
+  This update fixes denial-of-service and other security issues.
+  For more information, see:
+    https://www.openssl.org/news/secadv/20160922.txt
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6304
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6305
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2183
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6303
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6302
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2182
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2180
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2177
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2178
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2179
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-2181
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6306
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6307
+    https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6308
+  (* Security fix *)
+xap/mozilla-firefox-49.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/firefox.html
+  (* Security fix *)
+xap/pidgin-2.11.0-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    https://www.pidgin.im/news/security/
+  (* Security fix *)
++--------------------------+
+Tue Sep 20 01:02:03 UTC 2016
+
+The mini root filesystem for -current has been updated:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+  "links" has been removed due to missing dependencies that numbered too
+  many to be included in a "mini" root.
+  Thanks to Davide for the report.
+
+ap/cups-2.1.4-arm-2.txz:  Rebuilt.
+  /etc/rc.d/rc.cups.new was missing due to the sysvinit-scripts functions being
+  picked up during build time.
+  Thanks to Davide for the report.
++--------------------------+
+Tue Sep 20 09:26:14 UTC 2016
+a/kernel-modules-armv7-4.7.4_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.7.4-arm-1.txz:  Upgraded.
+ap/slackpkg-2.82.1-noarch-2.txz:  Rebuilt.
+  Commented out all but the master host URL for the "current" branch.
+  Thanks to Davide.
+k/kernel-source-4.7.4-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Sat Sep 17 11:06:08 UTC 2016
+a/bash-4.4.0-arm-1.txz:  Upgraded.
+a/btrfs-progs-4.7.2-arm-1.txz:  Upgraded.
+a/e2fsprogs-1.43.3-arm-1.txz:  Upgraded.
+a/pkgtools-14.2-noarch-2.txz:  Rebuilt.
+  removepkg:  Fixed removing packages with >= 3 hyphens in the package name
+  when using just the package name rather than the full name including
+  version, arch, and build.
+  Thanks to coralfang for the bug report, Jim Hawkins and Stuart Winter for
+  the patch, and SeB for testing and feedback.
+  removepkg:  Handle filenames that contain backslashes.
+  Thanks to aaazen for the bug report and patch.
+ap/vim-8.0.0005-arm-1.txz:  Upgraded.
+n/curl-7.50.3-arm-1.txz:  Upgraded.
+  Fixed heap overflows in four libcurl functions: curl_escape(),
+  curl_easy_escape(), curl_unescape() and curl_easy_unescape().
+  For more information, see:
+    https://curl.haxx.se/docs/adv_20160914.html
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7167
+  (* Security fix *)
+xap/vim-gvim-8.0.0005-arm-1.txz:  Upgraded.
++--------------------------+
+Thu Sep 15 19:20:21 UTC 2016
+ap/mariadb-10.0.27-arm-1.txz:  Upgraded.
+  This update fixes a critical vulnerability which can allow local and
+  remote attackers to inject malicious settings into MySQL configuration
+  files (my.cnf).  A successful exploitation could allow attackers to
+  execute arbitrary code with root privileges which would then allow them
+  to fully compromise the server.
+  This issue was discovered and reported by Dawid Golunski.
+  For more information, see:
+    http://legalhackers.com/advisories/MySQL-Exploit-Remote-Root-Code-Execution-Privesc-CVE-2016-6662.html
+    https://jira.mariadb.org/browse/MDEV-10465
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6662
+  (* Security fix *)
+ap/texinfo-6.3-arm-1.txz:  Upgraded.
+ap/vim-8.0.0003-arm-1.txz:  Upgraded.
+d/guile-2.0.12-arm-2.txz:  Rebuilt.
+  Match timestamps across all $ARCH on *.go and *.scm files, otherwise
+  on multilib systems the compiled (go) files may be detected as older
+  than the source (scm) files, causing guile to attempt to recompile
+  itself with every use.
+l/sdl-1.2.15-arm-2.txz:  Rebuilt.
+  Fixed a regression that broke MOD support.  Thanks to B Watson.
+x/libXfont-1.5.2-arm-1.txz:  Upgraded.
+x/mesa-12.0.2-arm-1.txz:  Upgraded.
+xap/vim-gvim-8.0.0003-arm-1.txz:  Upgraded.
++--------------------------+
+Sun Sep 11 16:17:18 UTC 2016
+/INSTALL_RASPBERRYPI.TXT:  Updated.
+  Adjusted the URL for RPI documentation - now point directly to:-
+  http://sarpi.fatdog.eu/
+  Huge thanks to Exaga for maintaining this and updating it so quickly after the
+  release of the hard float tree.
+a/kernel-modules-armv7-4.7.3_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.7.3-arm-1.txz:  Upgraded.
+a/kmod-23-arm-2.txz:  Rebuilt.
+a/mtd-utils-110916-arm-1.txz:  Upgraded.
+a/u-boot-tools-2016.05-arm-2.txz:  Rebuilt.
+  Removed sheevaplug tools since these are not required for the supported h/w.
+a/util-linux-2.28.2-arm-1.txz:  Upgraded.
+ap/hplip-3.16.8-arm-1.txz:  Upgraded.
+ap/nano-2.7.0-arm-1.txz:  Upgraded.
+ap/pamixer-1.3.1-arm-2.txz:  Rebuilt.
+ap/rpm-4.12.0.1-arm-2.txz:  Rebuilt.
+ap/vim-7.4.2342-arm-1.txz:  Upgraded.
+d/Cython-0.24.1-arm-1.txz:  Upgraded.
+d/gdb-7.11.1-arm-2.txz:  Rebuilt.
+d/mercurial-3.9.1-arm-1.txz:  Upgraded.
+d/python-2.7.12-arm-1.txz:  Upgraded.
+  Compiled using --enable-unicode=ucs4.
+  The upstream default for Python Unicode is ucs2, but ucs4 is more widely
+  used and recommended now.  Any Python scripts or binaries that use UCS-2
+  will need to be recompiled.  These can be identified with the following
+  grep command:  grep -r -l PyUnicodeUCS2 /usr 2> /dev/null
+k/kernel-source-4.7.3-arm-1.txz:  Upgraded.
+kde/calligra-2.9.11-arm-2.txz:  Rebuilt.
+kde/kate-4.14.3-arm-2.txz:  Rebuilt.
+kde/kdev-python-1.7.2-arm-2.txz:  Rebuilt.
+kde/kig-4.14.3-arm-2.txz:  Rebuilt.
+kde/kross-interpreters-4.14.3-arm-2.txz:  Rebuilt.
+kde/pykde4-4.14.3-arm-2.txz:  Rebuilt.
+kde/superkaramba-4.14.3-arm-2.txz:  Rebuilt.
+l/PyQt-4.11.4-arm-2.txz:  Rebuilt.
+l/akonadi-1.13.0-arm-2.txz:  Rebuilt.
+l/boost-1.61.0-arm-1.txz:  Upgraded.
+  Shared library .so-version bump.
+l/dbus-python-1.2.4-arm-2.txz:  Rebuilt.
+l/gdbm-1.12-arm-2.txz:  Rebuilt.
+l/glib2-2.46.2-arm-2.txz:  Rebuilt.
+l/gobject-introspection-1.46.0-arm-2.txz:  Rebuilt.
+l/gtk+2-2.24.31-arm-1.txz:  Upgraded.
+  This update fixes a security issue:  Integer overflow in the
+  gdk_cairo_set_source_pixbuf function in gdk/gdkcairo.c allows remote
+  attackers to cause a denial of service (crash) via a large image file,
+  which triggers a large memory allocation.
+  For more information, see:
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-7447
+  (* Security fix *)
+l/libxml2-2.9.4-arm-2.txz:  Rebuilt.
+l/pilot-link-0.12.5-arm-2.txz:  Rebuilt.
+l/pycups-1.9.73-arm-2.txz:  Rebuilt.
+l/pycurl-7.43.0-arm-2.txz:  Rebuilt.
+l/pygobject-2.28.6-arm-2.txz:  Rebuilt.
+l/pygobject3-3.18.2-arm-2.txz:  Rebuilt.
+l/pygtk-2.24.0-arm-2.txz:  Rebuilt.
+l/python-pillow-3.0.0-arm-2.txz:  Rebuilt.
+l/sip-4.18.1-arm-1.txz:  Upgraded.
+n/gnutls-3.4.15-arm-1.txz:  Upgraded.
+  libgnutls: Corrected the comparison of the serial size in OCSP response.
+  Previously the OCSP certificate check wouldn't verify the serial length
+  and could succeed in cases it shouldn't (GNUTLS-SA-2016-3).
+  Reported by Stefan Buehler.
+  For more information, see:
+    https://www.gnutls.org/security.html
+  (* Security fix *)
+n/php-5.6.25-arm-1.txz:  Upgraded.
+  This release fixes bugs and security issues.
+  For more information, see:
+    http://php.net/ChangeLog-5.php#5.6.25
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7125
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7126
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7127
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7128
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7129
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7130
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7131
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7132
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7133
+    http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7134
+  (* Security fix *)
+n/samba-4.5.0-arm-1.txz:  Upgraded.
+xap/blueman-2.0.4-arm-2.txz:  Rebuilt.
+xap/gimp-2.8.18-arm-2.txz:  Rebuilt.
+xap/vim-gvim-7.4.2342-arm-1.txz:  Upgraded.
+extra/brltty/brltty-5.4-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Fri Sep  2 08:09:10 UTC 2016
+l/gsl-2.2.1-arm-1.txz:  Upgraded.
+xap/mozilla-thunderbird-45.3.0-arm-1.txz:  Upgraded.
+  This release contains security fixes and improvements.
+  For more information, see:
+    http://www.mozilla.org/security/known-vulnerabilities/thunderbird.html
+  (* Security fix *)
++--------------------------+
+Wed Aug 31 06:05:04 UTC 2016
+a/gawk-4.1.4-arm-1.txz:  Upgraded.
+l/gsl-2.2-arm-1.txz:  Upgraded.
++--------------------------+
+Sun Aug 28 08:09:10 UTC 2016
+a/glibc-solibs-2.24-arm-2.txz:  Rebuilt.
+d/kernel-headers-4.7.2-arm-1.txz:  Upgraded.
+l/glibc-2.24-arm-2.txz:  Rebuilt.
+  Removed two unnecessary patches.
+  Built against Linux Kernel headers 4.7.2.
+l/glibc-i18n-2.24-arm-2.txz:  Rebuilt.
+l/glibc-profile-2.24-arm-2.txz:  Rebuilt.
++--------------------------+
+Sat Aug 27 08:09:10 UTC 2016
+a/kernel-modules-armv7-4.7.2_armv7-arm-1.txz:  Upgraded.
+a/kernel_armv7-4.7.2-arm-1.txz:  Upgraded.
+k/kernel-source-4.7.2-arm-1.txz:  Upgraded.
+isolinux/*:  Rebuilt.
+kernels/*:  Upgraded.
++--------------------------+
+Thu Aug 25 03:02:01 UTC 2016
+xap/mozilla-firefox-48.0.2-arm-1.txz:  Upgraded.
++--------------------------+
+Wed Aug 24 01:02:03 UTC 2016
+
+Hello!
+
+Slackware ARM -current and onwards is now a hard float OS!
+
+To those of you whom are reading this after having let an automated tool
+upgrade a soft float "-current" installation, and have found their system
+has been destroyed:-
+I did think of several ways to mitigate this by patching slackpkg, but it's not
+fool proof so I've tried to mitigate such issues by deliberately wiping the soft
+float port contents >2 months ahead of time in order to break your tools and cause
+you to read the Change Log and take action.
+Slackware is not designed to have automated packaging upgrade tools, so there's
+no 100% fool proof way.
+
+Like a phoenix rising from the ashes, and after several weeks of development
+flavoured with other appropriate but overused marketing metaphors, the
+Slackware ARM hard float port has landed! (see what I did there? ;-) )
+
+What's important is that this port is built from the same soft float port source
+tree, so is already based upon its success and stability over the last 10 years.
+A few bugs have been fixed along the way, and the source tree updated to abstract
+out as much architecture-specific stuff as possible (removing armv5 CFLAGS from
+almost 1000 build scripts was not a lot of fun!).
+
+The OS has been rebuilt over ~25 passes, so the core OS has been well excercised.
+I've been testing as much as I can for the last few weeks and everything
+looks in good order.  I cannot test everything though, so expect breakages.
+Please report anything in the usual place:
+  http://www.linuxquestions.org/questions/slackware-arm-108/
+
+The currently supported systems that have been tested are:
+  Trimslice Pro
+  Banana Pi
+  Versatile (QEMU emulation)
+
+This is Day Zero of the release - the community projects will need their time
+to update images, documentation and so on.
+
+The mini root filesystem for -current is also available:
+ftp://ftp.arm.slackware.com/slackwarearm/slackwarearm-devtools/minirootfs/
+
+If you were previously using the Mozilla suite: these were moved out of tree
+for the soft float port (since they only supported hard float), but are now
+present once again in the 'xap' series.
+
+Thanks to everyone who has made donations.  As well as being an encouragement,
+it's enabled the purchase of two new Banana Pi's to support maintenance of
+stable release.  Please also know that whilst within the Slackware team, I
+do contribute back to the x86 project with enhancements and fixes that benefit
+both ARM and x86, from a volume point of view Slackware ARM is chiefly a
+downstream consumer and would not exist without the work of the small and
+dedicated Slackware team, and of course Patrick.  We love working on Slackware,
+and donations encourage us particulatly when it becomes an uphill slog for
+periods of time.
+
+Please help support the project to keep it alive in the public domain!
+
+Cheers and enjoy.  Apparently people have been waiting for a hard float port
+for some time! ;-)
+
+
+ Stuart.
+
+a/aaa_base-14.2-arm-1.txz:  Added.
+a/aaa_elflibs-14.2-arm-1.txz:  Added.
+a/aaa_terminfo-5.8-arm-1.txz:  Added.
+a/acl-2.2.52-arm-1.txz:  Added.
+a/acpid-2.0.26-arm-1.txz:  Added.
+a/attr-2.4.47-arm-1.txz:  Added.
+a/bash-4.3.046-arm-1.txz:  Added.
+a/bin-11.1-arm-1.txz:  Added.
+a/btrfs-progs-4.5.3-arm-1.txz:  Added.
+a/bzip2-1.0.6-arm-1.txz:  Added.
+a/coreutils-8.25-arm-1.txz:  Added.
+a/cpio-2.12-arm-1.txz:  Added.
+a/cpufrequtils-008-arm-1.txz:  Added.
+a/cryptsetup-1.7.1-arm-1.txz:  Added.
+a/dbus-1.10.8-arm-1.txz:  Added.
+a/dcron-4.5-arm-1.txz:  Added.
+a/devs-2.3.1-arm-1.txz:  Added.
+a/dialog-1.3_20160424-arm-1.txz:  Added.
+a/dosfstools-3.0.28-arm-1.txz:  Added.
+a/e2fsprogs-1.43.1-arm-1.txz:  Added.
+a/ed-1.13-arm-1.txz:  Added.
+a/eject-2.1.5-arm-1.txz:  Added.
+a/elvis-2.2-arm-1.txz:  Added.
+a/etc-14.2-arm-1.txz:  Added.
+a/eudev-3.1.5-arm-1.txz:  Added.
+a/file-5.28-arm-1.txz:  Added.
+a/findutils-4.4.2-arm-1.txz:  Added.
+a/floppy-5.5-arm-1.txz:  Added.
+a/gawk-4.1.3-arm-1.txz:  Added.
+a/genpower-1.0.5-arm-1.txz:  Added.
+a/gettext-0.19.8.1-arm-1.txz:  Added.
+a/getty-ps-2.1.0b-arm-1.txz:  Added.
+a/glibc-solibs-2.24-arm-1.txz:  Added.
+a/glibc-zoneinfo-2016f-arm-1.txz:  Added.
+a/gpm-1.20.7-arm-1.txz:  Added.
+a/gptfdisk-1.0.0-arm-1.txz:  Added.
+a/grep-2.25-arm-1.txz:  Added.
+a/gzip-1.8-arm-1.txz:  Added.
+a/hdparm-9.48-arm-1.txz:  Added.
+a/hwdata-0.284-arm-1.txz:  Added.
+a/infozip-6.0-arm-1.txz:  Added.
+a/inotify-tools-3.14-arm-1.txz:  Added.
+a/jfsutils-1.1.15-arm-1.txz:  Added.
+a/kbd-1.15.3-arm-1.txz:  Added.
+a/kernel-firmware-20160823git-noarch-1.txz:  Added.
+a/kernel-modules-armv7-4.4.19_armv7-arm-1.txz:  Added.
+a/kernel_armv7-4.4.19-arm-1.txz:  Added.
+a/kmod-23-arm-1.txz:  Added.
+a/less-481-arm-1.txz:  Added.
+a/lha-114i-arm-1.txz:  Added.
+a/libcgroup-0.41-arm-1.txz:  Added.
+a/libgudev-230-arm-1.txz:  Added.
+a/logrotate-3.8.9-arm-1.txz:  Added.
+a/lrzip-0.621-arm-1.txz:  Added.
+a/lvm2-2.02.161-arm-1.txz:  Added.
+a/mdadm-3.3.4-arm-1.txz:  Added.
+a/minicom-2.6.2-arm-1.txz:  Added.
+a/mkinitrd-1.4.8-arm-1.txz:  Added.
+a/mt-st-0.9b-arm-1.txz:  Added.
+a/mtd-utils-220516-arm-1.txz:  Added.
+a/mtx-1.3.12-arm-1.txz:  Added.
+a/ncompress-4.2.4.4-arm-1.txz:  Added.
+a/ntfs-3g-2016.2.22-arm-1.txz:  Added.
+a/openssl-solibs-1.0.2h-arm-1.txz:  Added.
+a/os-prober-1.70-arm-1.txz:  Added.
+a/patch-2.7.5-arm-1.txz:  Added.
+a/pciutils-3.4.1-arm-1.txz:  Added.
+a/pkgtools-14.2-noarch-1.txz:  Added.
+a/procps-ng-3.3.11-arm-1.txz:  Added.
+a/quota-4.03-arm-1.txz:  Added.
+a/reiserfsprogs-3.6.24-arm-1.txz:  Added.
+a/rpm2tgz-1.2.2-arm-1.txz:  Added.
+a/sdparm-1.10-arm-1.txz:  Added.
+a/sed-4.2.2-arm-1.txz:  Added.
+a/shadow-4.2.1-arm-1.txz:  Added.
+a/sharutils-4.15.2-arm-1.txz:  Added.
+a/slocate-3.1-arm-1.txz:  Added.
+a/smartmontools-6.5-arm-1.txz:  Added.
+a/splitvt-1.6.5-arm-1.txz:  Added.
+a/sysfsutils-2.1.0-arm-1.txz:  Added.
+a/sysklogd-1.5.1-arm-1.txz:  Added.
+a/sysvinit-2.88dsf-arm-1.txz:  Added.
+a/sysvinit-functions-8.53-arm-1.txz:  Added.
+a/sysvinit-scripts-2.0-noarch-1.txz:  Added.
+a/tar-1.29-arm-1.txz:  Added.
+a/tcsh-6.19.00-arm-1.txz:  Added.
+a/time-1.7-arm-1.txz:  Added.
+a/tree-1.7.0-arm-1.txz:  Added.
+a/u-boot-tools-2016.05-arm-1.txz:  Added.
+a/udisks-1.0.5-arm-1.txz:  Added.
+a/udisks2-2.1.5-arm-1.txz:  Added.
+a/unarj-265-arm-1.txz:  Added.
+a/upower-0.9.23-arm-1.txz:  Added.
+a/usb_modeswitch-2.2.6-arm-1.txz:  Added.
+a/usbutils-008-arm-1.txz:  Added.
+a/utempter-1.1.6-arm-1.txz:  Added.
+a/util-linux-2.28-arm-1.txz:  Added.
+a/vboot-utils-20130222gite6cf2c2-arm-1.txz:  Added.
+a/which-2.21-arm-1.txz:  Added.
+a/xfsprogs-4.3.0-arm-1.txz:  Added.
+a/xz-5.2.2-arm-1.txz:  Added.
+a/zoo-2.10_22-arm-1.txz:  Added.
+ap/a2ps-4.14-arm-1.txz:  Added.
+ap/acct-6.5.4-arm-1.txz:  Added.
+ap/alsa-utils-1.1.1-arm-1.txz:  Added.
+ap/amp-0.7.6-arm-1.txz:  Added.
+ap/ash-0.4.0-arm-1.txz:  Added.
+ap/at-3.1.19-arm-1.txz:  Added.
+ap/bc-1.06.95-arm-1.txz:  Added.
+ap/bpe-2.01.00-arm-1.txz:  Added.
+ap/cdparanoia-III_10.2-arm-1.txz:  Added.
+ap/cdrdao-1.2.3-arm-1.txz:  Added.
+ap/cdrtools-3.01-arm-1.txz:  Added.
+ap/cgmanager-0.39-arm-1.txz:  Added.
+ap/cups-2.1.4-arm-1.txz:  Added.
+ap/cups-filters-1.9.0-arm-1.txz:  Added.
+ap/dc3dd-7.2.641-arm-1.txz:  Added.
+ap/ddrescue-1.21-arm-1.txz:  Added.
+ap/diffstat-1.60-arm-1.txz:  Added.
+ap/diffutils-3.5-arm-1.txz:  Added.
+ap/dmapi-2.2.12-arm-1.txz:  Added.
+ap/dmidecode-3.0-arm-1.txz:  Added.
+ap/dvd+rw-tools-7.1-arm-1.txz:  Added.
+ap/enscript-1.6.6-arm-1.txz:  Added.
+ap/flac-1.3.1-arm-1.txz:  Added.
+ap/ghostscript-9.19-arm-1.txz:  Added.
+ap/ghostscript-fonts-std-8.11-noarch-1.txz:  Added.
+ap/gphoto2-2.5.10-arm-1.txz:  Added.
+ap/groff-1.22.3-arm-1.txz:  Added.
+ap/gutenprint-5.2.11-arm-1.txz:  Added.
+ap/hplip-3.16.5-arm-1.txz:  Added.
+ap/htop-2.0.1-arm-1.txz:  Added.
+ap/ispell-3.4.00-arm-1.txz:  Added.
+ap/itstool-2.0.2-arm-1.txz:  Added.
+ap/jed-0.99_19-arm-1.txz:  Added.
+ap/joe-4.1-arm-1.txz:  Added.
+ap/jove-4.16.0.73-arm-1.txz:  Added.
+ap/ksh93-2012_08_01-arm-1.txz:  Added.
+ap/linuxdoc-tools-0.9.72-arm-1.txz:  Added.
+ap/lm_sensors-3.4.0-arm-1.txz:  Added.
+ap/lsof-4.89-arm-1.txz:  Added.
+ap/lsscsi-0.28-arm-1.txz:  Added.
+ap/lxc-2.0.1-arm-1.txz:  Added.
+ap/lzip-1.16-arm-1.txz:  Added.
+ap/madplay-0.15.2b-arm-1.txz:  Added.
+ap/man-1.6g-arm-1.txz:  Added.
+ap/man-pages-4.06-noarch-1.txz:  Added.
+ap/mariadb-10.0.26-arm-1.txz:  Added.
+ap/mc-4.8.16-arm-1.txz:  Added.
+ap/moc-2.5.1-arm-1.txz:  Added.
+ap/most-5.0.0a-arm-1.txz:  Added.
+ap/mpg123-1.23.4-arm-1.txz:  Added.
+ap/nano-2.6.0-arm-1.txz:  Added.
+ap/normalize-0.7.7-arm-1.txz:  Added.
+ap/pamixer-1.3.1-arm-1.txz:  Added.
+ap/pm-utils-1.4.1-arm-1.txz:  Added.
+ap/powertop-2.8-arm-1.txz:  Added.
+ap/qpdf-6.0.0-arm-1.txz:  Added.
+ap/radeontool-1.6.3-arm-1.txz:  Added.
+ap/rpm-4.12.0.1-arm-1.txz:  Added.
+ap/rzip-2.1-arm-1.txz:  Added.
+ap/sc-7.16-arm-1.txz:  Added.
+ap/screen-4.4.0-arm-1.txz:  Added.
+ap/slackpkg-2.82.1-noarch-1.txz:  Added.
+ap/soma-2.10.4-noarch-1.txz:  Added.
+ap/sox-14.4.2-arm-1.txz:  Added.
+ap/sqlite-3130000-arm-1.txz:  Added.
+ap/squashfs-tools-4.3-arm-1.txz:  Added.
+ap/sudo-1.8.16-arm-1.txz:  Added.
+ap/sysstat-11.2.1.1-arm-1.txz:  Added.
+ap/terminus-font-4.40-noarch-1.txz:  Added.
+ap/texinfo-6.1-arm-1.txz:  Added.
+ap/tmux-2.2-arm-1.txz:  Added.
+ap/usbmuxd-1.1.0-arm-1.txz:  Added.
+ap/vim-7.4.2196-arm-1.txz:  Added.
+ap/vorbis-tools-1.4.0-arm-1.txz:  Added.
+ap/workbone-2.40-arm-1.txz:  Added.
+ap/xfsdump-3.1.6-arm-1.txz:  Added.
+ap/zsh-5.2-arm-1.txz:  Added.
+d/Cython-0.23.4-arm-1.txz:  Added.
+d/autoconf-2.69-noarch-1.txz:  Added.
+d/automake-1.15-noarch-1.txz:  Added.
+d/binutils-2.27-arm-1.txz:  Added.
+d/bison-3.0.4-arm-1.txz:  Added.
+d/ccache-3.2.4-arm-1.txz:  Added.
+d/clisp-2.49-arm-1.txz:  Added.
+d/cmake-3.5.2-arm-1.txz:  Added.
+d/cscope-15.8b-arm-1.txz:  Added.
+d/cvs-1.11.23-arm-1.txz:  Added.
+d/device-tree-compiler-1.4.1-arm-1.txz:  Added.
+d/distcc-3.1-arm-1.txz:  Added.
+d/doxygen-1.8.11-arm-1.txz:  Added.
+d/flex-2.6.0-arm-1.txz:  Added.
+d/gcc-5.4.0-arm-1.txz:  Added.
+d/gcc-g++-5.4.0-arm-1.txz:  Added.
+d/gcc-gfortran-5.4.0-arm-1.txz:  Added.
+d/gcc-gnat-5.4.0-arm-1.txz:  Added.
+d/gcc-go-5.4.0-arm-1.txz:  Added.
+d/gcc-java-5.4.0-arm-1.txz:  Added.
+d/gcc-objc-5.4.0-arm-1.txz:  Added.
+d/gdb-7.11.1-arm-1.txz:  Added.
+d/gettext-tools-0.19.8.1-arm-1.txz:  Added.
+d/git-2.9.2-arm-1.txz:  Added.
+d/gnu-cobol-1.1-arm-1.txz:  Added.
+d/gperf-3.0.4-arm-1.txz:  Added.
+d/guile-2.0.12-arm-1.txz:  Added.
+d/help2man-1.46.5-arm-1.txz:  Added.
+d/indent-2.2.10-arm-1.txz:  Added.
+d/intltool-0.51.0-arm-1.txz:  Added.
+d/kernel-headers-4.4.19-arm-1.txz:  Added.
+d/libtool-2.4.6-arm-1.txz:  Added.
+d/llvm-3.8.1-arm-1.txz:  Added.
+d/m4-1.4.17-arm-1.txz:  Added.
+d/make-4.1-arm-1.txz:  Added.
+d/mercurial-3.8.2-arm-1.txz:  Added.
+d/nasm-2.12.01-arm-1.txz:  Added.
+d/oprofile-1.1.0-arm-1.txz:  Added.
+d/p2c-1.21alpha2-arm-1.txz:  Added.
+d/perl-5.22.2-arm-1.txz:  Added.
+d/pkg-config-0.29.1-arm-1.txz:  Added.
+d/pmake-1.111-arm-1.txz:  Added.
+d/python-2.7.11-arm-1.txz:  Added.
+d/python-setuptools-22.0.5-arm-1.txz:  Added.
+d/rcs-5.9.4-arm-1.txz:  Added.
+d/ruby-2.2.5-arm-1.txz:  Added.
+d/scons-2.4.1-arm-1.txz:  Added.
+d/slacktrack-2.17-arm-1.txz:  Added.
+d/strace-4.11-arm-1.txz:  Added.
+d/subversion-1.9.4-arm-1.txz:  Added.
+d/swig-3.0.7-arm-1.txz:  Added.
+d/yasm-1.3.0-arm-1.txz:  Added.
+e/emacs-24.5-arm-1.txz:  Added.
+f/linux-faqs-20030919-noarch-1.txz:  Added.
+f/linux-howtos-20160401-noarch-1.txz:  Added.
+k/kernel-source-4.4.19-arm-1.txz:  Added.
+kde/amarok-2.8.0-arm-1.txz:  Added.
+kde/amor-4.14.3-arm-1.txz:  Added.
+kde/analitza-4.14.3-arm-1.txz:  Added.
+kde/ark-4.14.3-arm-1.txz:  Added.
+kde/artikulate-4.14.3-arm-1.txz:  Added.
+kde/audiocd-kio-4.14.3-arm-1.txz:  Added.
+kde/baloo-4.14.3-arm-1.txz:  Added.
+kde/baloo-widgets-4.14.3-arm-1.txz:  Added.
+kde/blinken-4.14.3-arm-1.txz:  Added.
+kde/bluedevil-2.1.1-arm-1.txz:  Added.
+kde/bomber-4.14.3-arm-1.txz:  Added.
+kde/bovo-4.14.3-arm-1.txz:  Added.
+kde/calligra-2.9.11-arm-1.txz:  Added.
+kde/cantor-4.14.3-arm-1.txz:  Added.
+kde/cervisia-4.14.3-arm-1.txz:  Added.
+kde/dolphin-plugins-4.14.3-arm-1.txz:  Added.
+kde/dragon-4.14.3-arm-1.txz:  Added.
+kde/filelight-4.14.3-arm-1.txz:  Added.
+kde/granatier-4.14.3-arm-1.txz:  Added.
+kde/gwenview-4.14.3-arm-1.txz:  Added.
+kde/juk-4.14.3-arm-1.txz:  Added.
+kde/k3b-2.0.3-arm-1.txz:  Added.
+kde/kaccessible-4.14.3-arm-1.txz:  Added.
+kde/kactivities-4.13.3-arm-1.txz:  Added.
+kde/kajongg-4.14.3-arm-1.txz:  Added.
+kde/kalgebra-4.14.3-arm-1.txz:  Added.
+kde/kalzium-4.14.3-arm-1.txz:  Added.
+kde/kamera-4.14.3-arm-1.txz:  Added.
+kde/kanagram-4.14.3-arm-1.txz:  Added.
+kde/kapman-4.14.3-arm-1.txz:  Added.
+kde/kapptemplate-4.14.3-arm-1.txz:  Added.
+kde/kate-4.14.3-arm-1.txz:  Added.
+kde/katomic-4.14.3-arm-1.txz:  Added.
+kde/kaudiocreator-1.3-arm-1.txz:  Added.
+kde/kblackbox-4.14.3-arm-1.txz:  Added.
+kde/kblocks-4.14.3-arm-1.txz:  Added.
+kde/kbounce-4.14.3-arm-1.txz:  Added.
+kde/kbreakout-4.14.3-arm-1.txz:  Added.
+kde/kbruch-4.14.3-arm-1.txz:  Added.
+kde/kcachegrind-4.14.3-arm-1.txz:  Added.
+kde/kcalc-4.14.3-arm-1.txz:  Added.
+kde/kcharselect-4.14.3-arm-1.txz:  Added.
+kde/kcolorchooser-4.14.3-arm-1.txz:  Added.
+kde/kcron-4.14.3-arm-1.txz:  Added.
+kde/kde-base-artwork-4.14.3-arm-1.txz:  Added.
+kde/kde-baseapps-4.14.3-arm-1.txz:  Added.
+kde/kde-dev-scripts-4.14.3-arm-1.txz:  Added.
+kde/kde-dev-utils-4.15.12-arm-1.txz:  Added.
+kde/kde-runtime-4.14.3-arm-1.txz:  Added.
+kde/kde-wallpapers-4.14.3-noarch-1.txz:  Added.
+kde/kde-workspace-4.11.22-arm-1.txz:  Added.
+kde/kdeartwork-4.14.3-arm-1.txz:  Added.
+kde/kdeconnect-kde-0.8-arm-1.txz:  Added.
+kde/kdegraphics-mobipocket-4.14.3-arm-1.txz:  Added.
+kde/kdegraphics-strigi-analyzer-4.14.3-arm-1.txz:  Added.
+kde/kdegraphics-thumbnailers-4.14.3-arm-1.txz:  Added.
+kde/kdelibs-4.14.21-arm-1.txz:  Added.
+kde/kdenetwork-filesharing-4.14.3-arm-1.txz:  Added.
+kde/kdenetwork-strigi-analyzers-4.14.3-arm-1.txz:  Added.
+kde/kdepim-4.14.10-arm-1.txz:  Added.
+kde/kdepim-runtime-4.14.10-arm-1.txz:  Added.
+kde/kdepimlibs-4.14.10-arm-1.txz:  Added.
+kde/kdeplasma-addons-4.14.3-arm-1.txz:  Added.
+kde/kdesdk-kioslaves-4.14.3-arm-1.txz:  Added.
+kde/kdesdk-strigi-analyzers-4.14.3-arm-1.txz:  Added.
+kde/kdesdk-thumbnailers-4.14.3-arm-1.txz:  Added.
+kde/kdev-python-1.7.2-arm-1.txz:  Added.
+kde/kdevelop-4.7.2-arm-1.txz:  Added.
+kde/kdevelop-pg-qt-1.0.0-arm-1.txz:  Added.
+kde/kdevelop-php-1.7.2-arm-1.txz:  Added.
+kde/kdevelop-php-docs-1.7.2-arm-1.txz:  Added.
+kde/kdevplatform-1.7.2-arm-1.txz:  Added.
+kde/kdewebdev-4.14.3-arm-1.txz:  Added.
+kde/kdf-4.14.3-arm-1.txz:  Added.
+kde/kdiamond-4.14.3-arm-1.txz:  Added.
+kde/kfilemetadata-4.14.3-arm-1.txz:  Added.
+kde/kfloppy-4.14.3-arm-1.txz:  Added.
+kde/kfourinline-4.14.3-arm-1.txz:  Added.
+kde/kgamma-4.14.3-arm-1.txz:  Added.
+kde/kgeography-4.14.3-arm-1.txz:  Added.
+kde/kget-4.14.3-arm-1.txz:  Added.
+kde/kgoldrunner-4.14.3-arm-1.txz:  Added.
+kde/kgpg-4.14.3-arm-1.txz:  Added.
+kde/khangman-4.14.3-arm-1.txz:  Added.
+kde/kig-4.14.3-arm-1.txz:  Added.
+kde/kigo-4.14.3-arm-1.txz:  Added.
+kde/killbots-4.14.3-arm-1.txz:  Added.
+kde/kio-mtp-2063e75_20131020git-arm-1.txz:  Added.
+kde/kiriki-4.14.3-arm-1.txz:  Added.
+kde/kiten-4.14.3-arm-1.txz:  Added.
+kde/kjumpingcube-4.14.3-arm-1.txz:  Added.
+kde/klettres-4.14.3-arm-1.txz:  Added.
+kde/klickety-4.14.3-arm-1.txz:  Added.
+kde/klines-4.14.3-arm-1.txz:  Added.
+kde/kmag-4.14.3-arm-1.txz:  Added.
+kde/kmahjongg-4.14.3-arm-1.txz:  Added.
+kde/kmines-4.14.3-arm-1.txz:  Added.
+kde/kmix-4.14.3-arm-1.txz:  Added.
+kde/kmousetool-4.14.3-arm-1.txz:  Added.
+kde/kmouth-4.14.3-arm-1.txz:  Added.
+kde/kmplot-4.14.3-arm-1.txz:  Added.
+kde/knavalbattle-4.14.3-arm-1.txz:  Added.
+kde/knetwalk-4.14.3-arm-1.txz:  Added.
+kde/kolf-4.14.3-arm-1.txz:  Added.
+kde/kollision-4.14.3-arm-1.txz:  Added.
+kde/kolourpaint-4.14.3-arm-1.txz:  Added.
+kde/kompare-4.14.3-arm-1.txz:  Added.
+kde/konquest-4.14.3-arm-1.txz:  Added.
+kde/konsole-4.14.3-arm-1.txz:  Added.
+kde/kopete-4.14.3-arm-1.txz:  Added.
+kde/korundum-4.14.3-arm-1.txz:  Added.
+kde/kpat-4.14.3-arm-1.txz:  Added.
+kde/kplayer-0.7.2-arm-1.txz:  Added.
+kde/kppp-4.14.3-arm-1.txz:  Added.
+kde/kqtquickcharts-4.14.3-arm-1.txz:  Added.
+kde/krdc-4.14.3-arm-1.txz:  Added.
+kde/kremotecontrol-4.14.3-arm-1.txz:  Added.
+kde/kreversi-4.14.3-arm-1.txz:  Added.
+kde/krfb-4.14.3-arm-1.txz:  Added.
+kde/kross-interpreters-4.14.3-arm-1.txz:  Added.
+kde/kruler-4.14.3-arm-1.txz:  Added.
+kde/ksaneplugin-4.14.3-arm-1.txz:  Added.
+kde/kscreen-1.0.2.1-arm-1.txz:  Added.
+kde/kshisen-4.14.3-arm-1.txz:  Added.
+kde/ksirk-4.14.3-arm-1.txz:  Added.
+kde/ksnakeduel-4.14.3-arm-1.txz:  Added.
+kde/ksnapshot-4.14.3-arm-1.txz:  Added.
+kde/kspaceduel-4.14.3-arm-1.txz:  Added.
+kde/ksquares-4.14.3-arm-1.txz:  Added.
+kde/kstars-4.14.3-arm-1.txz:  Added.
+kde/ksudoku-4.14.3-arm-1.txz:  Added.
+kde/ksystemlog-4.14.3-arm-1.txz:  Added.
+kde/kteatime-4.14.3-arm-1.txz:  Added.
+kde/ktimer-4.14.3-arm-1.txz:  Added.
+kde/ktorrent-4.3.1-arm-1.txz:  Added.
+kde/ktouch-4.14.3-arm-1.txz:  Added.
+kde/ktuberling-4.14.3-arm-1.txz:  Added.
+kde/kturtle-4.14.3-arm-1.txz:  Added.
+kde/ktux-4.14.3-arm-1.txz:  Added.
+kde/kubrick-4.14.3-arm-1.txz:  Added.
+kde/kuser-4.14.3-arm-1.txz:  Added.
+kde/kwalletmanager-4.14.3-arm-1.txz:  Added.
+kde/kwebkitpart-1.3.4-arm-1.txz:  Added.
+kde/kwordquiz-4.14.3-arm-1.txz:  Added.
+kde/libkcddb-4.14.3-arm-1.txz:  Added.
+kde/libkcompactdisc-4.14.3-arm-1.txz:  Added.
+kde/libkdcraw-4.14.3-arm-1.txz:  Added.
+kde/libkdeedu-4.14.3-arm-1.txz:  Added.
+kde/libkdegames-4.14.3-arm-1.txz:  Added.
+kde/libkexiv2-4.14.3-arm-1.txz:  Added.
+kde/libkipi-4.14.3-arm-1.txz:  Added.
+kde/libkmahjongg-4.14.3-arm-1.txz:  Added.
+kde/libkomparediff2-4.14.3-arm-1.txz:  Added.
+kde/libksane-4.14.3-arm-1.txz:  Added.
+kde/libkscreen-1.0.5-arm-1.txz:  Added.
+kde/libktorrent-1.3.1-arm-1.txz:  Added.
+kde/libmm-qt-1.0.1-arm-1.txz:  Added.
+kde/libnm-qt-0.9.8.3-arm-1.txz:  Added.
+kde/lokalize-4.14.3-arm-1.txz:  Added.
+kde/lskat-4.14.3-arm-1.txz:  Added.
+kde/marble-4.14.3-arm-1.txz:  Added.
+kde/mplayerthumbs-4.14.3-arm-1.txz:  Added.
+kde/nepomuk-core-4.14.3-arm-1.txz:  Added.
+kde/nepomuk-widgets-4.14.3-arm-1.txz:  Added.
+kde/okteta-4.14.3-arm-1.txz:  Added.
+kde/okular-4.14.3-arm-1.txz:  Added.
+kde/oxygen-gtk2-1.4.6-arm-1.txz:  Added.
+kde/oxygen-icons-4.14.3-arm-1.txz:  Added.
+kde/pairs-4.14.3-arm-1.txz:  Added.
+kde/palapeli-4.14.3-arm-1.txz:  Added.
+kde/parley-4.14.3-arm-1.txz:  Added.
+kde/partitionmanager-1.1.1-arm-1.txz:  Added.
+kde/perlkde-4.14.3-arm-1.txz:  Added.
+kde/perlqt-4.14.3-arm-1.txz:  Added.
+kde/picmi-4.14.3-arm-1.txz:  Added.
+kde/plasma-nm-0.9.3.6-arm-1.txz:  Added.
+kde/polkit-kde-agent-1-9d74ae3_20120104git-arm-1.txz:  Added.
+kde/polkit-kde-kcmodules-1-001bdf7_20120111git-arm-1.txz:  Added.
+kde/poxml-4.14.3-arm-1.txz:  Added.
+kde/print-manager-4.14.3-arm-1.txz:  Added.
+kde/pykde4-4.14.3-arm-1.txz:  Added.
+kde/qtruby-4.14.3-arm-1.txz:  Added.
+kde/rocs-4.14.3-arm-1.txz:  Added.
+kde/skanlite-1.1-arm-1.txz:  Added.
+kde/smokegen-4.14.3-arm-1.txz:  Added.
+kde/smokekde-4.14.3-arm-1.txz:  Added.
+kde/smokeqt-4.14.3-arm-1.txz:  Added.
+kde/step-4.14.3-arm-1.txz:  Added.
+kde/superkaramba-4.14.3-arm-1.txz:  Added.
+kde/svgpart-4.14.3-arm-1.txz:  Added.
+kde/sweeper-4.14.3-arm-1.txz:  Added.
+kde/umbrello-4.14.3-arm-1.txz:  Added.
+kde/wicd-kde-0.3.0_bcf27d8-arm-1.txz:  Added.
+kde/zeroconf-ioslave-4.14.3-arm-1.txz:  Added.
+kdei/calligra-l10n-bs-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-ca-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-ca@valencia-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-cs-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-da-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-de-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-el-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-en_GB-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-es-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-et-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-fi-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-fr-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-gl-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-hu-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-it-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-ja-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-kk-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-nb-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-nl-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-pl-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-pt-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-pt_BR-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-ru-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-sk-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-sv-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-tr-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-uk-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-zh_CN-2.9.11-noarch-1.txz:  Added.
+kdei/calligra-l10n-zh_TW-2.9.11-noarch-1.txz:  Added.
+kdei/kde-l10n-ar-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-bg-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-bs-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ca-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ca@valencia-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-cs-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-da-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-de-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-el-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-en_GB-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-es-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-et-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-eu-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-fa-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-fi-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-fr-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ga-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-gl-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-he-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-hi-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-hr-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-hu-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ia-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-id-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-is-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-it-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ja-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-kk-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-km-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ko-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-lt-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-lv-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-mr-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-nb-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-nds-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-nl-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-nn-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-pa-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-pl-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-pt-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-pt_BR-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ro-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ru-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-sk-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-sl-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-sr-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-sv-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-tr-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-ug-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-uk-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-wa-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-zh_CN-4.14.3-noarch-1.txz:  Added.
+kdei/kde-l10n-zh_TW-4.14.3-noarch-1.txz:  Added.
+l/ConsoleKit2-1.0.0-arm-1.txz:  Added.
+l/GConf-3.2.6-arm-1.txz:  Added.
+l/LibRaw-0.17.2-arm-1.txz:  Added.
+l/M2Crypto-0.23.0-arm-1.txz:  Added.
+l/PyQt-4.11.4-arm-1.txz:  Added.
+l/QScintilla-2.9.1-arm-1.txz:  Added.
+l/a52dec-0.7.4-arm-1.txz:  Added.
+l/aalib-1.4rc5-arm-1.txz:  Added.
+l/adwaita-icon-theme-3.18.0-arm-1.txz:  Added.
+l/akonadi-1.13.0-arm-1.txz:  Added.
+l/alsa-lib-1.1.1-arm-1.txz:  Added.
+l/alsa-oss-1.0.28-arm-1.txz:  Added.
+l/alsa-plugins-1.1.1-arm-1.txz:  Added.
+l/apr-1.5.2-arm-1.txz:  Added.
+l/apr-util-1.5.4-arm-1.txz:  Added.
+l/aspell-0.60.6.1-arm-1.txz:  Added.
+l/aspell-en-7.1_0-arm-1.txz:  Added.
+l/at-spi2-atk-2.18.1-arm-1.txz:  Added.
+l/at-spi2-core-2.18.3-arm-1.txz:  Added.
+l/atk-2.18.0-arm-1.txz:  Added.
+l/atkmm-2.24.2-arm-1.txz:  Added.
+l/attica-0.4.2-arm-1.txz:  Added.
+l/audiofile-0.3.6-arm-1.txz:  Added.
+l/automoc4-0.9.88-arm-1.txz:  Added.
+l/babl-0.1.14-arm-1.txz:  Added.
+l/boost-1.59.0-arm-1.txz:  Added.
+l/cairo-1.14.6-arm-1.txz:  Added.
+l/cairomm-1.12.0-arm-1.txz:  Added.
+l/chmlib-0.40-arm-1.txz:  Added.
+l/clucene-2.3.3.4-arm-1.txz:  Added.
+l/db42-4.2.52-arm-1.txz:  Added.
+l/db44-4.4.20-arm-1.txz:  Added.
+l/db48-4.8.30-arm-1.txz:  Added.
+l/dbus-glib-0.106-arm-1.txz:  Added.
+l/dbus-python-1.2.4-arm-1.txz:  Added.
+l/dconf-0.24.0-arm-1.txz:  Added.
+l/dconf-editor-3.18.2-arm-1.txz:  Added.
+l/desktop-file-utils-0.23-arm-1.txz:  Added.
+l/djvulibre-3.5.27-arm-1.txz:  Added.
+l/ebook-tools-0.2.2-arm-1.txz:  Added.
+l/eigen2-2.0.17-arm-1.txz:  Added.
+l/eigen3-3.2.7-arm-1.txz:  Added.
+l/elfutils-0.163-arm-1.txz:  Added.
+l/enchant-1.6.0-arm-1.txz:  Added.
+l/esound-0.2.41-arm-1.txz:  Added.
+l/exiv2-0.25-arm-1.txz:  Added.
+l/expat-2.1.0-arm-1.txz:  Added.
+l/fftw-3.3.4-arm-1.txz:  Added.
+l/freetype-2.6.5-arm-1.txz:  Added.
+l/fribidi-0.19.7-arm-1.txz:  Added.
+l/fuse-2.9.5-arm-1.txz:  Added.
+l/gamin-0.1.10-arm-1.txz:  Added.
+l/gc-7.4.2-arm-1.txz:  Added.
+l/gcr-3.16.0-arm-1.txz:  Added.
+l/gd-2.2.1-arm-1.txz:  Added.
+l/gdbm-1.12-arm-1.txz:  Added.
+l/gdk-pixbuf2-2.32.3-arm-1.txz:  Added.
+l/gegl-0.2.0-arm-1.txz:  Added.
+l/giflib-5.1.1-arm-1.txz:  Added.
+l/glade3-3.8.5-arm-1.txz:  Added.
+l/glib-1.2.10-arm-1.txz:  Added.
+l/glib-networking-2.46.1-arm-1.txz:  Added.
+l/glib2-2.46.2-arm-1.txz:  Added.
+l/glibc-2.24-arm-1.txz:  Added.
+l/glibc-i18n-2.24-arm-1.txz:  Added.
+l/glibc-profile-2.24-arm-1.txz:  Added.
+l/glibmm-2.46.4-arm-1.txz:  Added.
+l/gmime-2.6.20-arm-1.txz:  Added.
+l/gmm-4.2-noarch-1.txz:  Added.
+l/gmp-6.1.1-arm-1.txz:  Added.
+l/gnome-keyring-3.16.0-arm-1.txz:  Added.
+l/gnome-themes-standard-3.18.0-arm-1.txz:  Added.
+l/gobject-introspection-1.46.0-arm-1.txz:  Added.
+l/grantlee-0.5.1-arm-1.txz:  Added.
+l/gsettings-desktop-schemas-3.18.1-arm-1.txz:  Added.
+l/gsl-2.1-arm-1.txz:  Added.
+l/gst-plugins-base-1.6.4-arm-1.txz:  Added.
+l/gst-plugins-base0-0.10.36-arm-1.txz:  Added.
+l/gst-plugins-good-1.6.4-arm-1.txz:  Added.
+l/gst-plugins-good0-0.10.31-arm-1.txz:  Added.
+l/gstreamer-1.6.4-arm-1.txz:  Added.
+l/gstreamer0-0.10.36-arm-1.txz:  Added.
+l/gtk+-1.2.10-arm-1.txz:  Added.
+l/gtk+2-2.24.30-arm-1.txz:  Added.
+l/gtk+3-3.18.9-arm-1.txz:  Added.
+l/gtkmm2-2.24.4-arm-1.txz:  Added.
+l/gtkmm3-3.18.1-arm-1.txz:  Added.
+l/gtkspell-2.0.16-arm-1.txz:  Added.
+l/gvfs-1.26.3-arm-1.txz:  Added.
+l/harfbuzz-1.3.0-arm-1.txz:  Added.
+l/herqq-1.0.0-arm-1.txz:  Added.
+l/hicolor-icon-theme-0.15-noarch-1.txz:  Added.
+l/hunspell-1.3.3-arm-1.txz:  Added.
+l/icon-naming-utils-0.8.90-arm-1.txz:  Added.
+l/icu4c-56.1-arm-1.txz:  Added.
+l/ilmbase-2.2.0-arm-1.txz:  Added.
+l/iso-codes-3.67-arm-1.txz:  Added.
+l/jasper-1.900.1-arm-1.txz:  Added.
+l/jemalloc-3.6.0-arm-1.txz:  Added.
+l/js185-1.0.0-arm-1.txz:  Added.
+l/json-c-0.12-arm-1.txz:  Added.
+l/judy-1.0.5-arm-1.txz:  Added.
+l/keybinder-0.3.1-arm-1.txz:  Added.
+l/keyutils-1.5.9-arm-1.txz:  Added.
+l/lcms-1.19-arm-1.txz:  Added.
+l/lcms2-2.7-arm-1.txz:  Added.
+l/libaio-0.3.109-arm-1.txz:  Added.
+l/libao-1.2.0-arm-1.txz:  Added.
+l/libarchive-3.2.1-arm-1.txz:  Added.
+l/libart_lgpl-2.3.21-arm-1.txz:  Added.
+l/libasyncns-0.8-arm-1.txz:  Added.
+l/libatasmart-0.19-arm-1.txz:  Added.
+l/libbluedevil-2.1-arm-1.txz:  Added.
+l/libcaca-0.99.beta18-arm-1.txz:  Added.
+l/libcanberra-0.30-arm-1.txz:  Added.
+l/libcap-2.22-arm-1.txz:  Added.
+l/libcap-ng-0.7.7-arm-1.txz:  Added.
+l/libcddb-1.3.2-arm-1.txz:  Added.
+l/libcdio-0.93-arm-1.txz:  Added.
+l/libcdio-paranoia-10.2+0.93+1-arm-1.txz:  Added.
+l/libcroco-0.6.11-arm-1.txz:  Added.
+l/libdbusmenu-qt-0.9.2-arm-1.txz:  Added.
+l/libdiscid-0.6.1-arm-1.txz:  Added.
+l/libdvdnav-5.0.3-arm-1.txz:  Added.
+l/libdvdread-5.0.3-arm-1.txz:  Added.
+l/libevent-2.0.22-arm-1.txz:  Added.
+l/libexif-0.6.21-arm-1.txz:  Added.
+l/libfakekey-0.1-arm-1.txz:  Added.
+l/libffi-3.2.1-arm-1.txz:  Added.
+l/libglade-2.6.4-arm-1.txz:  Added.
+l/libgnome-keyring-3.12.0-arm-1.txz:  Added.
+l/libgphoto2-2.5.10-arm-1.txz:  Added.
+l/libgpod-0.8.3-arm-1.txz:  Added.
+l/libgsf-1.14.36-arm-1.txz:  Added.
+l/libical-2.0.0-arm-1.txz:  Added.
+l/libid3tag-0.15.1b-arm-1.txz:  Added.
+l/libidl-0.8.14-arm-1.txz:  Added.
+l/libidn-1.33-arm-1.txz:  Added.
+l/libieee1284-0.2.11-arm-1.txz:  Added.
+l/libimobiledevice-1.2.0-arm-1.txz:  Added.
+l/libiodbc-3.52.10-arm-1.txz:  Added.
+l/libjpeg-turbo-1.5.0-arm-1.txz:  Added.
+l/libkarma-0.1.1-arm-1.txz:  Added.
+l/liblastfm-1.0.9-arm-1.txz:  Added.
+l/libmad-0.15.1b-arm-1.txz:  Added.
+l/libmcrypt-2.5.8-arm-1.txz:  Added.
+l/libmcs-0.7.2-arm-1.txz:  Added.
+l/libmng-2.0.3-arm-1.txz:  Added.
+l/libmowgli-0.7.1-arm-1.txz:  Added.
+l/libmpc-1.0.3-arm-1.txz:  Added.
+l/libmsn-4.2.1-arm-1.txz:  Added.
+l/libmtp-1.1.11-arm-1.txz:  Added.
+l/libnih-1.0.3-arm-1.txz:  Added.
+l/libnjb-2.2.6-arm-1.txz:  Added.
+l/libnl-1.1.4-arm-1.txz:  Added.
+l/libnl3-3.2.27-arm-1.txz:  Added.
+l/libnotify-0.7.6-arm-1.txz:  Added.
+l/libodfgen-0.1.6-arm-1.txz:  Added.
+l/libogg-1.3.2-arm-1.txz:  Added.
+l/liboggz-1.1.1-arm-1.txz:  Added.
+l/liboil-0.3.17-arm-1.txz:  Added.
+l/libpcap-1.7.4-arm-1.txz:  Added.
+l/libplist-1.12-arm-1.txz:  Added.
+l/libpng-1.6.23-arm-1.txz:  Added.
+l/libproxy-0.4.12-arm-1.txz:  Added.
+l/libraw1394-2.1.1-arm-1.txz:  Added.
+l/librevenge-0.0.4-arm-1.txz:  Added.
+l/librsvg-2.40.16-arm-1.txz:  Added.
+l/libsamplerate-0.1.8-arm-1.txz:  Added.
+l/libsecret-0.18.5-arm-1.txz:  Added.
+l/libsigc++-2.6.2-arm-1.txz:  Added.
+l/libsigsegv-2.10-arm-1.txz:  Added.
+l/libsndfile-1.0.26-arm-1.txz:  Added.
+l/libsoup-2.52.2-arm-1.txz:  Added.
+l/libspectre-0.2.7-arm-1.txz:  Added.
+l/libssh-0.7.3-arm-1.txz:  Added.
+l/libssh2-1.7.0-arm-1.txz:  Added.
+l/libtasn1-4.9-arm-1.txz:  Added.
+l/libtermcap-1.2.3-arm-1.txz:  Added.
+l/libtheora-1.1.1-arm-1.txz:  Added.
+l/libtiff-4.0.6-arm-1.txz:  Added.
+l/libunistring-0.9.3-arm-1.txz:  Added.
+l/libusb-1.0.20-arm-1.txz:  Added.
+l/libusb-compat-0.1.5-arm-1.txz:  Added.
+l/libusbmuxd-1.0.10-arm-1.txz:  Added.
+l/libvisio-0.1.5-arm-1.txz:  Added.
+l/libvisual-0.4.0-arm-1.txz:  Added.
+l/libvisual-plugins-0.4.0-arm-1.txz:  Added.
+l/libvncserver-0.9.10-arm-1.txz:  Added.
+l/libvorbis-1.3.5-arm-1.txz:  Added.
+l/libvpx-1.5.0-arm-1.txz:  Added.
+l/libwmf-0.2.8.4-arm-1.txz:  Added.
+l/libwmf-docs-0.2.8.4-noarch-1.txz:  Added.
+l/libwnck-2.31.0-arm-1.txz:  Added.
+l/libwpd-0.10.1-arm-1.txz:  Added.
+l/libwpg-0.3.1-arm-1.txz:  Added.
+l/libxklavier-5.4-arm-1.txz:  Added.
+l/libxml2-2.9.4-arm-1.txz:  Added.
+l/libxslt-1.1.29-arm-1.txz:  Added.
+l/libyaml-0.1.6-arm-1.txz:  Added.
+l/libzip-1.0.1-arm-1.txz:  Added.
+l/loudmouth-1.5.1-arm-1.txz:  Added.
+l/lzo-2.09-arm-1.txz:  Added.
+l/media-player-info-18-arm-1.txz:  Added.
+l/mhash-0.9.9.9-arm-1.txz:  Added.
+l/mm-1.4.2-arm-1.txz:  Added.
+l/mozilla-nss-3.23-arm-1.txz:  Added.
+l/mpfr-3.1.4-arm-1.txz:  Added.
+l/ncurses-5.9-arm-1.txz:  Added.
+l/neon-0.30.1-arm-1.txz:  Added.
+l/netpbm-10.66.02-arm-1.txz:  Added.
+l/newt-0.52.19-arm-1.txz:  Added.
+l/notify-python-0.1.1-arm-1.txz:  Added.
+l/openexr-2.2.0-arm-1.txz:  Added.
+l/openjpeg-2.1.0-arm-1.txz:  Added.
+l/orc-0.4.24-arm-1.txz:  Added.
+l/pango-1.38.1-arm-1.txz:  Added.
+l/pangomm-2.38.1-arm-1.txz:  Added.
+l/parted-3.2-arm-1.txz:  Added.
+l/pcre-8.39-arm-1.txz:  Added.
+l/phonon-4.8.3-arm-1.txz:  Added.
+l/phonon-gstreamer-4.8.2-arm-1.txz:  Added.
+l/pilot-link-0.12.5-arm-1.txz:  Added.
+l/polkit-0.113-arm-1.txz:  Added.
+l/polkit-gnome-0.105-arm-1.txz:  Added.
+l/polkit-qt-1-0.103.0-arm-1.txz:  Added.
+l/poppler-0.45.0-arm-1.txz:  Added.
+l/poppler-data-0.4.7-noarch-1.txz:  Added.
+l/popt-1.16-arm-1.txz:  Added.
+l/pulseaudio-9.0-arm-1.txz:  Added.
+l/pycairo-1.10.0-arm-1.txz:  Added.
+l/pycups-1.9.73-arm-1.txz:  Added.
+l/pycurl-7.43.0-arm-1.txz:  Added.
+l/pygobject-2.28.6-arm-1.txz:  Added.
+l/pygobject3-3.18.2-arm-1.txz:  Added.
+l/pygtk-2.24.0-arm-1.txz:  Added.
+l/pyrex-0.9.9-arm-1.txz:  Added.
+l/python-pillow-3.0.0-arm-1.txz:  Added.
+l/qca-2.1.1-arm-1.txz:  Added.
+l/qimageblitz-0.0.6-arm-1.txz:  Added.
+l/qjson-0.8.1-arm-1.txz:  Added.
+l/qt-4.8.7-arm-1.txz:  Added.
+l/qt-gstreamer-1.2.0-arm-1.txz:  Added.
+l/qtscriptgenerator-0.2.0-arm-1.txz:  Added.
+l/raptor2-2.0.15-arm-1.txz:  Added.
+l/rasqal-0.9.30-arm-1.txz:  Added.
+l/readline-6.3-arm-1.txz:  Added.
+l/redland-1.0.16-arm-1.txz:  Added.
+l/sbc-1.3-arm-1.txz:  Added.
+l/sdl-1.2.15-arm-1.txz:  Added.
+l/seamonkey-solibs-2.40-arm-1.txz:  Added.
+l/serf-1.3.8-arm-1.txz:  Added.
+l/sg3_utils-1.42-arm-1.txz:  Added.
+l/shared-desktop-ontologies-0.11.0-arm-1.txz:  Added.
+l/shared-mime-info-1.6-arm-1.txz:  Added.
+l/sip-4.18-arm-1.txz:  Added.
+l/slang-2.3.0-arm-1.txz:  Added.
+l/slang1-1.4.9-arm-1.txz:  Added.
+l/soprano-2.9.4-arm-1.txz:  Added.
+l/sound-theme-freedesktop-0.7-arm-1.txz:  Added.
+l/speexdsp-1.2rc3-arm-1.txz:  Added.
+l/startup-notification-0.12-arm-1.txz:  Added.
+l/strigi-0.7.8-arm-1.txz:  Added.
+l/svgalib-1.4.0-arm-1.txz:  Added.
+l/system-config-printer-1.3.13-arm-1.txz:  Added.
+l/t1lib-5.1.2-arm-1.txz:  Added.
+l/taglib-1.10-arm-1.txz:  Added.
+l/taglib-extras-1.0.1-arm-1.txz:  Added.
+l/tango-icon-theme-0.8.90-noarch-1.txz:  Added.
+l/tango-icon-theme-extras-0.1.0-noarch-1.txz:  Added.
+l/urwid-1.0.3-arm-1.txz:  Added.
+l/v4l-utils-1.10.1-arm-1.txz:  Added.
+l/virtuoso-ose-6.1.8-arm-1.txz:  Added.
+l/vte-0.28.2-arm-1.txz:  Added.
+l/wavpack-4.75.2-arm-1.txz:  Added.
+l/xapian-core-1.2.22-arm-1.txz:  Added.
+l/zlib-1.2.8-arm-1.txz:  Added.
+n/ModemManager-1.4.14-arm-1.txz:  Added.
+n/NetworkManager-1.2.2-arm-1.txz:  Added.
+n/alpine-2.20-arm-1.txz:  Added.
+n/autofs-5.0.7-arm-1.txz:  Added.
+n/biff+comsat-0.17-arm-1.txz:  Added.
+n/bind-9.10.4_P2-arm-1.txz:  Added.
+n/bluez-5.41-arm-1.txz:  Added.
+n/bluez-firmware-1.2-arm-1.txz:  Added.
+n/bootp-2.4.3-arm-1.txz:  Added.
+n/bridge-utils-1.5-arm-1.txz:  Added.
+n/bsd-finger-0.17-arm-1.txz:  Added.
+n/ca-certificates-20160104-noarch-1.txz:  Added.
+n/cifs-utils-6.4-arm-1.txz:  Added.
+n/conntrack-tools-1.4.3-arm-1.txz:  Added.
+n/crda-3.18-arm-1.txz:  Added.
+n/curl-7.50.1-arm-1.txz:  Added.
+n/cyrus-sasl-2.1.26-arm-1.txz:  Added.
+n/dhcp-4.3.4-arm-1.txz:  Added.
+n/dhcpcd-6.8.2-arm-1.txz:  Added.
+n/dirmngr-1.1.1-arm-1.txz:  Added.
+n/dnsmasq-2.76-arm-1.txz:  Added.
+n/ebtables-2.0.10-arm-1.txz:  Added.
+n/elm-2.5.8-arm-1.txz:  Added.
+n/epic5-2.0-arm-1.txz:  Added.
+n/ethtool-4.5-arm-1.txz:  Added.
+n/fetchmail-6.3.26-arm-1.txz:  Added.
+n/getmail-4.47.0-arm-1.txz:  Added.
+n/gnupg-1.4.21-arm-1.txz:  Added.
+n/gnupg2-2.0.30-arm-1.txz:  Added.
+n/gnutls-3.4.13-arm-1.txz:  Added.
+n/gpa-0.9.9-arm-1.txz:  Added.
+n/gpgme-1.6.0-arm-1.txz:  Added.
+n/htdig-3.2.0b6-arm-1.txz:  Added.
+n/httpd-2.4.23-arm-1.txz:  Added.
+n/icmpinfo-1.11-arm-1.txz:  Added.
+n/idnkit-1.0-arm-1.txz:  Added.
+n/iftop-1.0pre2-arm-1.txz:  Added.
+n/imapd-2.20-arm-1.txz:  Added.
+n/inetd-1.79s-arm-1.txz:  Added.
+n/iproute2-4.4.0-arm-1.txz:  Added.
+n/ipset-6.20-arm-1.txz:  Added.
+n/iptables-1.6.0-arm-1.txz:  Added.
+n/iptraf-ng-1.1.4-arm-1.txz:  Added.
+n/iputils-s20140519-arm-1.txz:  Added.
+n/ipw2100-fw-1.3-fw-1.txz:  Added.
+n/ipw2200-fw-3.1-fw-1.txz:  Added.
+n/irssi-0.8.19-arm-1.txz:  Added.
+n/iw-4.3-arm-1.txz:  Added.
+n/lftp-4.7.3-arm-1.txz:  Added.
+n/libassuan-2.4.2-arm-1.txz:  Added.
+n/libgcrypt-1.7.3-arm-1.txz:  Added.
+n/libgpg-error-1.23-arm-1.txz:  Added.
+n/libksba-1.3.3-arm-1.txz:  Added.
+n/libmbim-1.12.2-arm-1.txz:  Added.
+n/libmnl-1.0.3-arm-1.txz:  Added.
+n/libndp-1.6-arm-1.txz:  Added.
+n/libnetfilter_acct-1.0.2-arm-1.txz:  Added.
+n/libnetfilter_conntrack-1.0.5-arm-1.txz:  Added.
+n/libnetfilter_cthelper-1.0.0-arm-1.txz:  Added.
+n/libnetfilter_cttimeout-1.0.0-arm-1.txz:  Added.
+n/libnetfilter_log-1.0.1-arm-1.txz:  Added.
+n/libnetfilter_queue-1.0.2-arm-1.txz:  Added.
+n/libnfnetlink-1.0.1-arm-1.txz:  Added.
+n/libnftnl-1.0.6-arm-1.txz:  Added.
+n/libqmi-1.12.6-arm-1.txz:  Added.
+n/libtirpc-1.0.1-arm-1.txz:  Added.
+n/links-2.13-arm-1.txz:  Added.
+n/lynx-2.8.8rel.2-arm-1.txz:  Added.
+n/mailx-12.5-arm-1.txz:  Added.
+n/mcabber-1.0.1-arm-1.txz:  Added.
+n/metamail-2.7-arm-1.txz:  Added.
+n/mobile-broadband-provider-info-20151214-arm-1.txz:  Added.
+n/mtr-0.86-arm-1.txz:  Added.
+n/mutt-1.6.2-arm-1.txz:  Added.
+n/nc-1.10-arm-1.txz:  Added.
+n/ncftp-3.2.5-arm-1.txz:  Added.
+n/net-snmp-5.7.3-arm-1.txz:  Added.
+n/net-tools-2.73cef8a-arm-1.txz:  Added.
+n/netatalk-2.2.3-arm-1.txz:  Added.
+n/netdate-bsd4-arm-1.txz:  Added.
+n/netkit-bootparamd-0.17-arm-1.txz:  Added.
+n/netkit-ftp-0.17-arm-1.txz:  Added.
+n/netkit-ntalk-0.17-arm-1.txz:  Added.
+n/netkit-routed-0.17-arm-1.txz:  Added.
+n/netkit-rsh-0.17-arm-1.txz:  Added.
+n/netkit-rusers-0.17-arm-1.txz:  Added.
+n/netkit-rwall-0.17-arm-1.txz:  Added.
+n/netkit-rwho-0.17-arm-1.txz:  Added.
+n/netkit-timed-0.17-arm-1.txz:  Added.
+n/netpipes-4.2-arm-1.txz:  Added.
+n/nettle-3.2-arm-1.txz:  Added.
+n/netwatch-1.3.1_2-arm-1.txz:  Added.
+n/network-scripts-14.2-noarch-1.txz:  Added.
+n/netwrite-0.17-arm-1.txz:  Added.
+n/newspost-2.1.1-arm-1.txz:  Added.
+n/nfacct-1.0.1-arm-1.txz:  Added.
+n/nfs-utils-1.3.3-arm-1.txz:  Added.
+n/nftables-0.6-arm-1.txz:  Added.
+n/nmap-7.12-arm-1.txz:  Added.
+n/nn-6.7.3-arm-1.txz:  Added.
+n/ntp-4.2.8p8-arm-1.txz:  Added.
+n/obexftp-0.24-arm-1.txz:  Added.
+n/openldap-client-2.4.42-arm-1.txz:  Added.
+n/openobex-1.7.1-arm-1.txz:  Added.
+n/openssh-7.3p1-arm-1.txz:  Added.
+n/openssl-1.0.2h-arm-1.txz:  Added.
+n/openvpn-2.3.11-arm-1.txz:  Added.
+n/p11-kit-0.23.2-arm-1.txz:  Added.
+n/php-5.6.24-arm-1.txz:  Added.
+n/pidentd-3.0.19-arm-1.txz:  Added.
+n/pinentry-0.9.7-arm-1.txz:  Added.
+n/popa3d-1.0.3-arm-1.txz:  Added.
+n/ppp-2.4.7-arm-1.txz:  Added.
+n/procmail-3.22-arm-1.txz:  Added.
+n/proftpd-1.3.5b-arm-1.txz:  Added.
+n/pssh-2.3.1-arm-1.txz:  Added.
+n/pth-2.0.7-arm-1.txz:  Added.
+n/rdist-6.1.5-arm-1.txz:  Added.
+n/rfkill-0.5-arm-1.txz:  Added.
+n/rp-pppoe-3.12-arm-1.txz:  Added.
+n/rpcbind-0.2.3-arm-1.txz:  Added.
+n/rsync-3.1.2-arm-1.txz:  Added.
+n/samba-4.4.5-arm-1.txz:  Added.
+n/sendmail-8.15.2-arm-1.txz:  Added.
+n/sendmail-cf-8.15.2-noarch-1.txz:  Added.
+n/slrn-1.0.2-arm-1.txz:  Added.
+n/snownews-1.5.12-arm-1.txz:  Added.
+n/stunnel-5.35-arm-1.txz:  Added.
+n/tcp_wrappers-7.6-arm-1.txz:  Added.
+n/tcpdump-4.7.4-arm-1.txz:  Added.
+n/telnet-0.17-arm-1.txz:  Added.
+n/tftp-hpa-5.2-arm-1.txz:  Added.
+n/tin-2.2.1-arm-1.txz:  Added.
+n/traceroute-2.0.21-arm-1.txz:  Added.
+n/trn-3.6-arm-1.txz:  Added.
+n/ulogd-2.0.5-arm-1.txz:  Added.
+n/uucp-1.07-arm-1.txz:  Added.
+n/vlan-1.9-arm-1.txz:  Added.
+n/vsftpd-3.0.3-arm-1.txz:  Added.
+n/wget-1.18-arm-1.txz:  Added.
+n/whois-5.2.12-arm-1.txz:  Added.
+n/wireless-tools-29-arm-1.txz:  Added.
+n/wpa_supplicant-2.5-arm-1.txz:  Added.
+n/yptools-2.14-arm-1.txz:  Added.
+n/ytalk-3.3.0-arm-1.txz:  Added.
+n/zd1211-firmware-1.4-fw-1.txz:  Added.
+t/tetex-3.0-arm-1.txz:  Added.
+t/tetex-doc-3.0-arm-1.txz:  Added.
+t/transfig-3.2.5e-arm-1.txz:  Added.
+t/xfig-3.2.5c-arm-1.txz:  Added.
+tcl/expect-5.45-arm-1.txz:  Added.
+tcl/hfsutils-3.2.6-arm-1.txz:  Added.
+tcl/tcl-8.6.5-arm-1.txz:  Added.
+tcl/tclx-8.4.1-arm-1.txz:  Added.
+tcl/tix-8.4.3-arm-1.txz:  Added.
+tcl/tk-8.6.5-arm-1.txz:  Added.
+x/anthy-9100h-arm-1.txz:  Added.
+x/appres-1.0.4-arm-1.txz:  Added.
+x/bdftopcf-1.0.5-arm-1.txz:  Added.
+x/beforelight-1.0.5-arm-1.txz:  Added.
+x/bigreqsproto-1.1.2-arm-1.txz:  Added.
+x/bitmap-1.0.8-arm-1.txz:  Added.
+x/compiz-0.8.8-arm-1.txz:  Added.
+x/compositeproto-0.4.2-arm-1.txz:  Added.
+x/damageproto-1.2.1-arm-1.txz:  Added.
+x/dejavu-fonts-ttf-2.34-noarch-1.txz:  Added.
+x/dmxproto-2.3.1-arm-1.txz:  Added.
+x/dri2proto-2.8-arm-1.txz:  Added.
+x/dri3proto-1.0-arm-1.txz:  Added.
+x/editres-1.0.6-arm-1.txz:  Added.
+x/encodings-1.0.4-arm-1.txz:  Added.
+x/evieext-1.1.1-arm-1.txz:  Added.
+x/fixesproto-5.0-arm-1.txz:  Added.
+x/font-adobe-100dpi-1.0.3-arm-1.txz:  Added.
+x/font-adobe-75dpi-1.0.3-arm-1.txz:  Added.
+x/font-adobe-utopia-100dpi-1.0.4-arm-1.txz:  Added.
+x/font-adobe-utopia-75dpi-1.0.4-arm-1.txz:  Added.
+x/font-adobe-utopia-type1-1.0.4-arm-1.txz:  Added.
+x/font-alias-1.0.3-arm-1.txz:  Added.
+x/font-arabic-misc-1.0.3-arm-1.txz:  Added.
+x/font-bh-100dpi-1.0.3-arm-1.txz:  Added.
+x/font-bh-75dpi-1.0.3-arm-1.txz:  Added.
+x/font-bh-lucidatypewriter-100dpi-1.0.3-arm-1.txz:  Added.
+x/font-bh-lucidatypewriter-75dpi-1.0.3-arm-1.txz:  Added.
+x/font-bh-ttf-1.0.3-arm-1.txz:  Added.
+x/font-bh-type1-1.0.3-arm-1.txz:  Added.
+x/font-bitstream-100dpi-1.0.3-arm-1.txz:  Added.
+x/font-bitstream-75dpi-1.0.3-arm-1.txz:  Added.
+x/font-bitstream-speedo-1.0.2-arm-1.txz:  Added.
+x/font-bitstream-type1-1.0.3-arm-1.txz:  Added.
+x/font-cronyx-cyrillic-1.0.3-arm-1.txz:  Added.
+x/font-cursor-misc-1.0.3-arm-1.txz:  Added.
+x/font-daewoo-misc-1.0.3-arm-1.txz:  Added.
+x/font-dec-misc-1.0.3-arm-1.txz:  Added.
+x/font-ibm-type1-1.0.3-arm-1.txz:  Added.
+x/font-isas-misc-1.0.3-arm-1.txz:  Added.
+x/font-jis-misc-1.0.3-arm-1.txz:  Added.
+x/font-micro-misc-1.0.3-arm-1.txz:  Added.
+x/font-misc-cyrillic-1.0.3-arm-1.txz:  Added.
+x/font-misc-ethiopic-1.0.3-arm-1.txz:  Added.
+x/font-misc-meltho-1.0.3-arm-1.txz:  Added.
+x/font-misc-misc-1.1.2-arm-1.txz:  Added.
+x/font-mutt-misc-1.0.3-arm-1.txz:  Added.
+x/font-schumacher-misc-1.1.2-arm-1.txz:  Added.
+x/font-screen-cyrillic-1.0.4-arm-1.txz:  Added.
+x/font-sony-misc-1.0.3-arm-1.txz:  Added.
+x/font-sun-misc-1.0.3-arm-1.txz:  Added.
+x/font-util-1.3.1-arm-1.txz:  Added.
+x/font-winitzki-cyrillic-1.0.3-arm-1.txz:  Added.
+x/font-xfree86-type1-1.0.4-arm-1.txz:  Added.
+x/fontcacheproto-0.1.3-arm-1.txz:  Added.
+x/fontconfig-2.11.1-arm-1.txz:  Added.
+x/fontsproto-2.1.3-arm-1.txz:  Added.
+x/fonttosfnt-1.0.4-arm-1.txz:  Added.
+x/freeglut-2.8.1-arm-1.txz:  Added.
+x/fslsfonts-1.0.5-arm-1.txz:  Added.
+x/fstobdf-1.0.6-arm-1.txz:  Added.
+x/gccmakedep-1.0.3-arm-1.txz:  Added.
+x/glew-1.13.0-arm-1.txz:  Added.
+x/glproto-1.4.17-arm-1.txz:  Added.
+x/glu-9.0.0-arm-1.txz:  Added.
+x/iceauth-1.0.7-arm-1.txz:  Added.
+x/ico-1.0.4-arm-1.txz:  Added.
+x/imake-1.0.7-arm-1.txz:  Added.
+x/inputproto-2.3.2-arm-1.txz:  Added.
+x/kbproto-1.0.7-arm-1.txz:  Added.
+x/libFS-1.0.7-arm-1.txz:  Added.
+x/libICE-1.0.9-arm-1.txz:  Added.
+x/libSM-1.2.2-arm-1.txz:  Added.
+x/libX11-1.6.3-arm-1.txz:  Added.
+x/libXScrnSaver-1.2.2-arm-1.txz:  Added.
+x/libXau-1.0.8-arm-1.txz:  Added.
+x/libXaw-1.0.13-arm-1.txz:  Added.
+x/libXaw3d-1.6.2-arm-1.txz:  Added.
+x/libXaw3dXft-1.6.2d-arm-1.txz:  Added.
+x/libXcm-0.5.2-arm-1.txz:  Added.
+x/libXcomposite-0.4.4-arm-1.txz:  Added.
+x/libXcursor-1.1.14-arm-1.txz:  Added.
+x/libXdamage-1.1.4-arm-1.txz:  Added.
+x/libXdmcp-1.1.2-arm-1.txz:  Added.
+x/libXevie-1.0.3-arm-1.txz:  Added.
+x/libXext-1.3.3-arm-1.txz:  Added.
+x/libXfixes-5.0.2-arm-1.txz:  Added.
+x/libXfont-1.5.1-arm-1.txz:  Added.
+x/libXfontcache-1.0.5-arm-1.txz:  Added.
+x/libXft-2.3.2-arm-1.txz:  Added.
+x/libXi-1.7.6-arm-1.txz:  Added.
+x/libXinerama-1.1.3-arm-1.txz:  Added.
+x/libXmu-1.1.2-arm-1.txz:  Added.
+x/libXp-1.0.3-arm-1.txz:  Added.
+x/libXpm-3.5.11-arm-1.txz:  Added.
+x/libXpresent-1.0.0-arm-1.txz:  Added.
+x/libXrandr-1.5.0-arm-1.txz:  Added.
+x/libXrender-0.9.9-arm-1.txz:  Added.
+x/libXres-1.0.7-arm-1.txz:  Added.
+x/libXt-1.1.5-arm-1.txz:  Added.
+x/libXtst-1.2.2-arm-1.txz:  Added.
+x/libXv-1.0.10-arm-1.txz:  Added.
+x/libXvMC-1.0.9-arm-1.txz:  Added.
+x/libXxf86dga-1.1.4-arm-1.txz:  Added.
+x/libXxf86misc-1.0.3-arm-1.txz:  Added.
+x/libXxf86vm-1.1.4-arm-1.txz:  Added.
+x/libdmx-1.1.3-arm-1.txz:  Added.
+x/libdrm-2.4.68-arm-1.txz:  Added.
+x/libepoxy-1.3.1-arm-1.txz:  Added.
+x/liberation-fonts-ttf-1.07.4-noarch-1.txz:  Added.
+x/libevdev-1.4.1-arm-1.txz:  Added.
+x/libfontenc-1.1.3-arm-1.txz:  Added.
+x/libhangul-0.1.0-arm-1.txz:  Added.
+x/libpciaccess-0.13.4-arm-1.txz:  Added.
+x/libpthread-stubs-0.3-arm-1.txz:  Added.
+x/libva-1.6.2-arm-1.txz:  Added.
+x/libvdpau-1.1.1-arm-1.txz:  Added.
+x/libxcb-1.11.1-arm-1.txz:  Added.
+x/libxkbfile-1.0.9-arm-1.txz:  Added.
+x/libxshmfence-1.2-arm-1.txz:  Added.
+x/listres-1.0.3-arm-1.txz:  Added.
+x/lndir-1.0.3-arm-1.txz:  Added.
+x/luit-1.1.1-arm-1.txz:  Added.
+x/m17n-lib-1.6.1-arm-1.txz:  Added.
+x/makedepend-1.0.5-arm-1.txz:  Added.
+x/mesa-12.0.1-arm-1.txz:  Added.
+x/mkcomposecache-1.2.1-arm-1.txz:  Added.
+x/mkfontdir-1.0.7-arm-1.txz:  Added.
+x/mkfontscale-1.1.2-arm-1.txz:  Added.
+x/motif-2.3.5-arm-1.txz:  Added.
+x/mtdev-1.1.5-arm-1.txz:  Added.
+x/oclock-1.0.3-arm-1.txz:  Added.
+x/pixman-0.34.0-arm-1.txz:  Added.
+x/presentproto-1.0-arm-1.txz:  Added.
+x/printproto-1.0.5-arm-1.txz:  Added.
+x/randrproto-1.5.0-arm-1.txz:  Added.
+x/recordproto-1.14.2-arm-1.txz:  Added.
+x/rendercheck-1.5-arm-1.txz:  Added.
+x/renderproto-0.11.1-arm-1.txz:  Added.
+x/resourceproto-1.2.0-arm-1.txz:  Added.
+x/rgb-1.0.6-arm-1.txz:  Added.
+x/sazanami-fonts-ttf-20040629-noarch-1.txz:  Added.
+x/scim-1.4.15-arm-1.txz:  Added.
+x/scim-anthy-1.2.7-arm-1.txz:  Added.
+x/scim-hangul-0.4.0-arm-1.txz:  Added.
+x/scim-input-pad-0.1.3.1-arm-1.txz:  Added.
+x/scim-m17n-0.2.3-arm-1.txz:  Added.
+x/scim-pinyin-0.5.92-arm-1.txz:  Added.
+x/scim-tables-0.5.14.1-arm-1.txz:  Added.
+x/scrnsaverproto-1.2.2-arm-1.txz:  Added.
+x/sessreg-1.1.0-arm-1.txz:  Added.
+x/setxkbmap-1.3.1-arm-1.txz:  Added.
+x/showfont-1.0.5-arm-1.txz:  Added.
+x/sinhala_lklug-font-ttf-20060929-noarch-1.txz:  Added.
+x/smproxy-1.0.6-arm-1.txz:  Added.
+x/tibmachuni-font-ttf-1.901b-noarch-1.txz:  Added.
+x/transset-1.0.1-arm-1.txz:  Added.
+x/ttf-indic-fonts-0.5.14-arm-1.txz:  Added.
+x/twm-1.0.9-arm-1.txz:  Added.
+x/util-macros-1.19.0-arm-1.txz:  Added.
+x/videoproto-2.3.3-arm-1.txz:  Added.
+x/viewres-1.0.4-arm-1.txz:  Added.
+x/wqy-zenhei-font-ttf-0.8.38_1-noarch-1.txz:  Added.
+x/x11-skel-7.7-arm-1.txz:  Added.
+x/x11perf-1.6.0-arm-1.txz:  Added.
+x/xauth-1.0.9-arm-1.txz:  Added.
+x/xbacklight-1.2.1-arm-1.txz:  Added.
+x/xbiff-1.0.3-arm-1.txz:  Added.
+x/xbitmaps-1.1.1-arm-1.txz:  Added.
+x/xcalc-1.0.6-arm-1.txz:  Added.
+x/xcb-proto-1.11-arm-1.txz:  Added.
+x/xcb-util-0.4.0-arm-1.txz:  Added.
+x/xcb-util-cursor-0.1.2-arm-1.txz:  Added.
+x/xcb-util-errors-1.0-arm-1.txz:  Added.
+x/xcb-util-image-0.4.0-arm-1.txz:  Added.
+x/xcb-util-keysyms-0.4.0-arm-1.txz:  Added.
+x/xcb-util-renderutil-0.3.9-arm-1.txz:  Added.
+x/xcb-util-wm-0.4.1-arm-1.txz:  Added.
+x/xclipboard-1.1.3-arm-1.txz:  Added.
+x/xclock-1.0.7-arm-1.txz:  Added.
+x/xcm-0.5.2-arm-1.txz:  Added.
+x/xcmiscproto-1.2.2-arm-1.txz:  Added.
+x/xcmsdb-1.0.5-arm-1.txz:  Added.
+x/xcompmgr-1.1.7-arm-1.txz:  Added.
+x/xconsole-1.0.6-arm-1.txz:  Added.
+x/xcursor-themes-1.0.4-arm-1.txz:  Added.
+x/xcursorgen-1.0.6-arm-1.txz:  Added.
+x/xdbedizzy-1.1.0-arm-1.txz:  Added.
+x/xdg-user-dirs-0.15-arm-1.txz:  Added.
+x/xdg-utils-1.1.1-arm-1.txz:  Added.
+x/xditview-1.0.4-arm-1.txz:  Added.
+x/xdm-1.1.11-arm-1.txz:  Added.
+x/xdpyinfo-1.3.2-arm-1.txz:  Added.
+x/xdriinfo-1.0.5-arm-1.txz:  Added.
+x/xedit-1.2.2-arm-1.txz:  Added.
+x/xev-1.2.2-arm-1.txz:  Added.
+x/xextproto-7.3.0-arm-1.txz:  Added.
+x/xeyes-1.1.1-arm-1.txz:  Added.
+x/xf86-input-acecad-1.5.0-arm-1.txz:  Added.
+x/xf86-input-evdev-2.10.3-arm-1.txz:  Added.
+x/xf86-input-joystick-1.6.1-arm-1.txz:  Added.
+x/xf86-input-keyboard-1.8.1-arm-1.txz:  Added.
+x/xf86-input-mouse-1.9.1-arm-1.txz:  Added.
+x/xf86-input-penmount-1.5.0-arm-1.txz:  Added.
+x/xf86-input-synaptics-1.8.3-arm-1.txz:  Added.
+x/xf86-input-void-1.4.0-arm-1.txz:  Added.
+x/xf86-input-wacom-0.33.0-arm-1.txz:  Added.
+x/xf86-video-amdgpu-1.1.0-arm-1.txz:  Added.
+x/xf86-video-apm-1.2.5-arm-1.txz:  Added.
+x/xf86-video-ark-0.7.5-arm-1.txz:  Added.
+x/xf86-video-armsoc-1.4.0-arm-1.txz:  Added.
+x/xf86-video-ast-1.1.5-arm-1.txz:  Added.
+x/xf86-video-ati-7.7.0-arm-1.txz:  Added.
+x/xf86-video-chips-1.2.6-arm-1.txz:  Added.
+x/xf86-video-cirrus-1.5.3-arm-1.txz:  Added.
+x/xf86-video-dummy-0.3.7-arm-1.txz:  Added.
+x/xf86-video-fbdev-0.4.4-arm-1.txz:  Added.
+x/xf86-video-fbturbo-199.f9a6ed7-arm-1.txz:  Added.
+x/xf86-video-glint-1.2.8-arm-1.txz:  Added.
+x/xf86-video-i128-1.3.6-arm-1.txz:  Added.
+x/xf86-video-i740-1.3.5-arm-1.txz:  Added.
+x/xf86-video-mach64-6.9.5-arm-1.txz:  Added.
+x/xf86-video-mga-1.6.4-arm-1.txz:  Added.
+x/xf86-video-neomagic-1.2.9-arm-1.txz:  Added.
+x/xf86-video-nouveau-1.0.12-arm-1.txz:  Added.
+x/xf86-video-nv-2.1.20-arm-1.txz:  Added.
+x/xf86-video-openchrome-0.5.0-arm-1.txz:  Added.
+x/xf86-video-opentegra-1.5158a25-arm-1.txz:  Added.
+x/xf86-video-r128-6.10.1-arm-1.txz:  Added.
+x/xf86-video-rendition-4.2.6-arm-1.txz:  Added.
+x/xf86-video-s3-0.6.5-arm-1.txz:  Added.
+x/xf86-video-s3virge-1.10.7-arm-1.txz:  Added.
+x/xf86-video-savage-2.3.8-arm-1.txz:  Added.
+x/xf86-video-siliconmotion-1.7.8-arm-1.txz:  Added.
+x/xf86-video-sis-0.10.8-arm-1.txz:  Added.
+x/xf86-video-sisusb-0.9.6-arm-1.txz:  Added.
+x/xf86-video-tdfx-1.4.6-arm-1.txz:  Added.
+x/xf86-video-tga-1.2.2-arm-1.txz:  Added.
+x/xf86-video-trident-1.3.7-arm-1.txz:  Added.
+x/xf86-video-tseng-1.2.5-arm-1.txz:  Added.
+x/xf86-video-v4l-0.2.0-arm-1.txz:  Added.
+x/xf86-video-vesa-2.3.4-arm-1.txz:  Added.
+x/xf86-video-vmware-13.1.0-arm-1.txz:  Added.
+x/xf86-video-voodoo-1.2.5-arm-1.txz:  Added.
+x/xf86-video-xgi-1.6.0git_2012_08_06-arm-1.txz:  Added.
+x/xf86-video-xgixp-1.8.1-arm-1.txz:  Added.
+x/xf86bigfontproto-1.2.0-arm-1.txz:  Added.
+x/xf86dga-1.0.3-arm-1.txz:  Added.
+x/xf86dgaproto-2.1-arm-1.txz:  Added.
+x/xf86driproto-2.1.1-arm-1.txz:  Added.
+x/xf86miscproto-0.9.3-arm-1.txz:  Added.
+x/xf86vidmodeproto-2.3.1-arm-1.txz:  Added.
+x/xfd-1.1.2-arm-1.txz:  Added.
+x/xfontsel-1.0.5-arm-1.txz:  Added.
+x/xfs-1.1.4-arm-1.txz:  Added.
+x/xfsinfo-1.0.5-arm-1.txz:  Added.
+x/xgamma-1.0.6-arm-1.txz:  Added.
+x/xgc-1.0.5-arm-1.txz:  Added.
+x/xhost-1.0.7-arm-1.txz:  Added.
+x/xineramaproto-1.2.1-arm-1.txz:  Added.
+x/xinit-1.3.4-arm-1.txz:  Added.
+x/xinput-1.6.2-arm-1.txz:  Added.
+x/xkbcomp-1.3.0-arm-1.txz:  Added.
+x/xkbevd-1.1.4-arm-1.txz:  Added.
+x/xkbprint-1.0.4-arm-1.txz:  Added.
+x/xkbutils-1.0.4-arm-1.txz:  Added.
+x/xkeyboard-config-2.18-arm-1.txz:  Added.
+x/xkill-1.0.4-arm-1.txz:  Added.
+x/xload-1.1.2-arm-1.txz:  Added.
+x/xlogo-1.0.4-arm-1.txz:  Added.
+x/xlsatoms-1.1.2-arm-1.txz:  Added.
+x/xlsclients-1.1.3-arm-1.txz:  Added.
+x/xlsfonts-1.0.5-arm-1.txz:  Added.
+x/xmag-1.0.6-arm-1.txz:  Added.
+x/xman-1.1.4-arm-1.txz:  Added.
+x/xmessage-1.0.4-arm-1.txz:  Added.
+x/xmh-1.0.3-arm-1.txz:  Added.
+x/xmodmap-1.0.9-arm-1.txz:  Added.
+x/xmore-1.0.2-arm-1.txz:  Added.
+x/xorg-cf-files-1.0.6-arm-1.txz:  Added.
+x/xorg-docs-1.7.1-arm-1.txz:  Added.
+x/xorg-server-1.18.4-arm-1.txz:  Added.
+x/xorg-server-xephyr-1.18.4-arm-1.txz:  Added.
+x/xorg-server-xnest-1.18.4-arm-1.txz:  Added.
+x/xorg-server-xvfb-1.18.4-arm-1.txz:  Added.
+x/xorg-sgml-doctools-1.11-arm-1.txz:  Added.
+x/xpr-1.0.4-arm-1.txz:  Added.
+x/xprop-1.2.2-arm-1.txz:  Added.
+x/xproto-7.0.29-arm-1.txz:  Added.
+x/xpyb-1.3.1-arm-1.txz:  Added.
+x/xrandr-1.5.0-arm-1.txz:  Added.
+x/xrdb-1.1.0-arm-1.txz:  Added.
+x/xrefresh-1.0.5-arm-1.txz:  Added.
+x/xscope-1.4.1-arm-1.txz:  Added.
+x/xset-1.2.3-arm-1.txz:  Added.
+x/xsetroot-1.1.1-arm-1.txz:  Added.
+x/xsm-1.0.3-arm-1.txz:  Added.
+x/xstdcmap-1.0.3-arm-1.txz:  Added.
+x/xterm-325-arm-1.txz:  Added.
+x/xtrans-1.3.5-arm-1.txz:  Added.
+x/xvidtune-1.0.3-arm-1.txz:  Added.
+x/xvinfo-1.1.3-arm-1.txz:  Added.
+x/xwd-1.0.6-arm-1.txz:  Added.
+x/xwininfo-1.1.3-arm-1.txz:  Added.
+x/xwud-1.0.4-arm-1.txz:  Added.
+xap/MPlayer-20160125-arm-1.txz:  Added.
+xap/audacious-3.7.2-arm-1.txz:  Added.
+xap/audacious-plugins-3.7.2-arm-1.txz:  Added.
+xap/blackbox-0.70.1-arm-1.txz:  Added.
+xap/blueman-2.0.4-arm-1.txz:  Added.
+xap/ddd-3.3.12-arm-1.txz:  Added.
+xap/electricsheep-20090306-arm-1.txz:  Added.
+xap/fluxbox-1.3.7-arm-1.txz:  Added.
+xap/fvwm-2.6.6-arm-1.txz:  Added.
+xap/geeqie-1.3-arm-1.txz:  Added.
+xap/gftp-2.0.19-arm-1.txz:  Added.
+xap/gimp-2.8.18-arm-1.txz:  Added.
+xap/gkrellm-2.3.7-arm-1.txz:  Added.
+xap/gnuchess-6.2.2-arm-1.txz:  Added.
+xap/gnuplot-5.0.3-arm-1.txz:  Added.
+xap/gparted-0.26.1-arm-1.txz:  Added.
+xap/gucharmap-3.12.1-arm-1.txz:  Added.
+xap/gv-3.7.4-arm-1.txz:  Added.
+xap/hexchat-2.12.1-arm-1.txz:  Added.
+xap/imagemagick-6.9.4_9-arm-1.txz:  Added.
+xap/mozilla-firefox-48.0.1-arm-1.txz:  Added.
+xap/mozilla-thunderbird-45.1.1-arm-1.txz:  Added.
+xap/network-manager-applet-1.2.2-arm-1.txz:  Added.
+xap/pan-0.139-arm-1.txz:  Added.
+xap/pavucontrol-3.0-arm-1.txz:  Added.
+xap/pidgin-2.10.12-arm-1.txz:  Added.
+xap/rdesktop-1.8.3-arm-1.txz:  Added.
+xap/rxvt-2.7.10-arm-1.txz:  Added.
+xap/sane-1.0.25-arm-1.txz:  Added.
+xap/seamonkey-2.40-arm-1.txz:  Added.
+xap/seyon-2.20c-arm-1.txz:  Added.
+xap/vim-gvim-7.4.2196-arm-1.txz:  Added.
+xap/windowmaker-0.95.7-arm-1.txz:  Added.
+xap/x11-ssh-askpass-1.2.4.1-arm-1.txz:  Added.
+xap/x3270-3.3.12ga7-arm-1.txz:  Added.
+xap/xaos-3.6-arm-1.txz:  Added.
+xap/xfractint-20.04p13-arm-1.txz:  Added.
+xap/xgames-0.3-arm-1.txz:  Added.
+xap/xine-lib-1.2.6-arm-1.txz:  Added.
+xap/xine-ui-0.99.9-arm-1.txz:  Added.
+xap/xlockmore-5.46-arm-1.txz:  Added.
+xap/xmms-1.2.11-arm-1.txz:  Added.
+xap/xpaint-2.9.10.3-arm-1.txz:  Added.
+xap/xpdf-3.04-arm-1.txz:  Added.
+xap/xsane-0.999-arm-1.txz:  Added.
+xap/xscreensaver-5.35-arm-1.txz:  Added.
+xap/xv-3.10a-arm-1.txz:  Added.
+xfce/Thunar-1.6.10-arm-1.txz:  Added.
+xfce/exo-0.10.7-arm-1.txz:  Added.
+xfce/garcon-0.4.0-arm-1.txz:  Added.
+xfce/gtk-xfce-engine-2.10.1-arm-1.txz:  Added.
+xfce/libxfce4ui-4.12.1-arm-1.txz:  Added.
+xfce/libxfce4util-4.12.1-arm-1.txz:  Added.
+xfce/orage-4.12.1-arm-1.txz:  Added.
+xfce/thunar-volman-0.8.1-arm-1.txz:  Added.
+xfce/tumbler-0.1.31-arm-1.txz:  Added.
+xfce/xfce4-appfinder-4.12.0-arm-1.txz:  Added.
+xfce/xfce4-clipman-plugin-1.2.6-arm-1.txz:  Added.
+xfce/xfce4-dev-tools-4.12.0-arm-1.txz:  Added.
+xfce/xfce4-notifyd-0.2.4-arm-1.txz:  Added.
+xfce/xfce4-panel-4.12.0-arm-1.txz:  Added.
+xfce/xfce4-power-manager-1.4.4-arm-1.txz:  Added.
+xfce/xfce4-pulseaudio-plugin-0.2.4-arm-1.txz:  Added.
+xfce/xfce4-screenshooter-1.8.2-arm-1.txz:  Added.
+xfce/xfce4-session-4.12.1-arm-1.txz:  Added.
+xfce/xfce4-settings-4.12.0-arm-1.txz:  Added.
+xfce/xfce4-systemload-plugin-1.1.2-arm-1.txz:  Added.
+xfce/xfce4-taskmanager-1.1.0-arm-1.txz:  Added.
+xfce/xfce4-terminal-0.6.3-arm-1.txz:  Added.
+xfce/xfce4-weather-plugin-0.8.7-arm-1.txz:  Added.
+xfce/xfconf-4.12.0-arm-1.txz:  Added.
+xfce/xfdesktop-4.12.3-arm-1.txz:  Added.
+xfce/xfwm4-4.12.3-arm-1.txz:  Added.
+y/bsd-games-2.13-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-af-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-am-0.03_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-az-0.02_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-be-0.01-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-bg-4.1_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-bn-0.01.1_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-br-0.50_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ca-20040130_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-cs-20040614_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-csb-0.02_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-cy-0.50_3-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-da-1.4.42_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-de-20030222_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-el-0.50_3-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-eo-2.1.20000225a_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-es-1.11_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-et-0.1.21_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-fa-0.11_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-fi-0.7_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-fo-0.2.16_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-fr-0.50_3-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ga-4.5_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-gd-0.1.1_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-gl-0.5a_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-gu-0.03_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-gv-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-he-1.0_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-hi-0.02_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-hil-0.11_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-hr-0.51_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-hsb-0.02_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-hu-0.99.4.2_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ia-0.50_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-id-1.2_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-is-0.51.1_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-it-2.2_20050523_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ku-0.20_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-la-20020503_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-lt-1.2.1_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-lv-0.5.5_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mg-0.03_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mi-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mk-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mn-0.06_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mr-0.10_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ms-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-mt-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-nb-0.50.1_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-nds-0.01_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-nl-0.50_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-nn-0.50.1_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-no-0.50_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ny-0.01_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-or-0.03_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-pa-0.01_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-pl-6.0_20061121_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-pt-0.50_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-pt_BR-20090702_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-qu-0.02_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ro-3.3_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ru-0.99f7_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-rw-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sc-1.0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sk-2.01_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sl-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sr-0.02-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sv-0.51_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-sw-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-ta-20040424_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-te-0.01_2-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-tet-0.1.1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-tl-0.02_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-tn-1.0.1_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-tr-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-uk-1.4.0_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-uz-0.6_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-vi-0.01.1_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-wa-0.50_0-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-yi-0.01.1_1-arm-1.txz:  Added.
+extra/aspell-word-lists/aspell-zu-0.50_0-arm-1.txz:  Added.
+extra/autoconf213/autoconf-2.13-noarch-1.txz:  Added.
+extra/autoconf264/autoconf-2.64-noarch-1.txz:  Added.
+extra/bash-completion/bash-completion-2.2-noarch-1.txz:  Added.
+extra/bittornado/bittornado-0.3.18-arm-1.txz:  Added.
+extra/bittorrent/bittorrent-4.4.0-arm-1.txz:  Added.
+extra/brltty/brltty-5.3.1-arm-1.txz:  Added.
+extra/emacspeak/emacspeak-38.0-arm-1.txz:  Added.
+extra/fltk/fltk-1.3.3-arm-1.txz:  Added.
+extra/kpartx/kpartx-0.5.0-arm-1.txz:  Added.
+extra/recordmydesktop/recordmydesktop-0.3.8.1-arm-1.txz:  Added.
+extra/tigervnc/tigervnc-1.6.0-arm-1.txz:  Added.
+extra/wicd/wicd-1.7.4-arm-1.txz:  Added.
+extra/x11vnc/x11vnc-0.9.13-arm-1.txz:  Added.
+isolinux/*:  Added.
+kernels/*:  Added.
++--------------------------+
+Mon Aug  8 20:21:22 BST 2016
+
+Almost there!  Everything has now been built and what remains is some testing and
+a couple of bug fixes identified along the way.
+
+If you have not already, you need to move any automatic updating tools to use the
+14.2 tree, otherwise you're going to have a bad day.
+
++--------------------------+
+Sun Jul 24 18:18:18 BST 2016
+
+Hello!
+
+The 32-bit hard float port is almost complete. I'll probably push it out to the
+FTP site in September unless the auto builder completes within the next couple
+of weeks, and I'm satisfied with the tests.
+
+The plan is to maintain in the same fashion as the soft float port: a small set
+of "officially supported" devices (currently it's what the soft float port had,
+minus kirkwood (so Trimslice, Banana Pi and QEMU)), and the community will
+continue to support "Device du jour".
+
+OS maintenance will be the same as the soft float port: the last stable release
+plus between 4-6 months support for the previous stable release (so for example
+14.1 would be maintained for 4-6 months after 14.2 is released), ad infinitum.
+
+I'll probably add support for new devices that look like nice toys as time and
+money permits: I have Orange PI One (Allwinner A20 - same SoC as the Banana Pi)
+and Orange Pi H3 versions that the OrangePi company sent as samples. I started
+playing with the A20 version today, and once the H3 support hits the mainstream
+kernel, I'll look in to that.
+
+I have some plans to further automate the build and maintenance process so that
+I can continue to maintain it, but more efficiently than with the soft float port.
+
+The OS is built for armv7 minimum target. The main C flags are:
+-march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard
+
+
+Development consists of a couple of machines that act as "-current" (lead
+builder and the "oh s*it!" builder), plus a couple of machines to maintain
+stable releases; so I need to buy a few more machines to do that.
+
+If you would like to donate to this project, please sponsor it:
+  http://arm.slackware.com/sponsor/
+
+Discussion thread:
+
+http://www.linuxquestions.org/questions/slackware-arm-108/donations-being-accepted-for-32bit-hard-float-port-4175585417/
+
+ Cheers,
+ Stuart
++--------------------------+
+Tue Jul 19 22:25:49 UTC 2016
+
+The Slackware ARM soft float port tree has been removed.
+
++--------------------------+
+Fri Jul  8 19:20:21 UTC 2016
+
+If you are still syncing from this tree, please switch over to the 14.2
+tree for security updates.  The "current" tree will have its content
+wiped out from the mirrors in a few weeks' time.
+
+I already have the hard float port bootstrapped, and if I release it
+I need to have people who are using the soft float port already
+switched over to the 14.2 tree: The hard float packages are ABI
+incompatible with the 14.2 (and previous "current") packages -- updating
+to them will destroy your OS!  It therefore seems prudent to remove
+the -current tree and cause people's scripts to break so that they
+take note.
+
+The port isn't in any way ready to release, but I have a build machine
+busy for the next few weeks!
+
+root@platano:~/ac/source# cat /etc/slackware-version
+Slackware 14.2
+root@platano:~/ac/source# readelf -h /bin/bash | grep floa | cut -d, -f3-
+ hard-float ABI
+root@platano:~/ac/source# cat /tmp/r2b-status-current
+Fri Jul  8 15:50:03 UTC 2016
+*** Building package n/wget [ 8 of 649 ( build pass 1/5 ) ] ***
+Failed count : 2 [ recently: n/yptools , n/wpa_supplicant ]
+Success count: 5 [ recently: y/bsd-games , n/zd1211-firmware , n/ytalk , n/wireless-tools , n/whois ]
+
+Thanks
+ Stuart.
