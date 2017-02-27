@@ -8,7 +8,7 @@ func TestFind(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if len(paths) != 1 {
+	if len(paths) <= 0 {
 		t.Errorf("expected to find %d file, but found %d", 1, len(paths))
 	}
 }

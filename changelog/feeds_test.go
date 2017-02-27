@@ -7,7 +7,7 @@ import (
 )
 
 func TestFeed(t *testing.T) {
-	fh, err := os.Open("testdata/ChangeLog.txt")
+	fh, err := os.Open("testdata/slackware64/ChangeLog.txt")
 	if err != nil {
 		t.Fatal(err)
 	}

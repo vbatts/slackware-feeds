@@ -8,7 +8,7 @@ import (
 )
 
 func TestFetchChangeLog(t *testing.T) {
-	server := httptest.NewServer(http.FileServer(http.Dir("../changelog/testdata/")))
+	server := httptest.NewServer(http.FileServer(http.Dir("../changelog/testdata/slackware64/")))
 	defer server.Close()
 
 	r := Repo{
@@ -25,7 +25,7 @@ func TestFetchChangeLog(t *testing.T) {
 		t.Errorf("expected %d entries; got %d", expectedLen, len(e))
 	}
 
-	stat, err := os.Stat("../changelog/testdata/ChangeLog.txt")
+	stat, err := os.Stat("../changelog/testdata/slackware64/ChangeLog.txt")
 	if err != nil {
 		t.Fatal(err)
 	}

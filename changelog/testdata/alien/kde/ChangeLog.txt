@@ -1,0 +1,2404 @@
++--------------------------+
+Sat Feb 18 18:32:32 UTC 2017
+14.2/latest/x86_64 : Here are the promised KDE 5_17.02 packages for
+  Slackware 14.2 (64bit only).
+
++--------------------------+
+Thu Feb 16 19:39:41 UTC 2017
+current/latest/x86_64/kde/plasma: added missing 'alien' tag to the packages.
+
++--------------------------+
+Wed Feb 15 13:25:56 UTC 2017
+Here is KDE 5_17.02 for Slackware, consisting of the KDE Frameworks 5.31.0,
+  Plasma 5.9.2 and Applications 16.12.2 on top of Qt 5.7.1.
+  KDE-5_17.02 is meant to be installed on top of Slackware -current.  For the
+  moment, I will not be offering new packages for Slackware 14.2.
+  Upgrading from the previous 5_17.01 is straight-forward.  Please read
+  the accompanying README file for detailed installation and upgrade
+  instructions!
+  Use only the current "latest" repository and not "testing" which I emptied:
+    http://bear.alienbase.nl/mirrors/alien-kde/current/latest/
+
++--------------------------+
+Tue Feb 14 13:23:11 UTC 2017
+Removed the repositories for Slackware 13.37 and 14.1 to conserve diskspace
+  on my internet-facing server.
+
++--------------------------+
+Mon Jan 30 21:44:50 UTC 2017
+current/latest/kde/applications-extra/calligra: rebuilt against the newer
+  poppler (64bit only, because 32bit is fine).
+
++--------------------------+
+Sun Jan 29 23:17:55 UTC 2017
+Good feedback was received from my Slackware friends visiting the blog.
+  As a result of the discussion there, it seemed prudent to recompile the
+  following packages on Slackware-current:
+    deps/poppler (updated to match the version in Slackware-current)
+    applications/okular
+    frameworks/kfilemetadata5 (both because of the bump in poppler version)
+    deps/sip
+    deps/PyQt
+    kde4/pykde4 (all three because of the changes in slackware-current's python)
+    kde4/korundum
+    kde4/qtruby (these two because of the ruby update in -current)
+    frameworks/sonnet (because of hunspell update in -current)
+    kdepim/akonadi (to get rid of the hardcoded stdlib path in a header,
+      containing the gcc version number in the path)
+  Also, I have uploaded the packages for 32bit Slackware-current.  Note that
+  there will not be Plasma5 updates for 32bit Slackware 14.2 any longer.
+
++--------------------------+
+Thu Jan 26 22:24:44 UTC 2017
+Here is KDE 5_17.01 for Slackware, consisting of the KDE Frameworks 5.30.0,
+  Plasma 5.8.5 and Applications 16.12.1 on top of Qt 5.7.1.
+  KDE-5_17.01 is meant to be installed on top of Slackware 14.2 or -current.
+  It will *replace* any version of KDE 4 you might have installed!
+  Upgrading from the previous 5_16.12 needs a bit of tender care & loving this
+  time.  In particular, the new quarterly release of the Applications brings
+  a lot of change. Many packages have been added, but also many packages are
+  no longer part of the 'ktown' repository.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Use only the "latest" repositories and not "testing" which is out of date:
+    https://bear.alienbase.nl/mirrors/alien-kde/14.2/latest/
+  or:
+    https://bear.alienbase.nl/mirrors/alien-kde/current/latest/
+
++--------------------------+
+Fri Dec  9 21:03:28 UTC 2016
+Here is KDE 5_16.12 for Slackware, consisting of the KDE Frameworks 5.28.0,
+  Plasma 5.8.4 and Applications 16.08.3 on top of Qt 5.7.0.
+  I wanted to have the last 16.08.x release of KDE Applications available in
+  my repository before the new 16.12.x releases start coming.  There are
+  some big changes in Applications 16.12 for which I need to time to review,
+  plan and build packages.  Therefore you will probably not see packages
+  for Applications 16.12.0 in 2016.
+  The upgrade from the previous KDE 5_16.11 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Use only the "latest" repositories and not "testing" which is out of date:
+    https://bear.alienbase.nl/mirrors/alien-kde/14.2/latest/
+  or:
+    https://bear.alienbase.nl/mirrors/alien-kde/current/latest/
+
++--------------------------+
+Tue Nov  8 23:03:32 UTC 2016
+Here is KDE 5_16.11 for Slackware, consisting of the KDE Frameworks 5.27.0,
+  Plasma 5.8.3 and Applications 16.08.2 on top of Qt 5.7.0.
+  Upgrade from the previous KDE 5_16.08 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Use only the "latest" repositories and not "testing" which is out of date:
+    https://bear.alienbase.nl/mirrors/alien-kde/14.2/latest/
+  or:
+    https://bear.alienbase.nl/mirrors/alien-kde/current/latest/
+
++--------------------------+
+Tue Sep  6 11:48:44 UTC 2016
+deps/qt5: applied a patch to fix a bug in qtwebkit (visible in kmail) which
+  is triggered because of having been compiled against glibc-2.24.
+
++--------------------------+
+Wed Aug 31 11:35:41 UTC 2016
+Here is KDE 5_16.08 for Slackware 14.2 and -current, consisting of the KDE
+  Frameworks 5.25.0, Plasma 5.7.4 and Applications 16.08.0 on top of Qt 5.7.0.
+  Upgrade from the previous KDE 5_16.07 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Also note that the 'ktown' repository has a new "current/testing" branch
+  which contains packages (64bit only!) for testing the Wayland support
+  in Plasma 5 for Slackware.  If you are interested in my regular 'ktown'
+  packages then please use only the "latest" repositories and not "testing":
+    https://bear.alienbase.nl/mirrors/alien-kde/14.2/latest/
+  or:
+    https://bear.alienbase.nl/mirrors/alien-kde/current/latest/
+
++--------------------------+
+Sat Jul 23 19:28:29 UTC 2016
+deps/poppler: added a recompiled Slackware package which adds Qt5 support on
+  top of the Qt4 support which was already present.
+14.2/latest/kde/kde4/baloo: recompiled in order to remove the overlap with the
+  baloo5 package (the probable cause of the broken search in krunner).
+14.2/latest/kde/kde4/frameworks/: recompiled kfilemetadata5 in order to pick
+  up popper's Qt5 support, and them recompiled baloo5 for good measure.
+
++--------------------------+
+Fri Jul 22 10:24:00 UTC 2016
+Here is KDE 5_16.07 for Slackware 14.2 and -current, consisting of the KDE
+  Frameworks 5.24.0, Plasma 5.7.2 and Applications 16.04.3 on top of Qt 5.6.1.
+  Upgrade from the previous KDE 5_16.06 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Fri Jul  8 23:07:03 UTC 2016
+14.2/latest/kde/plasma: re-added breeze-gtk and plasma-workspace-wallpapers
+  (64bit only) which I had inadvertently moved to my archive along with the
+  old breeze and plasma-workspace packages (oh, the curse of using wildcards).
+
++--------------------------+
+Fri Jul  8 14:12:43 UTC 2016
+14.2/latest/kde/plasma: rebuilt the following packages (64bit only) which
+  still had dependencies on the now removed Wayland support in qt5, mesa and
+  xorg-server: breeze, kwayland-integration, plasma-integration, kinfocenter,
+  kscreenlocker, kwin, libkscreen2, plasma-workspace and powerdevil.
+
++--------------------------+
+Wed Jul  6 21:40:21 UTC 2016
+current/testing/deps: (64bit only) removed mesa, elogind and xorg-server
+  packages that were intended for a new testing repository targeting wayland
+  support. They were not meant to be published already. Please re-install
+  Slackware's version of mesa and xorg-server and check your Nvidia binary
+  blob if you use that.
+
++--------------------------+
+Wed Jul  6 12:07:03 UTC 2016
+NOTICE: my 'ktown' repository for Plasma5 has been promoted from 'testing'
+  to 'stable'. This means, 'ktown' repository for Slackware 14.2 now offers
+  the Plasma5 desktop under 'latest', consisting of Frameworks 5.23.0,
+  Plasma 5.7 and Applications 16.04.2.
+  Repository URL: http://bear.alienbase.nl/mirrors/alien-kde/14.2/latest/
+  The old testing repository for Slackware-current will soon start moving
+  again, investigating the useability of Wayland. For the time being the URL
+  http://bear.alienbase.nl/mirrors/alien-kde/current/testing/ will point to
+  the stable repository (using symlinks).
+14.2/latest/kde/plasma: updated to 5.7.
+14.2/latest/kde/applications-extra/skanlite: built the first KF5 based
+  version 2.0.
+
++--------------------------+
+Thu Jun 23 17:16:25 UTC 2016
+current/testing/deps:  qt5 has been upgraded to 5.6.1-1 which is a bugfix
+  release, addresssing some serious QML related crash issues.
+
++--------------------------+
+Tue Jun 14 22:06:26 UTC 2016
+Here is KDE 5_16.06 for Slackware, consisting of the KDE Frameworks 5.23.0,
+  Plasma 5.6.5 and Applications 16.04.2, accompanied by Qt5 5.6.1.
+  Upgrade from the previous KDE 5_16.05 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat May 21 15:36:21 UTC 2016
+current/testing/kde/plasma/powerdevil: fix the broken (missing) suspend
+  menu item.
+
++--------------------------+
+Mon May 16 23:02:54 UTC 2016
+Here is KDE 5_16.05 for Slackware, consisting of the KDE Frameworks 5.22.0,
+  Plasma 5.6.4 and Applications 16.04.1, accompanied by Qt5 5.6.0.
+  Upgrade from the previous KDE 5_16.04 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Mon May  2 12:40:38 UTC 2016
+current/testing/deps/:  Recompiled the 32bit packages for phonon,
+  phonon-gstreamer and phonon-vlc in the presence of Qt5 so that the broken
+  Powerdevil and NetworkManagement services work again.
+current/testing/kde/applications/spectacle:  Patch applied for the broken
+  rectangular image capture on Nvidia GPUs.
+current/testing/kde/frameworks/kcoreaddons:  Patched a randomizer regression
+  which made random numbers predictable.
+
++--------------------------+
+Wed Apr 27 23:06:48 UTC 2016
+current/testing/deps/:  Added the missing 32bit packages for phonon,
+  phonon-gstreamer and phonon-vlc.
+
++--------------------------+
+Mon Apr 25 12:03:00 UTC 2016
+current/testing/kde/applications/kcalc:  Patched to fix the zero-sized window
+  in combination with Qt 5.6.
+
++--------------------------+
+Wed Apr 20 21:59:16 UTC 2016
+Here is KDE 5_16.04 for Slackware, consisting of the KDE Frameworks 5.21.0,
+  Plasma 5.6.3 and Applications 16.04.0, accompanied by Qt5 5.6.0.
+  Upgrade from the previous KDE 5_16.03 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Mar 16 09:41:15 UTC 2016
+Here is KDE 5_16.03 for Slackware, consisting of the KDE Frameworks 5.20.0,
+  Plasma 5.5.5 and Applications 15.12.3.
+  Upgrade from the previous KDE 5_16.02 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat Mar  5 11:44:19 UTC 2016
+current/testing/deps:  qt5 and qca-qt5 have been recompiled to drop
+  support for OpenSSL SSLv2.
+current/testing/kde/kdepim:  more packages needed to be recompiled as a
+  consequence of upgrading libical: akonadi-calendar, kalarmcal, kblog,
+  kcalcore, kcalutils, kdepim, kdepim-runtime, ktnef.
+current/testing/kde/kde4/kdepimlibs4:  recompiled against new libical.
+
++--------------------------+
+Sat Feb 27 11:55:12 UTC 2016
+current/testing/kde/kdepim/kdepimlibs:  Recompiled against libical-2.0.0.
+
++--------------------------+
+Fri Feb 26 23:51:33 UTC 2016
+current/testing/kde/applications/oxygen-icons:  Removed, this package was
+  moved to Frameworks and renamed to oxygen-icons5 a couple of months ago,
+  and I should have removed this obsoleted package much earlier.
+current/testing/kde/frameworks/plasma-framework:  Patched to fix the 'empty'
+  Xembed icons in the systray.
+
++--------------------------+
+Tue Feb 23 21:57:19 UTC 2016
+Here is KDE 5_16.02 for Slackware, consisting of the KDE Frameworks 5.19.0,
+  Plasma 5.5.4 and Applications 15.12.2.
+  Upgrade from the previous KDE 5_16.01 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Feb 10 09:07:17 UTC 2016
+current/testing/deps: patched qt5 for QTBUG-48321 which affects
+  the new VLC 2.2.2 fullscreen mode.
+
++--------------------------+
+Thu Feb  4 12:24:18 UTC 2016
+current/testing/kde/plasma: updated to 5.5.4 (bugfix release).
+current/testing/kde/applications/okteta: for 32bit, compile the correct
+  version (15.12.1).
+
++--------------------------+
+Thu Jan 21 11:01:26 UTC 2016
+Here is KDE 5_16.01 for Slackware, consisting of the KDE Frameworks 5.18.0,
+  Plasma 5.5.3 and Applications 15.12.1.
+  Upgrade from the previous KDE 5_15.12 should be smooth.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------e
+Thu Jan  7 15:21:45 UTC 2016
+current/testing/kde/applications: restored the accidentally archived
+  dolphin-plugins package.
+current/testing/kde/plasma: added the missing slack-desc file to the 64bit
+  bluez-qt package.
+
++--------------------------+
+Thu Dec 31 12:56:47 UTC 2015
+current/testing/kde/kdepim: Rebuilt kdepim.  Kalarm is auto-started in XFCE
+  sessions because the file "/etc/kde/xdg/autostart/kalarm.autostart.desktop"
+  is missing the line "OnlyShowIn=KDE;".  I have now added that line.
+
++--------------------------+
+Thu Dec 24 16:17:02 UTC 2015
+Some package recompilations as a result of your feedback, thanks!
+Also, three new packages have been added and one has been re-added.
+current/testing/deps: Updated OpenAL.
+current/testing/kde/applications: Rebuilt kde-runtime, kdenetwork-filesharing,
+  kdesdk-thumbnailers, kdegraphics-thumbnailers, krfb, kamera, marble, ark,
+  dolphin, kde-baseapps.
+current/testing/kde/applications: Added the missing baloo5-widgets.
+current/testing/kde/kdepim: Rebuilt kdepimlibs.
+current/testing/kde/plasma: Added bluez-qt,bluedevil (now that Slackware
+  finally got updated to BlueZ 5)).
+current/testing/kde/plasma:  Rebuilt plasma5-nm, plasma-workspace.
+current/testing/kde/plasma-extra: Re-added oxygen-fonts on request.
+
++--------------------------+
+Wed Dec 16 22:06:21 UTC 2015
+Here is the December release of Plasma 5: KDE 5_15.12 for Slackware-current,
+  consisting of the KDE Frameworks 5.17.0, Plasma 5.5.1 and
+  Applications 15.12.0.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Dec  9 00:22:57 UTC 2015
+current/testing/deps/json-glib: updated to 1.0.4.
+current/testing/kde/telepathy/kaccounts-integration: applied a patch to fix
+  breakage in the KDE Telepathy accounts connection.
+
++--------------------------+
+Fri Nov 27 15:40:39 UTC 2015
+current/testing/deps/telepathy/:  Rebuilt against new icu4c and eudev.
+current/testing/kde/applications/kde-workspace:
+  Rebuilt against new icu4c and eudev.
+current/testing/kde/kde4/kdelibs:  Rebuilt against new icu4c and eudev.
+current/testing/kde/kde4-extragear/mtp-kio:  Updated to new git snapshot.
+current/testing/kde/telepathy/:  Updated to 15.08.3.
+
++--------------------------+
+Wed Nov 25 08:06:22 UTC 2015
+current/testing/kde/frameworks/solid:  rebuilt against eudev's libudev.so.1
+current/testing/kde/plasma/kwin:  rebuilt against eudev's libudev.so.1
+current/testing/kde/plasma/powerdevil:  rebuilt against eudev's libudev.so.1
+  No Plasma 5 package should link against the old libudev.s0.0 anymore.
+current/testing/kde/plasma-extra/kdeconnect-framework:  updated.
+
++--------------------------+
+Sun Nov 22 13:15:17 UTC 2015
+The remainining 32bit packages have noew been recompiled (qt5, step,
+  akonadi4, akonadi, akonadi-search, akonadi-calendar, kdepimlibs, sddm-qt5)
+  and everything should be working again.  Tell me if some package still
+  complains about missing libraries.
+
++--------------------------+
+Sat Nov 21 23:58:50 UTC 2015
+Packages that were recompiled as a result of the 'Fri Nov 20 05:25:18 UTC 2015'
+  update in slackware-current (32bit packages follow a bit later, because
+  LibreOffice is higher on my TODO list):
+  deps/qt5 (updated to 5.5.1 as well)
+  kde/applications/step
+  kde/kde4/akonadi4
+  kde/kdepim/akonadi
+  kde/kdepim/akonadi-search
+  kde/kdepim/akonadi-calendar
+  kde/kdepim/kdepimlibs
+  kde/plasma-extra/sddm-qt5
+
++--------------------------+
+Mon Nov 16 22:06:27 UTC 2015
+current/testing/kde/applications: applied the missing 'alien' tag to the
+  packages in 'applications'.
+
++--------------------------+
+Sun Nov 15 22:08:06 UTC 2015
+Here is my November release of Plasma 5: KDE 5_15.11 for Slackware-current,
+  consisting of the KDE Frameworks 5.16.0, Plasma 5.4.3 and
+  Applications 15.08.3.
+  You'll notice straight away that Frameworks were expanded with new Oxygen
+  and Breeze icon sets.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Oct 18 13:25:51 UTC 2015
+current/testing/kde/frameworks/kio: applied patch which restores missing
+  servicemenus in Dolphin (caused by KF5 port of dolphin)
+
++--------------------------+
+Fri Oct 16 14:03:52 UTC 2015
+current/testing/deps/telepathy/telepathy-glib: fixed the slack-desc file.
+
++--------------------------+
+Wed Oct 14 11:47:31 UTC 2015
+current/testing/kde/telepathy/ktp-accounts-kcm: applied a patch that stops the
+  crashes in the KDE Telepathy tray application
+
++--------------------------+
+Tue Oct 13 08:01:12 UTC 2015
+Here is KDE 5_15.10, the October release for Slackware -current.
+  It contains KDE Frameworks 5.15.0, Plasma 5.4.2 and Applications 15.08.2.
+  Upgrading from the previous KDE-5_15.09_02 should be straight-forward.
+  KDE-5_15.10 is meant only to be installed on top of Slackware -current and
+  it will *replace* any version of KDE 4 you might have installed!
+  What is NEW:
+  - a rebuilt sddm-qt5 package which fixes the broken progress bar on startup
+    of the Plasma Desktop session.
+  - a new package 'xembed-sni-proxy' which docks into the Plasma 5 system
+    tray provides a legacy XEmbed tray for those applications that need it.
+  - a full set of KDE Telepathy packages (14 new packages) along with their
+    dependencies (18 new packages).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat Sep 19 12:24:59 UTC 2015
+current/testing/kde/applications/kde-workspace: re-generated the .md5 and .asc
+  files for the 64bit package. I had rebuilt this package but forgot to
+  refresh the metadata.
+
++--------------------------+
+Wed Sep 16 11:03:54 UTC 2015
+current/testing/deps/grantlee-qt4: added because KDEvelop still needs this.
+current/testing/kde/kde4/oktetapart4: added to provide HEX editor integration
+  for the still KDE4-based KDEvelop.
+
++--------------------------+
+Mon Sep 14 21:29:39 UTC 2015
+Here is a second September release of KDE 5 for Slackware-current.
+  KDE 5_15.09_02 consists of the KDE Frameworks 5.14.0, Plasma 5.4.1
+  and Applications 15.08.1.
+  Two changes in the "deps" section: LoginKit was removed (it caused a
+  minute-long delay in logging out and is useless at this point);
+  and a recompiled version of libproxy was added (removed KDE 4 support).
+  Upgrading from the previous KDE 5_15.09 should be an easy ride.
+  Note:
+  KDE-5_15.09_02 is meant only to be installed on top of Slackware -current
+  and it will *replace* any version of KDE 4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Sep  2 12:25:00 UTC 2015
+current/latest/deps/phonon-vlc: rebuilt against vlc 2.2.1 on uptodate -current.
+
++--------------------------+
+Wed Jul  8 13:03:01 UTC 2015
+This is KDE 5_15.07 for Slackware, consisting of the KDE Frameworks 5.12.0,
+  Plasma 5.3.2 and Applications 15.04.3.
+  Compared to my KDE 5_15.06 no further changes were made apart from
+  the updates to Frameworks, Plasma and Applications.
+  Note:
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat Jun 13 21:55:27 UTC 2015
+14.1/4.14.3/deps/qt: removed my qt-4.8.6 package (containing some KDE related
+  patches) because now Slackware 14.1 has qt-4.8.7 with those same patches in
+  its official repository. I encourage you to upgrade to that version.
+
++--------------------------+
+Mon Jun 01 19:49:40 UTC 2015
+This is KDE 5_15.06 for Slackware, consisting of the KDE Frameworks 5.10.0,
+  Plasma 5.3.1 and Applications 15.04.2.  Compared to my KDE 5_15.05 the only
+  updates are the new set of Applications packages.  This includes LTS
+  (Long Term Support) updates for kdelibs, kdepimlibs, kdepim, kdepim-runtime
+  and kde-workspace.
+  One package is new:
+  - kde4-extragear/kdeconnect4 contains the essentials of the KDE4 based
+    kdeconnect-kde which will allow you to access your Android device with the
+    (also still KDE4 based) Dolphin.  This package therefore fixes the errors
+    you would get if you tried to access your Android device in Plasma 5.
+  One package has been modified:
+  - kde4/kactivities, the KDE4 based version, no longer contains the
+    kactivitymanagerd binary.
+    The same daemon in the kactivities-framework works fine with the KDE4 based
+    activities libraries. When installing all my KDE5 packages in one massive
+    upgrade, the kactivities package would get installed after the
+    kactivities-framework package and the KDE4 based kactivitymanagerd would
+    overwrite the Frameworks version, causing serious desktop crashes.
+  Note:
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Mon May 25 23:27:53 UTC 2015
+Here is KDE 5_15.05 for Slackware.  This is mostly a maintenance release
+  for all components; there's no new packages or functionality.
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you migh thave installed!
+  New & changed since the previous KDE 5_15.04 release:
+  - kde/frameworks packages were updated to 5.10.0. No new Frameworks this time.
+    See also https://www.kde.org/announcements/kde-frameworks-5.10.0.php
+  - kde/plasma packages were updated to 5.3.1. This is a maintenance release,
+    see also https://www.kde.org/announcements/plasma-5.3.1.php
+  - kde/applications packages were updated to 15.04.1. This is a bugfix release,
+    see also https://www.kde.org/announcements/announce-applications-15.04.1.php
+  - kde/kde4, new LTS (Long Term Support) versions of kdelibs, kdepim*
+  - deps directory: I have removed qt-gstreamer0 because I do not think any
+    package uses it.  Slackware has moved to gstreamer-1 and furthermore, the
+    contents of qt-gstreamer and qt-gstreamer0 paackages had a partial overlap
+    in their files.  Be sure to re-install qt-gstreamer just in case.
+  - I fixed the missing shutdown/reboot and suspend/hibernate options in the
+    menu by adding several Polkit policy files to the powerdevil package.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Apr 29 21:14:01 UTC 2015
+Updates to both the "latest" and "testing" repositories for slackware-current!
+current/latest/ : KDE 4.14.3 packages have all been removed - all but one:
+  the phonon-vlc package is still available and has been recompiled against
+  vlc-2.2.1. The rest of KDE 4.14.3 plus dependencies is now an official part
+  of Slackware-current since 21-april-2015.
+current/testing/ : Here you will find the all-new KDE 5_15.04 for
+  slackware-current, consisting of the KDE Frameworks 5.9.0, Plasma 5.3.0
+  and Applications 15.04.0.  This is meant only to be installed on top of
+  the latest Slackware-current and it will *replace* any version of KDE 4
+  you might have installed!
+  - Note that I did not compile the new Plasma Mediacenter tech-preview, the new
+    KDEnlive and KDE Telepathy. They need a lot of attention before I can build
+    them and it was more important to me to have a new release of KDE 5 out
+    as fast as possible, that works with the latest slackware-current.
+  - kde/kde4-extragear is completely emptied - you should use the packages
+    from slackware-current (calligra, k3b, kaudiocreator, kplayer, kwebkitpart,
+    oxygen-gtk2, oxygen-gtk3, kdevplatform, kdevelop-pg-qt, kdevelop,
+    kdev-python, kdevelop-php, kdevelop-php-docs, skanlite, kio-mtp,
+    libktorrent, ktorrent, partitionmanager).  Report any breakage!
+  - deps directory has three new packages (PyQt5, cfitsio, grantlee-qt5);
+    updates for PyQt, qt5 and sip; and the rest has been recompiled just to be
+    sure they are compatible with slackware-current.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!  Especially important after the recent mass-update
+  in slackware-current.
+
++--------------------------+
+Tue Apr  7 09:29:53 UTC 2015
+This is the KDE Software Compilation 4.14.3 for Slackware 14.1. yes, 14.1!
+  This release includes the latest version of the Plasma Workspaces, 4.11.17,
+  as well as other Long Term Support (LTS) updates: kdelibs and kdepim 4.14.6.
+  The set of packages includes the most recent versions of the Calligra
+  office suite (2.9.1) and Kdevelop (4.7.1) packages.
+  There were some other noteworthy updates (k3b, partitionmanager) and
+  additions (kdeconnect-kde, plasma-nm) in the 'extragear' department. 
+  I added a phonon-vlc package, which of course will only work if you also
+  install my vlc package - some people prefer the vlc backend for phonon to
+  the gstreamer or the ancient mplayer backend. 
+  All this means that compared to Slackware 14.1's KDE several dependencies
+  were updated and added.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Mon Mar 30 06:13:49 UTC 2015
+Time to give KDE 4.14.3 some attention. I have updated several packages
+  with Long Term Support (LTS) versions taken from Applications 14.12.3 and
+  also updated the Calligra office suite.
+  For that reason, I also had to refresh some of the 'deps'.
+current/4.14.3/deps/grantlee: updated to 0.5.1.
+current/4.14.3/deps/libodfgen: added 0.1.3 (dependency for libwpd).
+current/4.14.3/deps/librevenge: added 0.0.2 (dependency for libwpd).
+current/4.14.3/deps/libssh: updated to 0.6.4.
+current/4.14.3/deps/libwpd: updated to 0.10.0.
+current/4.14.3/kde/calligra: updated to 2.9.1.
+current/4.14.3/kde/kde-workspace: updated to 4.11.17 LTS (Long Term Support).
+current/4.14.3/kde/kdelibs: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepim: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepim-runtime: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepimlibs: updated to 4.14.6 LTS.
+
++--------------------------+
+Sat Mar 28 15:55:04 UTC 2015
+This is KDE 5_15.03 for Slackware, consisting of the KDE Frameworks 5.8.0,
+  Plasma 5.2.2 and Applications 14.12.3.
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you migh thave installed!
++--------------------------+
+Sun Sep  6 08:55:21 UTC 2015
+current/testing/x86_64/deps/: removed old versions of PyQt5, qca-qt5.
+current/testing/x86_64/kde/kde4/: removed old versions of korundum, perlqt,
+  pykde4, qtruby, smokekde.
+
++--------------------------+
+Thu Sep  3 14:05:26 UTC 2015
+current/testing/x86/deps/qt5-5.5.0: added missing "alien" tag.
+current/testing/x86/kde/plasma-extra/kdeconnect-framework: added missing
+  "alien" tag.
+current/testing/x86/kde/plasma-extra/polkit-kde-kcmodules-framework: added
+  missing "alien" tag.
+current/testing/x86/kde/plasma-extra/sddm-qt5: removed old version 0.11.
+current/testing/x86_64/deps/qt5: removed old version 5.4.1.
+
++--------------------------+
+Wed Sep  2 12:25:55 UTC 2015
+Here is KDE 5_15.09 for Slackware, consisting of the KDE Frameworks 5.13.0,
+  Plasma 5.4.0 and Applications 15.08.0.
+  This is an intrusive update if you currently have my KDE 5_15.07 packages
+  installed. Consider this to be beta-quality because there may be some
+  usability issues - read the "BUILD NOTES" section inside the README very
+  carefully before you decide to upgrade.
+  I need testers to iron out some annoying regressions.
+  Note:
+  KDE-5_15.09 is meant only to be installed on top of Slackware -current and
+  it will *replace* any version of KDE 4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Sep  2 12:25:00 UTC 2015
+current/latest/deps/phonon-vlc: rebuilt against vlc 2.2.1 on uptodate -current.
+
++--------------------------+
+Wed Jul  8 13:03:01 UTC 2015
+This is KDE 5_15.07 for Slackware, consisting of the KDE Frameworks 5.12.0,
+  Plasma 5.3.2 and Applications 15.04.3.
+  Compared to my KDE 5_15.06 no further changes were made apart from
+  the updates to Frameworks, Plasma and Applications.
+  Note:
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat Jun 13 21:55:27 UTC 2015
+14.1/4.14.3/deps/qt: removed my qt-4.8.6 package (containing some KDE related
+  patches) because now Slackware 14.1 has qt-4.8.7 with those same patches in
+  its official repository. I encourage you to upgrade to that version.
+
++--------------------------+
+Mon Jun 01 19:49:40 UTC 2015
+This is KDE 5_15.06 for Slackware, consisting of the KDE Frameworks 5.10.0,
+  Plasma 5.3.1 and Applications 15.04.2.  Compared to my KDE 5_15.05 the only
+  updates are the new set of Applications packages.  This includes LTS
+  (Long Term Support) updates for kdelibs, kdepimlibs, kdepim, kdepim-runtime
+  and kde-workspace.
+  One package is new:
+  - kde4-extragear/kdeconnect4 contains the essentials of the KDE4 based
+    kdeconnect-kde which will allow you to access your Android device with the
+    (also still KDE4 based) Dolphin.  This package therefore fixes the errors
+    you would get if you tried to access your Android device in Plasma 5.
+  One package has been modified:
+  - kde4/kactivities, the KDE4 based version, no longer contains the
+    kactivitymanagerd binary.
+    The same daemon in the kactivities-framework works fine with the KDE4 based
+    activities libraries. When installing all my KDE5 packages in one massive
+    upgrade, the kactivities package would get installed after the
+    kactivities-framework package and the KDE4 based kactivitymanagerd would
+    overwrite the Frameworks version, causing serious desktop crashes.
+  Note:
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE4 you might have installed!
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Mon May 25 23:27:53 UTC 2015
+Here is KDE 5_15.05 for Slackware.  This is mostly a maintenance release
+  for all components; there's no new packages or functionality.
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you migh thave installed!
+  New & changed since the previous KDE 5_15.04 release:
+  - kde/frameworks packages were updated to 5.10.0. No new Frameworks this time.
+    See also https://www.kde.org/announcements/kde-frameworks-5.10.0.php
+  - kde/plasma packages were updated to 5.3.1. This is a maintenance release,
+    see also https://www.kde.org/announcements/plasma-5.3.1.php
+  - kde/applications packages were updated to 15.04.1. This is a bugfix release,
+    see also https://www.kde.org/announcements/announce-applications-15.04.1.php
+  - kde/kde4, new LTS (Long Term Support) versions of kdelibs, kdepim*
+  - deps directory: I have removed qt-gstreamer0 because I do not think any
+    package uses it.  Slackware has moved to gstreamer-1 and furthermore, the
+    contents of qt-gstreamer and qt-gstreamer0 paackages had a partial overlap
+    in their files.  Be sure to re-install qt-gstreamer just in case.
+  - I fixed the missing shutdown/reboot and suspend/hibernate options in the
+    menu by adding several Polkit policy files to the powerdevil package.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Apr 29 21:14:01 UTC 2015
+Updates to both the "latest" and "testing" repositories for slackware-current!
+current/latest/ : KDE 4.14.3 packages have all been removed - all but one:
+  the phonon-vlc package is still available and has been recompiled against
+  vlc-2.2.1. The rest of KDE 4.14.3 plus dependencies is now an official part
+  of Slackware-current since 21-april-2015.
+current/testing/ : Here you will find the all-new KDE 5_15.04 for
+  slackware-current, consisting of the KDE Frameworks 5.9.0, Plasma 5.3.0
+  and Applications 15.04.0.  This is meant only to be installed on top of
+  the latest Slackware-current and it will *replace* any version of KDE 4
+  you might have installed!
+  - Note that I did not compile the new Plasma Mediacenter tech-preview, the new
+    KDEnlive and KDE Telepathy. They need a lot of attention before I can build
+    them and it was more important to me to have a new release of KDE 5 out
+    as fast as possible, that works with the latest slackware-current.
+  - kde/kde4-extragear is completely emptied - you should use the packages
+    from slackware-current (calligra, k3b, kaudiocreator, kplayer, kwebkitpart,
+    oxygen-gtk2, oxygen-gtk3, kdevplatform, kdevelop-pg-qt, kdevelop,
+    kdev-python, kdevelop-php, kdevelop-php-docs, skanlite, kio-mtp,
+    libktorrent, ktorrent, partitionmanager).  Report any breakage!
+  - deps directory has three new packages (PyQt5, cfitsio, grantlee-qt5);
+    updates for PyQt, qt5 and sip; and the rest has been recompiled just to be
+    sure they are compatible with slackware-current.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!  Especially important after the recent mass-update
+  in slackware-current.
+
++--------------------------+
+Tue Apr  7 09:29:53 UTC 2015
+This is the KDE Software Compilation 4.14.3 for Slackware 14.1. yes, 14.1!
+  This release includes the latest version of the Plasma Workspaces, 4.11.17,
+  as well as other Long Term Support (LTS) updates: kdelibs and kdepim 4.14.6.
+  The set of packages includes the most recent versions of the Calligra
+  office suite (2.9.1) and Kdevelop (4.7.1) packages.
+  There were some other noteworthy updates (k3b, partitionmanager) and
+  additions (kdeconnect-kde, plasma-nm) in the 'extragear' department. 
+  I added a phonon-vlc package, which of course will only work if you also
+  install my vlc package - some people prefer the vlc backend for phonon to
+  the gstreamer or the ancient mplayer backend. 
+  All this means that compared to Slackware 14.1's KDE several dependencies
+  were updated and added.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Mon Mar 30 06:13:49 UTC 2015
+Time to give KDE 4.14.3 some attention. I have updated several packages
+  with Long Term Support (LTS) versions taken from Applications 14.12.3 and
+  also updated the Calligra office suite.
+  For that reason, I also had to refresh some of the 'deps'.
+current/4.14.3/deps/grantlee: updated to 0.5.1.
+current/4.14.3/deps/libodfgen: added 0.1.3 (dependency for libwpd).
+current/4.14.3/deps/librevenge: added 0.0.2 (dependency for libwpd).
+current/4.14.3/deps/libssh: updated to 0.6.4.
+current/4.14.3/deps/libwpd: updated to 0.10.0.
+current/4.14.3/kde/calligra: updated to 2.9.1.
+current/4.14.3/kde/kde-workspace: updated to 4.11.17 LTS (Long Term Support).
+current/4.14.3/kde/kdelibs: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepim: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepim-runtime: updated to 4.14.6 LTS.
+current/4.14.3/kde/kdepimlibs: updated to 4.14.6 LTS.
+
++--------------------------+
+Sat Mar 28 15:55:04 UTC 2015
+This is KDE 5_15.03 for Slackware, consisting of the KDE Frameworks 5.8.0,
+  Plasma 5.2.2 and Applications 14.12.3.
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you migh thave installed!
+
+  New & changed since my KDE 5_15.02_02 release:
+  - kde/frameworks packages were updated to 5..8.0. Two Frameworks were added:
+    + KPeople, provides access to all contacts and the people who hold them
+    + KXmlRpcClient, interaction with XMLRPC services
+    See also https://www.kde.org/announcements/kde-frameworks-5.8.0.php
+  - kde/plasma packages were updated to 5.2.2. This is a bugfix release, see 
+    https://www.kde.org/announcements/plasma-5.2.2.php
+  - kde/applications packages were updated to 14.12.3. This is a bugfix release,
+    see also https://www.kde.org/announcements/announce-applications-14.12.3.php
+  - kde/kde4 has new versions of kdelibs and kdepim*
+  - kde/kde4-extragear has a new version 2.9.1 of the Calligra office suite.
+  - deps directory has two updates to Slackware packages (libwpd and grantlee)
+    which are required by the new versions of calligra and kdepim respectively;
+    and two new packages: librevenge and libodfgen (both are required for the
+    new release of libwpd)
+
+  NOTE:
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Upgrading to this KDE 5 is non-trivial.
+  You will have to *remove* old KDE packages manually.  If you do not have KDE
+  installed at all, you will have to *install* some of Slackware's own KDE
+  packages manually.
+
++--------------------------+
+Fri Feb 27 21:08:57 UTC 2015
+current/5/kde/plasma/libksysguard: rebuilt to move dbus files.
+current/5/kde/plasma/sddm-kcm: rebuilt to move dbus files.
+current/5/kde/plasma-extra/polkit-kde-kcmodules-framework: rebuilt to move
+  dbus files.
+
++--------------------------+
+Wed Feb 25 19:52:26 UTC 2015
+This is KDE 5_15.02_2 for Slackware, consisting of the KDE Frameworks 5.7.0,
+Plasma 5.2.1 and Applications 14.12.2.
+This is meant only to be installed on top of Slackware -current and it will
+*replace* any version of KDE 4 you migh thave installed!
+
+New & changed since my KDE 5_15.02 release:
+- deps/libssh version 0.6.4 was re-added, this was still missing after I moved
+  from KDE 4.14.3 To KDE 5. The updated version is required by kde-runtime.
+- kde/plasma packages were updated to 5.2.1. This is a bugfix release, see also
+  https://www.kde.org/announcements/plasma-5.2.1.php
+- kde/frameworks/kglobalaccel was rebuilt. It broke after the upgrade of
+  plasma-workspace because it had picked up an unneeded dependency.
+- kde/applications/kde-runtime was rebuilt. With the newer libssh in place,
+  the 'sftp' kioslave is built as well.
+
++--------------------------+
+Tue Feb 17 20:54:27 UTC 2015
+This is KDE 5_15.02 for Slackware, consisting of the KDE Frameworks 5.7.0,
+ Plasma 5.2.0 and Applications 14.12.2.
+ This is meant only to be installed on top of Slackware -current and it will
+ *replace* any version of KDE 4 you migh thave installed!
+
+New & changed since my 15.01 release of KDE 5:
+  - all "extragear" packages that went missing between KDE 4.14.3 and 5_15.01
+    like k3b, kdevelop etc, have been re-added
+  - The Frameworks have been upgraded from 5.6.0 to 5.7.0
+  - The Applications have been upgraded from 14.12.1 to 14.12.2 (bugfix release)
+  - katepart4 was added so that kdevelop works again
+  - konsolepart4 was added to be able to use an embedded konsole in dolphin
+  - sddm-theme-breeze was removed, the theme is now part of plasma-workspace
+
+  NOTE:
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Upgrading to this KDE 5 is non-trivial.
+  You will have to *remove* old KDE packages manually.  If you do not have KDE
+  installed at all, you will have to *install* some of Slackware's own KDE
+  packages manually.
+
++--------------------------+
+Wed Jan 28 21:49:44 UTC 2015
+current/5/kde/kde4/calligra: rebuilt the 64-bit package against the newer
+  exiv2 package (fixes error while loading shared libraries: libexiv2.so.12).
+
++--------------------------+
+Tue Jan 27 22:34:18 UTC 2015
+This is KDE 5 for Slackware.
+  It consists of Frameworks 5.6.0, Plasma 5.2.0 and Applications 14.12.1.
+  This is meant only to be installed on top of Slackware -current and it will
+  *replace* any version of KDE 4 you migh thave installed!
+
+  Plasma 5 is the next generation of KDE's desktop workspace.
+  Plasma 5 improves support for high-DPI displays and comes with a "converged
+  shell", i.e. one Plasma codebase for different target devices.  Plasma 5 uses
+  a new fully hardware-accelerated OpenGL(ES) graphics stack.  Plasma 5 is built
+  using Qt 5 and Frameworks 5.
+  And with the Breeze themed artwork and its own Oxygen font, this desktop looks
+  clean and modern.
+
+  Further points of interest:
+  - Lots of packages in the 'deps' department which are completely new to
+    Slackware. Since KDE 5 is built on Qt5 (KDE 4 had Qt4 as its base) you'll
+    find many Qt5 related packages. Also, in ordet for Qt4 and GTK based
+    applications to dock into the Plasma 5 system tray, more dependencies were
+    needed. So, apart from updates to regular Slackware packages, these are the
+    new ones:
+    LibRaw, OpenAL, akonadi-qt5, eigen3, gst1-plugins-base, gst1-plugins-good,
+    gstreamer1, json-glib, libappindicator, libdbusmenu-gtk, libdbusmenu-qt5,
+    libepoxy, libfakekey, libindicator, orc, polkit-qt5-1, qca-qt5,
+    qt-gstreamer, qt-gstreamer1, qt5, sni-qt, wayland and xapian-core.
+  - Note for users of multilib Slackware64 and also using Skyoe: you will have
+    to grab the 32-bit version of sni-qt and run convertpkg-compat32'' on it,
+    or else Skype won't be able to dock its icon in the systray.
+  - A bit sneakily, I built phonon-vlc for you.  You will also need a VLC
+    package to be able to use this package though.
+  - I added the latest Calligra 2.8.7 office suite.
+  - Even though I compile a 'kde-workspace' package as part of the whole set,
+    I do not ship that package. It conflicts with the new plasma-workspace
+    package.
+  - Several source tarballs in Plasma 5.2.0 have not been compiled to Slackware
+    packages: libbluedevil and bluedevil (they need BlueZ 5 which is not part of
+    Slackware), muon (a debian/ubuntu package manager), libkface (needs opencv
+    which I was not willing to add as a dependency).
+  - One dependency which you'll probably find curious, is wayland. It is
+    required in order to *compile* KWin's X11 driver, but it is apparently
+    not needed at *runtime*. Nevertheless, I left the package in, just in case
+    you want or need to recompile kwin.
+  - Graphical login: KDM has been replaced with SDDDM.
+
+  NOTE:
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+  Upgrading to this KDE 5 is non-trivial.
+  You will have to *remove* old KDE packages manually.  If you do not have KDE
+  installed at all, you will have to *install* some of Slackware's own KDE
+  packages manually.
+
++--------------------------+
+Tue Nov 11 23:35:57 UTC 2014
+This is the KDE Software Compilation 4.14.3 for Slackware-current!
+  This release includes the latest version of the Plasma Workspaces, 4.11.14.
+  Kactivities was taken from the 4.13.3 sources because that too, is missing
+  from KDE 4.14.
+  The set of packages includes the most recent versions of the Calligra
+  office suite and Kdevelop packages.
+  There were some other noteworthy updates in the 'extragear' department:
+  k3b, kdeconnect-kde, plasma-nm and partitionmanager.
+  And I sneaked some stuff in, which may not be of interest to everyone.  To
+  phonon, phonon-getreamer, qt-gstreamer1 I added Qt5 bindings, so that you
+  can use them with KDE 5.  And I added a phonon-vlc package, which of course
+  will only work if you also install my vlc package - some people prefer the
+  vlc backend for phonon to the gstreamer or the ancient mplayer backend. 
+  This means that compared to the previous KDE 4.14.2, several dependencies
+  were updated (phonon, phonon-gstreamer) and added (gstreamer1,
+  gst1-plugins-base, gst1-plugins-good, libfakekey, orc, qt-gstreamer1).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Oct 12 11:39:35 UTC 2014
+This is the KDE Software Compilation 4.14.2 for Slackware-current!
+  The release includes the latest version of the Plasma Workspaces, 4.11.13.
+  Kactivities was taken from the 4.13.3 sources because that is missing
+  from KDE 4.14.
+  This set of packages includes the recently released Calligra office suite
+  version 2.8.6.  The Kdevelop packages were updated to their latest versions.
+  Compared to the previous KDE 4.14.1, no dependencies were updated.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Sep 16 20:41:10 UTC 2014
+KDE5 for Slackware, has the Frameworks updated to 5.2.0.  The Plasma version
+  was updated to 5.0.2.  The dependencies are unchanged.
+  This is only useful if installed on top of Slackware -current and my KDE 4.14
+  packages (plus dependencies).  KDE5 is still a work in progress and needs the
+  KDE4 applications, libraries and artwork.
+
++--------------------------+
+Tue Sep 16 20:41:10 UTC 2014
+This is the KDE Software Compilation 4.14.1 for Slackware-current!
+  The release includes the latest version of the Plasma Workspaces, 4.11.12.
+  Kactivities was taken from the 4.13.3 sources because that is missing
+  from KDE 4.14.
+  Added (just like with previous package sets) are the latest version of
+  the Calligra office suite, 2.8.5, and the newest kdeconnect-kde 0.7.2.
+  Compared to the previous KDE 4.14.0, no dependencies were updated.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Aug 24 10:12:37 UTC 2014
+This is the KDE Software Compilation 4.13.3 for Slackware 14.1 as promised,
+  The newer KDE (4.14 and 5) will only be build for slackware-current but
+  4.13.3 is still fresh, and a nice enhancement of your stable
+  Slackware 14.1 computer.
+  It comes with the latest version 4.11.11 of the kde-workspace package.
+  Also included is the latest version of the Calligra office suite (2.8.5).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Fri Aug 15 08:49:13 UTC 2014
+This is the KDE Software Compilation 4.14.0 for Slackware-current!
+  The release includes the latest version of the Plasma Workspaces, 4.11.11.
+  Kactivities was taken from the 4.13.3 sources because that too, is missing
+  from KDE 4.14.
+  Added extras (just like with KDE 4.13.3) are the latest version of the
+  Calligra office suite, 2.8.5, and the newest kdeconnect-kde 0.7.2.
+  Compared to the previous KDE 4.13.3, there is one updated dependency: akonadi.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Aug 12 20:34:02 UTC 2014
+This is a first preview for Slackware, of the KDE Frameworks 5.1.0 combined
+  with Plasma 5.0.1.
+  This is only useful if installed on top of Slackware -current and my KDE 4.13
+  package (plus dependencies).  KDE5 is still a work in progress and needs the
+  KDE4 applications, libraries and artwork.
+  Plasma 5.0 is the next generation of KDE's desktop workspace.
+  Plasma 5.0 improves support for high-DPI displays and comes with a "converged
+  shell", i.e. one Plasma codebase for different target devices.  Plasma 5 uses
+  a new fully hardware-accelerated OpenGL(ES)graphics stack.  Plasma 5 is built
+  using Qt 5 and Frameworks 5.
+  And with the Breeze themed artwork and its own Oxygen font, this desktop looks
+  clean and modern.
+
++--------------------------+
+Wed Jul 23 18:17:40 UTC 2014
+14.1/4.12.5/kde/kwalletmanager:  Moved the files in /etc/kde/ to /etc/ .  This
+  fixes a bug in the SlackBuild caused by this package having been renamed
+  from 'kwallet' in KDE 4.12. The update fixes the error "system security
+  policy didn't allow you to save the changes" when attempting to change the
+  kwallet configuration.
+
++--------------------------+
+Thu Jul 17 06:25:25 UTC 2014
+current/4.13.3/kde/kde-workspace: rebuilt to fix missing library in kwin.
+current/4.13.3/kde/plasma-nm: increased the BUILD number from "1alien" to
+  "2alien" because it was built against a newer libmn-qt which had an ABI
+  change.
+
++--------------------------+
+Mon Jul 14 02:40:10 UTC 2014
+This is the KDE Software Compilation 4.13.3 for Slackware-current.
+  It comes with the latest version 4.11.11 of the kde-workspace package.
+  Also included is the latest version of the Calligra office suite (2.8.5).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Jun 29 12:34:07 UTC 2014
+14.1/4.12.5/kde/kdeconnect-kde:  updated to the newest release containing
+  many bugfixes and enhancements.
+
++--------------------------+
+Sat Jun 28 19:01:16 UTC 2014
+current/4.13.2/kde/kdeconnect-kde:  updated to the newest release containing
+  many bugfixes and enhancements.
+
++--------------------------+
+Fri Jun 20 20:26:58 UTC 2014
+14.1/4.12.5/kde/kdelibs:  applied patch for KMail/KIO POP3 SSL MITM Flaw.
+  This vulnerability is labeled CVE-2014-3494.
+  (* Security fix *)
+current/4.13.2/kde/kdelibs:  applied patch for KMail/KIO POP3 SSL MITM Flaw.
+  This vulnerability is labeled CVE-2014-3494.
+  (* Security fix *)
+
++--------------------------+
+Wed Jun 11 12:35:46 UTC 2014
+current/4.13.2/kdei: added missing hardlinks in directory x86/kdei pointing to
+  the existing packages in the x86_64/kdei directory.
+
++--------------------------+
+Tue Jun 10 09:12:50 UTC 2014
+This is the KDE Software Compilation 4.13.2 for Slackware-current.
+  No guarantees about its useability on Slackware 14.1.
+  I added the latest version 4.11.10 of the kde-workspace package.
+  Also included is the latest versions of the Calligra office suite (2.8.3).
+  Compared to the previous KDE 4.13.1, there is one updated dependency: libssh.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue May 13 19:27:42 UTC 2014
+This is the KDE Software Compilation 4.13.1 for Slackware-current.
+  No guarantees about its useability on Slackware 14.1.
+  I added the latest version 4.11.9 of the kde-workspace package.
+  The updated oxygen-gtk2 package should fix some application crashes.
+  Also included are the latest versions of the Calligra office suite
+  and KDevelop.  I included a new package: 'kdev-python' which adds python
+  support to KDevelop.
+  Compared to the previous KDE 4.13.0, there is one updated dependency: LibRaw.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat May  3 09:18:15 UTC 2014
+14.1/4.12.5/kde/kde-workspace:  applied patch so that KDM does not crash
+  when you select a desktop environment other than KDE or XFCE.
+  Moved the kde*.desktop files to /usr/share/xsessions so that other login
+  managers than KDM (like SLiM) can offer KDE desktop sessions as an option.
+current/4.13.0/kde/kde-workspace:  same changes as above.  In addition, the
+  version was upgraded from 4.11.8 to 4.11.9.
+
++--------------------------+
+Mon Apr 28 10:18:24 UTC 2014
+This is the KDE Software Compilation 4.12.5 for Slackware 14.1 and -current.
+  This release includes version 4.11.9 of the Plasma Workspaces.  It's also
+  the final increment of the KDE 4.12 series.
+  I added the latest Calligra 2.8.2 like I did with KDE 4.13 as well.  The
+  kdevelop packages have been updated too, and a new python plugin package
+  has been added (kdev-python).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Apr 15 19:41:55 UTC 2014
+This is the KDE Software Compilation 4.13.0 for Slackware-current!
+  No guarantees about its useability on Slackware 14.1.  I will make available
+  the final KDE 4.12 release (4.12.5) for Slackware 14.1, in two weeks.
+  This release includes the latest version 4.11.8 of the kde-workspace package
+  just like was the case with the previous KDE SC 4.12.  For this release I
+  have also added the very latest version of the Calligra office suite, 2.8.2.
+  Since the previous KDE 4.12, two dependencies were updated: akonadi and
+  soprano, and three new packages have been added: eigen3, qt-gstreamer
+  and xapian-core.
+  One noteworthy addition in KDE 4.13 is baloo, which is the next generation
+  of the nepomuk project.  It's responsible for handling user metadata such as
+  tags, rating and comments.  It also handles indexing and searching for files,
+  emails, contacts, and so on.
+  Automatic migration from nepomuk to baloo has been added to KDE 4.13.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Mar 30 21:40:38 UTC 2014
+This is the KDE Software Compilation 4.12.4 for Slackware-current (it was
+  actually compiled on Slackware 14.1 for maximum compatibility).
+  This release does not include a version 4.12.x of the Plasma Workspaces,
+  since it was feature-frozen in 4.11.  The work done in KDE 4.12 will be
+  mainly about improving and polishing KDE Applications.
+  I ship kde-workspace-4.11.8 along with KDE 4.12.4.
+  One package was renamed: kdnssd is now called zeroconf-ioslave.  I also
+  updated to the new Calligra 2.8.1.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Mar  5 20:49:43 UTC 2014
+current/4.12.3/kde: added the missing kwalletmanager package. For KDE 4.12.3,
+  the old 'kwallet' package had been renamed to 'kwalletmanager' and I had
+  not spotted that.
+  Upgrade using "upgradepkg kwallet%/path/to/kwalletmanager-4.12.3-*.txz".
+
++--------------------------+
+Sun Mar  2 22:14:58 UTC 2014
+This is the KDE Software Compilation 4.12.3 for Slackware-current (it was
+  actually compiled on Slackware 14.1 for maximum compatibility).
+  This release does not include a version 4.12.x of the Plasma Workspaces,
+  since it was feature-frozen in 4.11.  The work done in KDE 4.12 will be
+  mainly about improving and polishing KDE Applications.
+  I ship kde-workspace-4.11.7 along with KDE 4.12.3.
+  New package added: kdeconnect-kde.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+14.1/4.11.5/kde/kde-workspace: Updated to 4.11.7 (same source as is also used
+  in KDE SC 4.12.3).
+
++--------------------------+
+Mon Feb 10 21:22:31 UTC 2014
+current/4.12.2/kdei: added hardlinks in new directory x86/kdei pointing to
+  the existing packages in the x86_64/kdei directory.  Does not use up
+  any space on your hard drive, and you will be able to upgrade your
+  kde-l10n package with slackpkg+ now.
+14.1/4.11.5/kdei: added hardlinks for reasons explained above.
+14.0/4.10.5/kdei: added hardlinks for reasons explained above.
+13.37/4.6.5/kdei: added hardlinks for reasons explained above.
+
++--------------------------+
+Mon Feb  3 23:37:11 UTC 2014
+This is the KDE Software Compilation 4.12.2 for Slackware-current (it was
+  actually compiled on Slackware 14.1 for maximum compatibility).
+  This release does not include a version 4.12.x of the Plasma Workspaces,
+  since it was feature-frozen in 4.11.  The work done in KDE 4.12 will be
+  mainly about improving and polishing KDE Applications.
+  I ship kde-workspace-4.11.6 along with KDE 4.12.2.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Jan 12 12:41:11 UTC 2014
+This is the KDE Software Compilation 4.12.1 for Slackware-current (will work
+  on Slackware 14.1 as well most likely, but untested here).
+  This release does not include a version 4.12.x of the Plasma Workspaces,
+  since it was feature-frozen in 4.11.  The work done in KDE 4.12 will be
+  mainly about improving and polishing KDE Applications.
+  I ship kde-workspace-4.11.5 along with KDE 4.12.1.
+  You have a choice of NetworkManager GUI: the original 'networkmanagement'
+  widget or the new QML based 'plasma-nm' applet.  The packages required for
+  the Plasma NetworkManager applet are: libmm-qt, libnm-qt and plasma-nm itself.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Jan  7 20:10:02 UTC 2014
+This is the KDE Software Compilation 4.11.5 for Slackware 14.1 (and -current).
+  These packages will not work on Slackware 14.0. 
+  PIasma-nm is the future replacement of the networkmanagement widget.  Try
+  it out, it works well for me.
+  I also provide a recompiled version of the calligra package because the
+  updated libraries in KDE 4.11 break the calligra-words of Slackware 14.1.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Thu Dec 19 09:55:26 UTC 2013
+current/4.12.0/kde/libkomparediff2: Added the missing slack-desc file.
+
++--------------------------+
+Tue Dec 17 19:17:40 UTC 2013
+This is the KDE Software Compilation 4.12.0 for Slackware-current (might work
+  on Slackware 14.1 as well, but untested, ymmv).
+  This release does not include a new Plasma Workspaces since it was
+  feature-frozen in 4.11. so 4.12 will be mainly about improving and polishing
+  KDE Applications.
+  You have a choice of NetworkManager GUI: the original 'networkmanagement'
+  widget or the new QML based 'plasma-nm' applet.  The packages required for
+  the Plasma NetworkManager applet are: libmm-qt, libnm-qt and plasma-nm itself.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Dec  4 08:35:07 UTC 2013
+This is the KDE Software Compilation 4.11.4 for Slackware 14.1 (and -current).
+  These packages will not work on Slackware 14.0. 
+  Notable enhancements in the 4.11 release cycle are: more widespread use of
+  Qt-Quick in Plasma Workspaces, faster Nepomuk indexing, Kontact improvements,
+  OpenGL improvements in KWin (and a start of support for Wayland).
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Thu Nov  7 23:39:08 UTC 2013
+current/4.11.3/kde/kde-baseapps:  Applied a patch for a serious regression
+  in dolphin.  Dolphin no longer accepted URLs containing a kio-slave as
+  parameter (like "dolphin trash:/") and would open the Home directory instead.
+
++--------------------------+
+Tue Nov  5 18:49:00 UTC 2013
+This is the KDE Software Compilation 4.11.3 for Slackware-current (aka 14.1).
+  These packages will not work on Slackware 14.0. 
+  I added a few experimental packages which will likely become the future 
+  replacement of the networkmanagement widget.
+  These packages are: libmm-qt, libnm-qt and plasma-nm.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Oct 22 09:11:38 UTC 2013
+current/4.11.2/kde/kdelibs:  Rebuilt.  Reverted three upstream commits which
+  (although technically correct) have the effect of causing KDE to display
+  the wrong icons in some cases.
+  You may have to clear your KDE caches to see the effect for an existing
+  user account.
+
++--------------------------+
+Wed Oct 16 14:46:42 UTC 2013
+current/4.11.2/kde/calligra:  Rebuilt. This was not originally in my ktown
+  package set, but the "words" program in Slackware-current's own calligra
+  package was broken after the upgrade of the 'marble' package of KDE 4.11.2.
+
++--------------------------+
+Wed Oct 16 12:17:17 UTC 2013
+current/4.11.2/kde/ark:  Rebuilt. The libarchive update in -current had
+  broken it.
+
++--------------------------+
+Tue Oct 15 10:08:39 UTC 2013
+source/4.7.4:  Removed to make room for the next Slackware.
+source/4.8.4:  Removed to make room for the next Slackware.
+
++--------------------------+
+Tue Oct 15 07:18:03 UTC 2013
+14.0/4.9.5:  Removed to make room for the next Slackware.  Use KDE 4.10.5 on
+  Slackware 14 instead.
+source/4.9.5:  Removed to make room for the next Slackware.
+
++--------------------------+
+Tue Oct  1 18:39:33 UTC 2013
+This is the KDE Software Compilation 4.11.2 for Slackware-current.
+  These packages will not work on Slackware 14.0. 
+  I added a few experimental packages which may become a future replacement of
+  the networkmanagement widget.  These packages are: libmm-qt, libnm-qt and
+  plasma-nm.  I have not tested these, but I invite you to give them a spin.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Sep  4 22:35:14 UTC 2013
+current/kde/kde-runtime:  Patched KDE bug 324470 (minimize/maximize by
+  clicking taskbar entries requires double click).
+
++--------------------------+
+Sun Sep  1 18:15:53 UTC 2013
+This is the KDE Software Compilation 4.11.1 for Slackware-current.
+  These packages will not work on Slackware 14.0.
+  Notable enhancements in this new release cycle are: more widespread use of
+  Qt-Quick in Plasma Workspaces, faster Nepomuk indexing, Kontact improvements,
+  OpenGL improvements in KWin (and a start of support for Wayland).
+  The upgrade from Slackware-current's own 4.10.5 will be trivial.
+  Only four packages outside KDE (the 'deps') need an update: akonadi, attica,
+  shared-desktop-ontologies and soprano.
+  Four KDE packages have been removed since the KDE 4.10.5 of Slackware-current:
+  * kdeadmin, kdetoys, kdesdk and kdenetwork have been split up into smaller
+    individual packages since 4.10.5.
+
++--------------------------+
+Tue Aug 20 14:45:08 UTC 2013
+current/kde/amarok:  Removed the 2.7.1 package since slackware-current now has
+  a newer release available (2.8.0).
+current/kde/nepomuk-core:  Moved the directory /etc/kde/dbus-1 to /etc/dbus-1
+  where it belongs.
+
++--------------------------+
+Sat Aug 10 09:33:36 UTC 2013
+This is the KDE Software Compilation 4.11.0 for Slackware-current.
+  These packages will not work on Slackware 14.0.
+  Notable enhancements in this new release cycle are: more widespread use of
+  Qt-Quick in Plasma Workspaces, faster Nepomuk indexing, Kontact improvements,
+  OpenGL improvements in KWin (and a start of support for Wayland).
+  The upgrade from Slackware-current's own 4.10.5 will be trivial.
+  Only four packages outside KDE (the 'deps') need an update: akonadi, attica,
+  shared-desktop-ontologies and soprano.
+  Four KDE packages have been removed since the KDE 4.10.5 of Slackware-current:
+  * kdeadmin, kdetoys, kdesdk and kdenetwork have been split up into smaller
+    individual packages since 4.10.5.
+  I removed the calligra packages which were present in my 4.11_rc1 package set,
+  because Slackware-current has been updated to the most recent Calligra
+  release (2.7.1).
+
++--------------------------+
+Sun Jul 21 15:30:55 UTC 2013
+current/kde/amarok:  Patched to fix crashes in KDE 4.11.
+
++--------------------------+
+Sun Jul 21 12:50:52 UTC 2013
+Thanks for reporting your bugs with my packages on my blog.  Here are the
+  first results of your reports:
+current/kde/networkmanagement:  Upgraded to 0.9.0.9 because the current version
+  does not work with KDE 4.11
+current/kde/kwebkitpart:  Rebuilt because of a report that Konqueror with
+  webkit engine crashed in KDE 4.11RC1 when opening gcc.gnu.org.
+
++--------------------------+
+Wed Jul 17 14:34:02 UTC 2013
+This is the KDE Software Compilation 4.11 RC1 (aka 4.10.95) for
+  Slackware-current.  These packages will not work on Slackware 14.0.
+  Note that this is 'just' a release candidate for the upcoming KDE 4.11,
+  which means it will contain bugs.  Please report any bugs you find, so that
+  KDE 4.11 will be a quality product: https://bugs.kde.org/
+  There are four upgraded 'deps': akonadi, attica, shared-desktop-ontologies
+  and soprano.  I also added the new Calligra 2.7.0 to the 'kde' package set.
+  Four KDE packages have been removed because they have have been split up
+  into smaller individual packages: kdeadmin, kdetoys, kdesdk and kdenetwork.
+
++--------------------------+
+Mon Jul  2 00:46:28 UTC 2013
+This is the KDE Software Compilation 4.10.5 for Slackware 14.0.
+  Now that Slackware-current has an official set of KDE 4.10.x packages,
+  provided by Patrick Volkerding, I am offering my own packages for
+  Slackware 14.0 - so that users of this stable release can enjoy the
+  KDE upgrade as well.
+  If you already have my previous KDE 4.10.4 packages installed, then
+  there are a few updated 'extragear' packages: libkscreen, kscreen,
+  oxygen-gtk2 and oxygen-gtk3.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Jun  9 22:27:34 UTC 2013
+14.0/kde/kde-runtime:  Use -DSAMBA_INCLUDE_DIR=/usr/include/samba-4.0 with
+  cmake to fix building kio_smb.so (fixes the 'invalid protocol' error
+  in Dolphin when typing smb:// URIs).
+
++--------------------------+
+Tue Jun  4 18:54:12 UTC 2013
+This is the KDE Software Compilation 4.10.4 for Slackware 14.0.
+  Now that Slackware-current has an official set of KDE 4.10.x packages,
+  provided by Patrick Volkerding, I am offering my own packages for
+  Slackware 14.0 - so that users of this stable release can enjoy the
+  KDE upgrade as well.
+  If you already have my previous KDE 4.10.3 packages installed then there
+  is only one update besides the KDE Software Compilation: calligra.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed May 15 14:56:21 UTC 2013
+14.0/kde/kdelibs:  Patched to fix a crash exiting KDE or quitting some apps
+  (KDEBUG 319137)
+
++--------------------------+
+Thu May  9 22:11:31 UTC 2013
+This is the KDE Software Compilation 4.10.3 for Slackware 14.0.
+  Now that Slackware-current has an official set of KDE 4.10.x packages,
+  provided by Patrick Volkerding, I am offering my own packages for
+  Slackware 14.0 - so that users of this stable release can enjoy the
+  KDE upgrade as well.
+  If you already have my previous KDE 4.10.2 packages installed then there
+  are updates in the 'deps' directory, as well as a lot of new stuff in the
+  'kde' directory.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sun Apr 14 21:01:55 UTC 2013
+14.0/deps/QScintilla:  added to the deps. It needed a recompile against the
+  newer sip package to fix ABI incompatibilities.
+
++--------------------------+
+Wed Apr  3 21:01:21 UTC 2013
+This is the KDE Software Compilation 4.10.2 for Slackware 14.0.
+  Now that Slackware-current has an official set of KDE 4.10.x packages,
+  provided by Patrick Volkerding, I am offering my own packages for
+  Slackware 14.0 - so that users of this stable release can enjoy the
+  KDE upgrade as well.
+  If you already have my previous KDE 4.10.1 packages installed then all you
+  have to upgrade are the packages in the 'kde' directory.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Thu Mar  7 08:58:55 UTC 2013
+This is the KDE Software Compilation 4.10.1 for Slackware 14.0 (!).
+  Now that Slackware-current has an official set of KDE 4.10.1 packages,
+  provided by Patrick Volkerding, I have rebuilt my own KDE packages for
+  Slackware 14.0 so that users of this stable release can enjoy the
+  KDE upgrade as well.  I deleted the "current/4.10.1" package directory and
+  added the rebuilt packages in "14.0/4.10.1".
+  The upgrade from Slackware 14's own 4.8.5 is trivial.  I added nine
+  updated dependencies (PyQt, akonadi, attica, phonon-gstreamer, qt,
+  shared-desktop-ontologies, sip, soprano and virtuoso-ose)
+  and added a new one: qjson.
+  I updated several 'extragear' packages compared to Slackware 14: calligra,
+  kdevelop, kdevplatform, oxygen-gtk2, skanlite, and two are all new,
+  oxygen-gtk3 and kio-mtp.
+  If you already have my previous KDE 4.10.0 packages installed then all you
+  have to upgrade are the packages in the 'kde' directory.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Tue Mar  5 08:58:18 UTC 2013
+This is the KDE Software Compilation 4.10.1 for Slackware current (!).
+  If you are running Slackware 14 then I cannot guarantee that these packages
+  will work, and you are probably better off compiling them from source.
+  The upgrade from Slackware-current's own 4.10.0 will be trivial.  There
+  are *no* new or updated dependencies, the KDE packages are all there is.
+  I updated a few 'extragear' packages compared to Slackware-current:
+  oxygen-gtk2, oxygen-gtk3 and skanlite which finally has a 1.0 version number.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Sat Feb  9 23:49:27 UTC 2013
+4.10.0/kde/kde-workspace:  applied a patch to try and fix the "simple locker"
+  behaviour to always require an unlock password, even if "no password"
+  was configured for the screensaver. 
+4.10.0/kde/nepomuk-core:  applied a patch which fixes the broken "recursive
+  file indexing" in Nepomuk.
+
++--------------------------+
+Tue Feb  5 20:37:02 UTC 2013
+This is the KDE Software Compilation 4.10.0 for Slackware 14 and later.
+  The upgrade from Slackware's own 4.8.5 will be trivial.  I added nine
+  updated dependencies (PyQt, akonadi, attica, phonon-gstreamer, qt,
+  shared-desktop-ontologies, sip, soprano and virtuoso-ose)
+  and added a new one: qjson.
+  I updated several 'extragear' packages compared to Slackware 14: calligra,
+  kdevelop, kdevplatform, oxygen-gtk2, skanlite, and two are all new,
+  oxygen-gtk3 and kio-mtp.
+  Four KDE packages have been removed since the KDE 4.8.5 of Slackware 14:
+  * kdegames has been split up into smaller individual packages since 4.10.
+  * kdemultimedia has been split up into smaller individual packages since 4.9.
+  * ksecrets has been removed completely since the 4.9.x series.
+  * printer-applet has been replaced with print-manager since 4.10.x.
+  Note that KDE 4.10.0 requires cmake 2.8.10 - this is present in Slackware
+  -current but not part of Slackware 14, so you'll have to upgrade cmake there.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Jan  2 11:44:09 UTC 2013
+This is the KDE Software Compilation 4.9.5 for Slackware 14 and later.
+  The upgrade from Slackware's own 4.8.5 will be trivial.  I added five
+  updated dependencies (akonadi, qt, soprano, shared-desktop-ontologies and
+  virtuoso-ose).
+  I updated several 'extragear' packages compared to Slackware 14: kdevelop,
+  kdevplatform, oxygen-gtk2, and two are all new, oxygen-gtk3 and kio-mtp.
+  Two KDE packages have been removed since the KDE 4.8.5 of Slackware 14:
+  * kdemultimedia has been split up into several smaller individual packages.
+  * ksecrets has been removed completely in the 4.9.x series.
+  Please read the accompanying README file for detailed installation and
+  upgrade instructions!
+
++--------------------------+
+Wed Dec  5 23:14:15 UTC 2012
+4.9.4/kde/kdelibs:  applied a patch to fix a bug where .odt and other zip-
+  based files would not open properly in external applications when clicked
+  in dolphin (BUG 311214).  Unfortunately the bug was not detected until
+  right after release of KDE 4.9.4.
+
++--------------------------+
+Wed Dec  5 11:18:18 UTC 2012
+This is the KDE Software Compilation 4.9.4 for Slackware 14 and later.
+The upgrade from Slackware's own 4.8.5 will be trivial.  I added five
+updated dependencies (akonadi, qt, soprano, shared-desktop-ontologies and
+virtuoso-ose).  One of those dependencies has been updated since my previous
+KDE 4.9.3 packages: qt.
+I updated several 'extragear' packages compared to Slackware 14, of which
+two are all new: kdevelop, kdevplatform, oxygen-gtk2, oxygen-gtk3
+and kio-mtp.
+Two KDE packages have been removed since the KDE 4.8.5 of Slackware 14:
+* kdemultimedia has been split up into several smaller individual packages.
+* ksecrets has been removed completely in the 4.9.x series.
+Please read the accompanying README file for detailed installation and upgrade
+  instructions!
+
++--------------------------+
+Wed Nov  7 08:23:58 UTC 2012
+This is the KDE Software Compilation 4.9.3 for Slackware 14 and later.
+The upgrade from Slackware's own 4.8.5 will be trivial.  I added five
+  updated dependencies (akonadi, qt, soprano, shared-desktop-ontologies and
+  virtuoso-ose).  Two of those dependencies have been updated since my previous
+  KDE 4.9.2 packages: akonadi and qt.
+I created several updated 'extragear' packages this time, of which one is all
+  new: kdevelop, kdevplatform, oxygen-gtk2 and oxygen-gtk3.
+Two KDE packages have been removed since the KDE 4.8.5 of Slackware 14:
+  * kdemultimedia has been split up into several smaller individual packages.
+  * ksecrets has been removed completely in the 4.9.x series.
+Please read the accompanying README file for detailed installation and upgrade
+  instructions!
+
++--------------------------+
+Sat Oct 13 22:35:23 UTC 2012
+4.9.2/kde/kross-interpreters:  added... once blacklisted for KDE 4.7.1 because
+  of Ruby build errors, I had forgotten to fix the error and re-enable it.
+
++--------------------------+
+Tue Oct  2 12:21:34 UTC 2012
+This is KDE Software Compilation 4.9.2 for Slackware 14 (and newer).
+  The upgrade from Slackware's own 4.8.5 will be trivial.  There are five
+  updated dependencies (akonadi, qt, soprano, shared-desktop-ontologies
+  and virtuoso-ose).
+  Two KDE packages have been removed, compared to KDE 4.8.5: ksecrets and
+  kdemultimedia (the latter has in fact been split up into several smaller
+  individual packages).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Thu Sep  6 06:46:18 UTC 2012
+4.9.1/kde/kde-workspace:  patched to fix a major flaw in kwin (kdebugs 306260
+  and 306275)
+
++--------------------------+
+Mon Sep  3 22:07:21 UTC 2012
+This is KDE Software Compilation 4.9.1 for Slackware 14-RC4 (and newer).
+  The upgrade from Slackware's own 4.8.5 will be trivial.  There are four
+  updated dependencies (akonadi, soprano, shared-desktop-ontologies and
+  virtuoso-ose).
+  Two KDE packages have been removed, compared to KDE 4.8.5: ksecrets and
+  kdemultimedia (the latter has in fact been split up into several smaller
+  individual packages).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Fri Aug  3 21:53:09 UTC 2012
+4.9.0/deps/virtuoso-ose: the x86_64 package carried the build/tag of 'alien'
+  instead of '1alien'. Fixed now.
+
++--------------------------+
+Fri Aug  3 00:26:44 UTC 2012
+4.9.0/deps/virtuoso-ose: updated to 6.1.6 because of reports that this is
+  the best version for KDE 4.9.0.
+4.9.0/kde/okular: rebuilt against the upgraded poppler-0.20.2 which appeared
+  in Slackware exactly for this reason.  With this version of poppler, okular
+  is able to save annotations into PDF files.
+
++--------------------------+
+Wed Aug  1 17:24:39 UTC 2012
+This is KDE Software Compilation 4.9.0 for Slackware-14-Beta1 (and newer).
+  The upgrade from Slackware's own 4.8.4 will be trivial.  There are three
+  updated dependencies (akonadi, soprano and shared-desktop-ontologies).
+  Two KDE packages have been removed, compared to KDE 4.8.4: ksecrets and
+  kdemultimedia (the latter has in fact been split up into several smaller
+  individual packages).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Wed Jun 27 18:54:19 UTC 2012
+This is the first Release Candidate of KDE Software Compilation 4.9
+  for Slackware-current.
+  The official version number for KDE 4.9-rc1 is "4.8.95".
+  The upgrade from Slackware's own 4.8.4 will be trivial.  There are three
+  updated dependencies (akonadi, soprano and shared-desktop-ontologies) of
+  which akonadi is new since the previous KDE 4.9-beta1.
+  Two KDE packages have been removed, compared to KDE 4.8.4: ksecrets and
+  kdemultimedia (the latter has in fact been split up into several smaller
+  individual packages).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Mon Jun 25 18:52:56 UTC 2012
+current/4.8.90/breakfix:  Added attica-0.3.0 packages which you will need
+  after today's update to Slackware-current.  Many of the binaries in my
+  KDE 4.8.90 packages link against libattica.so.3 ; but unfortunately
+  Slackware-current's version of that library was updated to version 4.
+  Until I release KDE 4.9-RC1 packages, this is how you fix the breakage:
+  (1) make sure you have both the attica-0.3.0 and Slackware's newer 0.4.0
+      handy.
+  (2) run "upgradepkg attica-0.3.0-*.txz" to *downgrade* from 0.4.0 to 0.3.0
+  (3) run "installpkg attica-0.4.0-*.txz" to install the official 0.4.0
+      alongside 0.3.0.
+  When I release a new set of KDE 4.9 (beta/rc/whatever) packages, you can
+  finally "removepkg /var/log/packages/attica-0.3.0-*" to get rid of the old
+  attica.
+
++--------------------------+
+Wed Jun 13 17:19:35 UTC 2012
+This is the second Beta of KDE Software Compilation 4.9 for Slackware-current.
+  Its version number is "4.8.90".
+  The upgrade from Slackware's own 4.8.2 qill be trivial.  There are two
+  updated dependencies (soprano and shared-desktop-ontologies).
+  Two KDE packages have been removed: ksecrets and kdemultimedia (the latter
+  has in fact been split up into several smaller individual packages).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Thu Jun  7 13:36:21 UTC 2012
+Release of KDE Software Compilation 4.8.4 for Slackware '-current'.
+  It is an incremental update to the version 4.8.2 which is part of
+  Slackware-current since a few weeks ago.  It is also the final installment
+  of the KDE 4.8.x series.  I uploaded the first beta of the future 4.9.x
+  series a couple of days ago, but a stable release for that is still
+  months away.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Sun Jun  3 12:32:22 UTC 2012
+This is the first Beta of KDE Software Compilation 4.9 for Slackware-current.
+  Its version number is "4.8.80".
+  The KDE release team has opened a page for distros which offer the beta
+  releases of KDE 4.9 in order to give this new series better coverage for bug
+  hunting: http://community.kde.org/Getinvolved/Testing/Beta/InstallingBeta1
+  and Slackware is listed first ;-)
+  The upgrade from Slackware's own 4.8.2 qill be trivial.  I added one updated
+  dependency (soprano) and one KDE package has been removed: kdemultimedia has
+  been split up into several smaller individual packages.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Wed May  2 19:51:50 UTC 2012
+Release of KDE Software Compilation 4.8.3 for Slackware '-current'.
+  It is an incremental update to the version 4.8.2 which was added to
+  Slackware-current a few weeks ago.  And since Patrick updated the
+  libbluedevil and devil packages in '-current' already (or will do so
+  very soon after this post), I could skip those and limit this upgrade
+  to just the KDE core.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+
++--------------------------+
+Tue Apr  3 19:04:29 UTC 2012
+Release of KDE Software Compilation 4.8.2 for Slackware.
+  Another bugfix release in the 4.8 series.
+  Not much changed since my previous package set, most obvious is the
+  large amount of version updates in the "deps" section.
+  You have to be running Slackware-current in order to use these packages.
+  You must *recompile* everything if you want to run KDE 4.8.2 on
+  Slackware 13.37 or earlier, because of an incompatible update of glibc
+  in slackware-current.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * A lot of the dependencies have been updated since my previous KDE 4.8.1:
+    PyQt, QScintilla, akonadi, grantlee, libdbusmenu-qt, phonon,
+    phonon-mplayer, qt, raptor2, rasqal, redland, sg3_utils,
+    shared-desktop-ontologies, sip, soprano.
+  * Updated dependencies with regard to Slackware-current are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, libvncserver, phonon, polkit-qt-1, qt, raptor2, rascal,
+    redland, shared-desktop-ontologies, sip, soprano, strigi,
+    system-config-printer.
+  * Dependencies that are not part of Slackware at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * Note that the polkit-qt package has been moved from "kde" to "deps"
+    since that is what it is: a dependency, not a KDE app.  Read my earlier
+    announcement of KDE 4.8.0 for even more bla^H^H^Hinfo.
+
++--------------------------+
+Sun Mar 11 12:12:56 UTC 2012
+4.8.1/deps/lcms2:  added as this is a dependency for calligra's "krita".
+4.8.1/kde/calligra:  rebuilt against lcms2 to make krita work.
+
++--------------------------+
+Tue Mar  6 13:14:57 UTC 2012
+Release of KDE Software Compilation 4.8.1 for Slackware.
+  Overall a nice improvement to 4.8.0, so far it proves to be rock-stable.
+  Not much changed since my previous package set, most visible is the
+  inclusion of Calligra 2.4_rc1 - the first release candidate of the office
+  suite which is going to replace KOffice.
+  You have to be running Slackware-current in order to use these packages.
+  You must recompile everything if you want to run KDE 4.8.1 on
+  Slackware 13.37 or earlier, because of an incompatible update of glibc
+  in slackware-current.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * A few dependencies have been updated since my previous KDE 4.8.0:
+    akonadi and phonon-gstreamer.
+  * Updated dependencies with regard to the stable Slackware 13.37 are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, libvncserver, phonon, polkit-qt-1, qt, raptor2, rascal,
+    redland, shared-desktop-ontologies, sip, soprano, strigi,
+    system-config-printer and virtuoso-ose.
+  * Dependencies that are not part of Slackware 13.37 at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * Note that the libktorrent and polkit-qt packages have been moved from
+    "kde" to "deps" since that is what they are: dependencies, not KDE apps.
+  Read my earlier announcement of KDE 4.8.0 for even more bla^H^H^Hinfo.
+
++--------------------------+
+Thu Feb  2 09:44:00 UTC 2012
+4.8.0/deps/qt:   Applied patch to provide a fix for vulnerability CVE-2011-3922
+  (stack-based buffer overflow). Applied a patch which tries to work around a
+  change in path name queries, which broke system sounds in KDE (among others).
+
++--------------------------+
+Sat Jan 28 16:36:33 UTC 2012
+4.8.0/kde/kde-workspace:  make KDM look first in Slackware's standard xsessions
+  directory /usr/share/xsessions ; also remove the xfce*.desktop xsession files
+  which are shipped with KDM (our XFCE package provides this already).
+  Requested by Robby Workman.
+
++--------------------------+
+Thu Jan 26 15:06:28 UTC 2012
+4.8.0/kde/kdelibs:  patched to make UPnP support optional. UPnP support in
+ Solid now depends on the environment variable SOLID_UPNP.  You can enable
+  UPnP e.g. by creating an executable script '/etc/profile.d/upnp.sh' file
+  containing the following contents:
+  export SOLID_UPNP=1
+
++--------------------------+
+Wed Jan 25 18:49:37 UTC 2012
+4.8.0/kdei : Added the "alien" tag to all language packs... oops.
+
++--------------------------+
+Wed Jan 25 16:10:41 UTC 2012
+Release of KDE Software Compilation 4.8.0 for Slackware.
+  You have to be running Slackware-current in order to use these packages.
+  You have to recompile everything if you want to run KDE 4.8.0 on
+  Slackware 13.37 or earlier, because of an incompatible update of glibc
+  in slackware-current.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * Several dependencies have been updated since my previous KDE 4.7.4:
+    akonadi, attica, hunspell, libatasmart, libvncserver, phonon, phonon-xine,
+    polkit-qt-1, qt, strigi, udisks, and upower
+  * Updated dependencies with regard to the stable Slackware 13.37 are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, libvncserver, phonon, polkit-qt-1, qt, raptor2, rascal,
+    redland, shared-desktop-ontologies, sip, soprano, strigi,
+    system-config-printer and virtuoso-ose.
+  * Dependencies that are not part of Slackware 13.37 at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * The libktorrent and polkit-qt packages have been moved from "kde" to
+    "deps" since that is what they are: dependencies, not KDE apps.
+  Some house-keeping stuff that I keep repeating because it is mostly
+  identical to the previous 4.7 releases but still worthwhile to read:
+  * You will find three new KDE applications: bluedevil (a GUI for the KDE
+    bluetooth framework which integrates better than the GTK-based blueman),
+    kplayer (a KDE integrated front-end to mplayer) and wicd-kde (a KDE
+    applet plus kcontrol for WICD that integrates perfectly into KDE,
+    replacing the GTK-based client of the wicd package).
+  * I also added oxygen-gtk2 (previously named 'oxygen-gtk') which is a
+    theme engine giving GTK based applications an integrated KDE
+    look-and-feel (provided you are using KDE's default Oxygen theme).
+  * And finally I added (back from the dead) quanta. This is a bit of an
+    experiment, since the new Quanta Plus has not even been released yet.
+    The Quanta Plus web development software was only available as a Qt3
+    application until now, but its developers are working hard on a Qt4 port,
+    re-creating it as a plugin for kdevelop.
+    I was able to include beta versions of kdevplatform and kdevelop
+    (accompanied by a new package 'kdevelop-pg-qt') to support quanta.
+    Use these four at your own risk!  If you can't live without it and were
+    stuck with KDE 3 for all this time because of it, now may be the perfect
+    time to try Slackware-current, KDE 4.8.0 and Quanta 3.9.0 !
+  Last but not least... there is NetworkManager 0.9 support now (optionally):
+  I added a small set of packages to a subdirectory called "test".
+  The "test" directory contains NetworkManager plus related packages, as well
+  as a native KDE applet/kcontrol called "networkmanagement".  If you are using
+  KDE on a laptop and want to try managing your network connections using
+  NetworkManager instead of WICD, then these packages are for you.  The README
+  file inside the 4.8.0 directory has all the details.
+
++--------------------------+
+Fri Dec 23 13:18:36 UTC 2011
+4.7.4/kde/bluedevil:  Added missing bluedevil package.  I forgot to re-add it
+  because it was not rebuilt since KDE 4.7.3.  Thanks Doctor Fungus.
+
++--------------------------+
+Sun Dec 18 21:33:16 UTC 2011
+4.7.4/kde/kdelibs:  Fix for https://bugs.kde.org/show_bug.cgi?id=288963 which
+  was affecting number entry in several KDE apps.
+
++--------------------------+
+Mon Dec 12 22:48:10 UTC 2011
+4.7.4/kde/kplayer:  Added missing kplayer package.  I omitted to re-add it
+  because it was not rebuilt since KDE 4.7.3.  Thanks Boni Xavier.
+
++--------------------------+
+Sun Dec 11 18:24:22 UTC 2011
+4.7.4/kde/kde-workspace:  [* 32-bit version only *] rebuilt in the presence
+  of NetworkManager, so that it allows the networkmanagement applet to work.
+  If you do _not_ use NetworkManager, then upgrading to this rebuilt package
+  is still safe: it will _not_ have any negative effects.
+
++--------------------------+
+Tue Dec  6 22:58:10 UTC 2011
+Release of KDE Software Compilation 4.7.4 for Slackware.
+  You have to be running Slackware-current in order to use these packages.
+  No guarantees are made about their useability on Slackware 13.37 (but it is
+  likely that it will run just fine).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * Several dependencies have been updated since my previous KDE 4.7.3:
+    attica, libktorrent, libmsn, and soprano.
+  * Updated dependencies with regard to the stable Slackware 13.37 are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, phonon, polkit-qt-1, qt, raptor2, rascal, redland,
+    shared-desktop-ontologies, sip, soprano, strigi, system-config-printer
+    and virtuoso-ose.
+  * Dependencies that are not part of Slackware 13.37 at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * The libktorrent and polkit-qt packages have been moved from "kde" to
+    "deps" since that is what they are, dependencies, not KDE apps.
+  * Since this is the final release in the KDE 4.7 series, I have updated
+    some of Slackware's packages which I do not touch that often: amarok,
+    ktorrent and skanlite, so that you have a complete KDE experience.
+  Some house-keeping stuff that I keep repeating because it is mostly
+  identical to the previous 4.7 releases but still worthwhile to read:
+  * You will find three new KDE applications: bluedevil (a GUI for the KDE
+    bluetooth framework which integrates better than the GTK-based blueman),
+    and kplayer (a KDE integrated front-end to mplayer) and wicd-kde (a KDE
+    applet plus kcontrol for WICD that integrates perfectly into KDE,
+    replacing the GTK-based client of the wicd package).
+  * I also added oxygen-gtk which is a theme engine giving GTK based
+    applications an integrated KDE look-and-feel (provided you are using
+    KDE's default Oxygen theme).
+  * And finally I added (back from the dead) quanta. This is a bit of an
+    experiment, since the new Quanta Plus has not even been released yet.
+    The Quanta Plus web development software was only available as a Qt3
+    application until now, but its developers are working hard on a Qt4 port,
+    re-creating it as a plugin for kdevelop.
+    So I had to use git snapshots for kdevplatform, kdevelop and quanta.
+    Use these three at your own risk!  If you can't live without it and were
+    stuck with KDE 3 for all this time because of it, now may be the perfect
+    time to try Slackware-current, KDE 4.7.4 and Quanta 3.9.0 !
+  Last but not least... there is also NetworkManager support now (optionally):
+  I added a small set of packages to a subdirectory called "test".
+  The "test" directory contains NetworkManager plus related packages, as well
+  as a native KDE applet/kcontrol called "networkmanagement".  If you are using
+  KDE on a laptop and want to try managing your network connections using
+  NetworkManager instead of WICD, then these packages are for you.  The README
+  file inside the 4.7.4 directory has all the details.
+
++--------------------------+
+Wed Nov 23 18:13:39 UTC 2011
+4.6.5/deps/akonadi:  applied a patch that prevents akonadi from crashing when
+  logging out of KDE.
+
++--------------------------+
+Thu Nov 10 21:34:06 UTC 2011
+4.7.3/deps/libmsn:  added an updated package. KDE's Kopete stopped working with
+  MSN a few days ago, because the version of libmsn which is present in
+  Slackware is too old.
+
++--------------------------+
+Tue Nov  1 21:22:35 UTC 2011
+Release of KDE Software Compilation 4.7.3 for Slackware.
+  You have to be running Slackware-current in order to use these packages.
+  No guarantees are made about their useability on Slackware 13.37 (but it is
+  likely that it will run just fine).
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * Several dependencies have been updated since my previous KDE 4.7.2:
+    akonadi, grantlee, libbluedevil, libssh, phonon, shared-desktop-ontologies
+    and upower.
+  * Updated dependencies with regard to the stable Slackware 13.37 are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, phonon, polkit-qt-1, qt, raptor2, rascal, redland,
+    shared-desktop-ontologies, sip, soprano, strigi, system-config-printer
+    and virtuoso-ose.
+  * Dependencies that are not part of Slackware 13.37 at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * The polkit-qt package has been moved from "kde" to "deps" since the
+    KDE 4.7.0 release.
+  Some house-keeping stuff that I keep repeating because it is mostly
+  identical to the previous 4.7 releases but still worthwhile to read:
+  * You will find three new KDE applications: bluedevil (a GUI for the KDE
+    bluetooth framework which integrates better than the GTK-based blueman),
+    and kplayer (a KDE integrated front-end to mplayer) and wicd-kde (a KDE
+    applet plus kcontrol for WICD that integrates perfectly into KDE,
+    replacing the GTK-based client of the wicd package).
+  * I also added oxygen-gtk which is a theme engine giving GTK based
+    applications an integrated KDE look-and-feel (provided you are using
+    KDE's default Oxygen theme).
+  * And finally I added (back from the dead) quanta. This is a bit of an
+    experiment, since the new Quanta Plus has not even been released yet.
+    The Quanta Plus web development software was only available as a Qt3
+    application until now, but its developers are working hard on a Qt4 port,
+    re-creating it as a plugin for kdevelop.
+    So I had to use git snapshots for kdevplatform, kdevelop and quanta.
+    Use these three at your own risk!  If you can't live without it and were
+    stuck with KDE 3 for all this time because of it, now may be the perfect
+    time to try Slackware-current, KDE 4.7.3 and Quanta 3.9.0 !
+  Last but not least... there is also NetworkManager support now (optionally):
+  After I released the KDE 4.7.2 set, I added a small set of packages to
+  a subdirectory called "test".  I have repeated that for the KDE 4.7.3 set.
+  The "test" directory contains NetworkManager plus related packages, as well
+  as a native KDE applet/kcontrol called "networkmanagement".  If you are using
+  KDE on a laptop and want to try managing your network connections using
+  NetworkManager instead of WICD, then these packages are for you.  The README
+  file inside the 4.7.3 directory has all the details.
+
++--------------------------+
+Mon Oct 24 21:28:14 UTC 2011
+4.7.2/deps/strigi:  rebuilt with a patch taken from https://bugs.kde.org/281088
+  in order to fix "kfilemetadatareader crashes when hovering a PDF in dolphin".
+  Requested by Willy Sudiarto Raharjo.
+
++--------------------------+
+Thu Oct 20 20:19:52 UTC 2011
+4.6.5/kde/kdeutils:  rebuilt after applying a fix for CVE-2011-2725
+  (* Security fix *)
+4.7.2/kde/kdeutils:  rebuilt after applying a fix for CVE-2011-2725
+  (* Security fix *)
+
++--------------------------+
+Mon Oct 10 22:59:04 UTC 2011
+4.7.2/kde/test:  in the "test" directory you will find some packages that
+  add native and fully integrated NetworkrMmanager support in KDE.
+  Not a single Gnome package (like "nm-applet") is needed!
+  The included new "dependencies" are: NetworkManager, ModemManager,
+  cnetworkmanager and mobile-broadband-provider-info, 
+  The kde-workspace was rebuilt so that it would pick up support for NM in the
+  solid hardware device framework. And the new KDE package "networkmanagement"
+  gives you a nice network configurator in System Settings as well as a
+  plasmoid (aka widget) which can be added to your system tray.
+  Read the included README file for instructions!
+
++--------------------------+
+Sun Oct  9 17:25:05 UTC 2011
+4.7.2/kde/kdelibs:  applied a patch to fix a serious bug which prevented any
+  Nepomuk query which does NOT use wide unicode characters to fail.
+4.7.2/kde/kdepim-runtime:  applied a patch which fixes bug 283467: Kmail would
+  have duplicated "inbox/sent-mail etc..." folders after migration from a
+  previous version.
+
++--------------------------+
+Wed Oct  5 17:38:06 UTC 2011
+Release of KDE Software Compilation 4.7.2 for Slackware.
+  You have to be running Slackware-current in order to use these packages.
+  No guarantees are made about their useability on Slackware 13.37.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  * There are two updated dependencies since my KDE 4.7.1:
+    libbluedevil and strigi.
+  * Updated dependencies with regard to the stable Slackware 13.37 are:
+    PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+    libdbusmenu-qt, phonon, polkit-qt-1, qt, raptor2, rascal, redland,
+    shared-desktop-ontologies, sip, soprano, strigi, system-config-printer
+    and virtuoso-ose.
+  * Dependencies that are not part of Slackware 13.37 at all (yet):
+    grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+    phonon-xine, sg3_utils and udisks.
+  * The polkit-qt package has been moved from "kde" to "deps" since the
+    KDE 4.7.0 release.
+  Some house-keeping stuff that is identical to the previous release but
+  still worthwile to read:
+  * You will find two new KDE applications: bluedevil (a GUI for the KDE
+    bluetooth framework which integrates better than the GTK-based blueman),
+    and kplayer (a KDE integrated front-end to mplayer).
+  * I also added oxygen-gtk which is a theme engine giving GTK based
+    applications an integrated KDE look-and-feel (provided you as using
+    KDE's default Oxygen theme).
+  * And finally I added (back from the dead) quanta. This is a bit of an
+    experiment, since the new Quanta Plus has not even been released yet.
+    The Quanta Plus web development software was only available as a Qt3
+    application until now, but its developers are working hard on a Qt4 port,
+    re-creating it as a plugin for kdevelop.
+    So I had to use bleeding edge git snapshots for kdevplatform, kdevelop and
+    quanta.  Use these three at your own risk!  If you can't live without it
+    and stuck with KDE 3 for all this time because of it, now may be the perfect
+    time to try Slackware-current, KDE 4.7.2 and Quanta 3.9.0 !
+
++--------------------------+
+Sun Sep 25 16:58:15 UTC 2011
+4.6.5/kde/kdelibs:  applied a fix for CVE-2011-3365 (vulnerability in the kssl
+  kioslave).
+  (* Security fix *)
+4.7.1/kde/kdelibs:  applied a fix for CVE-2011-3365 (vulnerability in the kssl
+  kioslave).
+  (* Security fix *)
+
++--------------------------+
+Wed Sep 21 11:07:39 UTC 2011
+4.7.1/kde/kdepim-runtime:  applied a patch that prevents accidental deletion of
+  new email when retrieved by KMail from a POP3 server into a 'maildir' folder.
+  This bug was introduced in the 4.7.0 version of kdepim-runtime, so if you are
+  still running KDE 4.7.0 and use KMail, a it is wise to upgrade.
+
++--------------------------+
+Sun Sep 11 02:02:55 UTC 2011
+kde/kde-workspace:  rebuilt after applying a patch to fix a performance bug in
+  KWin - it seems to have been present in all 4.x releases.  Read more in
+  http://blog.martin-graesslin.com/blog/2011/08/rendering-at-60-frames/
+
++--------------------------+
+Sat Sep 10 14:24:32 UTC 2011
+deps/virtuoso-ose:  rebuilt after applying a patch which fixes issues with
+  Unicode pathnames - see https://bugs.kde.org/show_bug.cgi?id=271664.
+
++--------------------------+
+Tue Sep  6 19:27:03 UTC 2011
+Release of KDE Software Compilation 4.7.1 for Slackware.
+You have to be running Slackware-current in order to use these packages.
+  No guarantees are made about their useability on Slackware 13.37.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  There are several updated dependencies since my KDE 4.7.0:
+  PyQt, akonadi, clucene, libbluedevil, polkit-qt-1, qt, raptor2, rascal,
+  redland, sip and soprano,
+  Updated dependencies with regard to the stable Slackware 13.37 are:
+  PyQt, QScintilla, akonadi, attica, clucene, ebook-tools, hunspell,
+  libdbusmenu-qt, phonon, polkit-qt-1, qt, raptor2, rascal, redland,
+  shared-desktop-ontologies, sip, soprano, system-config-printer and
+  virtuoso-ose.
+  Dependencies that are not part of Slackware 13.37 at all (yet):
+  grantlee, herqq, libatasmart, libbluedevil, libssh, phonon-gstreamer,
+  phonon-xine, sg3_utils and udisks.
+  The polkit-qt package was moved from "kde" to "deps" in my 4.7.0 release.
+  You will find two new KDE applications: bluedevil (a GUI for the KDE
+  bluetooth framework which integrates better than the GTK-based blueman),
+  and kplayer (a KDE integrated front-end to mplayer).
+  I also added oxygen-gtk which is a theme engine giving GTK based applications
+  an integrated KDE look-and-feel (provided you as using KDE's default Oxygen
+  theme).
+  And finally I added (back from the dead) quanta. This is a bit of an
+  experiment, since the new Quanta Plus has not even been released yet.
+  The Quanta Plus web development software was only available as a Qt3
+  application until now, but its developers are working hard on a Qt4 port,
+  re-creating it as a plugin for kdevelop.
+  So I had to use bleeding edge git snapshots for kdevplatform, kdevelop and
+  quanta.  Use these three at your own risk!  If you can't live without it
+  and stuck with KDE 3 for all this time because of it, now may be the perfect
+  time to try Slackware-current, KDE 4.7.1 and Quanta 3.9.0 !
+
++--------------------------+
+Thu Aug  4 13:43:57 UTC 2011
+kde/konq-plugins:  Removed.  The content of this package has been integrated
+  into the 'kdebase' package (it is part of the 'kde-baseapps' source tarball
+  since 4.7).
+
++--------------------------+
+Wed Aug  3 19:20:32 UTC 2011
+deps/herqq:  patched the SlackBuild script and rebuilt the x86_64 package
+  because it was installing libraries incorrectly into /usr/lib .  It looks
+  like no rebuild of kdelibs is required.
+
++--------------------------+
+Tue Aug  2 19:00:52 UTC 2011
+deps/phonon-gstreamer: Added.  The gstreamer and xine backends were split out
+  of the new phonon 4.5.0 which ships with my KDE 4.7.0.  This means that any
+  application that uses phonon for its output was suddenly limited to using
+  the not fully mature mplayer backend. This new package restores the lost
+  functionality.
+deps/phonon-xine: Added.  For the same reasons as above. 
+
++--------------------------+
+Mon Aug  1 11:18:47 UTC 2011
+Release of KDE Software Compilation 4.7.0 for Slackware.
+You have to be running Slackware 13.37 (32bit or 64bit) or -current in order
+  to use these packages. They were built on slackware-current!
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  There are several updated/new dependencies since my KDE 4.6.5:
+  akonadi, phonon, shared-desktop-ontologies, soprano.
+  Updated dependencies with regard to the stable Slackware 13.37 are:
+  PyQt, QScintilla, akonadi, attica, ebook-tools, hunspell, libdbusmenu-qt,
+  phonon, shared-desktop-ontologies, sip, soprano, system-config-printer,
+  virtuoso-ose.
+  Dependencies that are not part of Slackware 13.37 at all (yet):
+  grantlee, herqq (added for KDE 4.7.0), libatasmart, libbluedevil, libssh,
+  sg3_utils, udisks.
+  The polkit-qt package was moved from "kde" to "deps".
+  And finally, two new KDE applications are bluedevil (a GUI for the KDE
+  bluetooth framework), and kplayer (a KDE integrated front-end to mplayer).
+
++--------------------------+
+Tue Jul 26 18:26:10 UTC 2011
+4.6.5/kde/kdeutils:  Rebuilt with a patchset to make kcalc work again.
+4.6.5/kdei/kde-l10n-*:  Rebuilt because the KDE team released new language
+  sources.
+
++--------------------------+
+Thu Jul  7 08:39:01 UTC 2011
+Release of KDE Software Compilation 4.6.5 for Slackware.
+You have to be running Slackware 13.37 (32bit or 64bit) or newer in order to
+  use these packages. They were built on slackware-current.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  The stable release 4.6.1 of the kdepim and kdepim-runtime packages is
+  included as well.
+  There are no updated dependencies since KDE 4.6.4.
+  Updated dependencies with regard to the stable Slackware 13.37 are:
+  PyQt, QScintilla, akonadi, attica, ebook-tools, hunspell, libdbusmenu-qt,
+  sip, soprano, system-config-printer, virtuoso-ose.
+  Not part of Slackware 13.37 at all (yet): grantlee, libatasmart, libbluedevil,
+  libssh, sg3_utils, udisks. And bluedevil of course which I added to "kde".
+
++--------------------------+
+Sat Jun 11 11:59:11 UTC 2011
+4.6.4/deps: Removed an older version of the QScintilla package that was
+  accidentally left in the 32bit packages directory.
+
++--------------------------+
+Wed Jun  8 15:27:02 UTC 2011
+Release of KDE Software Compilation 4.6.4 for Slackware.
+You have to be running Slackware 13.37 (32bit or 64bit) or newer in order to
+  use these packages. They were built on -current.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  The stable release 4.6.0 of the kdepim and kdepim-runtime packages is
+  included as well. YES! This release has taken a long time to stabilize,
+  after it had basically been re-written from scratch.
+  Updated dependencies since KDE 4.6.3 if you have that installed already:
+  akonadi, libssh.
+  Updated dependencies with regard to the stable Slackware 13.37 are:
+  PyQt, QScintilla, akonadi, attica, ebook-tools, hunspell, libdbusmenu-qt,
+  sip, soprano, system-config-printer, virtuoso-ose.
+  Not part of Slackware 13.37 at all (yet): grantlee, libatasmart, libbluedevil,
+  libssh, sg3_utils, udisks. And bluedevil of course which I added to "kde".
+
++--------------------------+
+Sun May  8 00:33:49 UTC 2011
+Release of KDE Software Compilation 4.6.3 for Slackware.
+  Have fun with these packages for Slackware 13.37 (comes in 32-bit as well
+  as 64-bit flavours).  
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  Updated dependencies since KDE 4.6.2 if you have that installed already:
+  sip, PyQt, QScintilla.
+  New dependency package since KDE 4.6.2: libbluedevil.
+  Updated dependencies with regard to the stable Slackware 13.37 are:
+  PyQt, QScintilla, akonadi, attica, ebook-tools, hunspell, libdbusmenu-qt,
+  sip, soprano, system-config-printer, virtuoso-ose.
+  Not part of Slackware 13.37 at all (yet): grantlee, libatasmart, libbluedevil,
+  libssh, sg3_utils, udisks.
+4.6.3/kde/bluedevil:  Added. This is the new bluetooth connection manager.
+4.6.3/kde/k3b:  Upgraded to the latest snapshot of the 2.0 series.
+KDE SC 4.4.5 for Slackware 13.1 (and with a bit of effort, 13.0):  Removed.
+  Please upgrade your Slackware. 
+
++--------------------------+
+Sat Apr  9 14:11:31 UTC 2011
+4.6.1/kde/kdebase-workspace:  patched to fix the shutdown issue in runlevel 4
+  (kdm would drop you in a tty instead of powering off the computer).
+
++--------------------------+
+Fri Apr  8 07:57:00 UTC 2011
+Release of KDE Software Compilation 4.6.2 for Slackware.
+  Have fun with these packages for Slackware 13.37 (comes in 32-bit as well
+  as 64-bit flavours).  Assuming Slackware 13.37 has not yet been released
+  by the time I post this, rest assured that it'll all work just fine on
+  its Release Candidate 3.14159265 too!
+  Slackware 13.37 itself sticks with KDE SC 4.5.5, which is rock stable and
+  well-tested.
+  Please read the accompanying README file for installation and upgrade
+  instructions!
+  Updated dependencies since KDE 4.6.1 if you have that installed already:
+  QScintilla, akonadi, libdbusmenu-qt, system-config-printer, upower,
+  virtuoso-ose.
+  Other updates from Slackware: PyQt, attica, ebook-tools, hunspell, sip,
+  soprano.
+  Not part of Slackware at all: grantlee, libatasmart, libssh, sg3_utils,
+  udisks.
+
++--------------------------+
+Mon Mar 28 07:30:49 UTC 2011
+4.6.1/kde/kdegraphics:  rebuilt against the new versoin of poppler that went
+  into slackware-current.
+4.6.1/kde/kdelibs:  patched with a fix for CVE-2011-1168 (a XSS vulnerability
+  in konqueror).
+
++--------------------------+
+Sun Mar 13 19:40:48 UTC 2011
+4.6.1/deps/QScintilla:  rebuilt the package against the newer PyQt.  This
+  fixes the segfault in the 'eric' python IDE - it runs fine now.
+
++--------------------------+
+Sat Mar 12 21:01:58 UTC 2011
+4.6.1/deps/QScintilla:  re-added the missing 2.4.6 package.  I had built this
+  package for KDE 4.6.0, and it is still needed for KDE 4.6.1 (there is an
+  incompatible package with version 2.4.5 in Slackware itself).
+
++--------------------------+
+Sat Mar  5 00:22:42 UTC 2011
+Release of KDE Software Compilation 4.6.1.
+  Have fun with these packages for Slackware-current (32-bit as well as 64-bit).
+  Slackware itself will stick with the 4.5.5 version, which is rock stable
+  and well-tested.
+    Several slackware packages need to be updated, there are even some entirely
+  new packages (grantlee, libatasmart, libssh, sg3-utils, udisks, upower) which
+  are required in order to run this new version of KDE4.  You can find all of
+  these packages in the "deps" directory for your architecture.
+    Accompanying this KDE release are updated packages for k3b and
+  kaudiocreator because the versions in Slackware will not work with KDE 4.6.
+    New for KDE are kwebkitpart, polkit-kde-kcmodules-1 and polkit-kde-agent-1
+  (the two polkit packages replace the old polkit-kde-1 package which does not
+  work with KDE 4.6).
+    A word of caution about to the PIM packages (kdepim and kdepim-runtime):
+  you can either keep the version 4.4.10 which is already included in slackware
+  -current, which is stable, and compatible with KDE 4.6, _or_ you can upgrade
+  to the new version 4.6beta4 which is included with my KDE 4.6 packages...
+  and may not be stable enough for production use.
+  See the README file for detailed installation instructions!
+
++--------------------------+
+Sun Feb 13 13:50:22 UTC 2011
+4.6.0/kde/kdeartwork:  Rebuilt because of library updates in slackware-current.
+4.6.0/kde/kdebase-runtime:  Rebuilt.
+4.6.0/kde/kdebindings:  Rebuilt.
+4.6.0/kde/kdegraphics:  Rebuilt.
+4.6.0/kde/kdeplasma-addons:  Rebuilt.
+
++--------------------------+
+Tue Jan 25 19:57:47 UTC 2011
+Release of KDE Software Compilation 4.6.0.
+  Have fun with these packages for Slackware-current (32-bit as well as 64-bit).
+  Slackware itself will stick with the 4.5.5 version, which is rock stable
+  and well-tested.
+    Several slackware packages need to be updated, there are even some entirely
+  new packages (grantlee, libatasmart, libssh, sg3-utils, udisks, upower) which
+  are required in order to run this new version of KDE4.  You can find all of
+  these packages in the "deps" directory for your architecture.
+    Accompanying this KDE release are updated packages for k3b, kaudiocreator,
+  kdevplatform and kdevelop because the versions in Slackware will not work
+  with KDE 4.6.  New for KDE are kwebkitpart, polkit-kde-kcmodules-1 and
+  polkit-kde-agent-1 (the two polkit packages replace the old polkit-kde-1
+  package which does not work with KDE 4.6).
+    A word of caution about to the PIM packages (kdepim and kdepim-runtime):
+  you can either keep the version 4.4.9 which is already included in slackware
+  -current, which is stable, and compatible with KDE 4.6, _or_ you can upgrade
+  to the new version 4.6beta4 which is included with my KDE 4.6 packages...
+  and may not be stable enough for production use.
+  See the README file for detailed installation instructions!
+
++--------------------------+
+Thu Jan  6 09:09:33 UTC 2011
+Release of KDE 4.6.RC2 (aka 4.5.95) packages for Slackware-current.
+  This is the second release candidate for the upcoming KDE Software
+  Compilation 4.6.0, use it at your own risk.
+  Several slackware packages need to be updated, and there are some entirely new
+  packages as well (grantlee, libatasmart, sg3-utils, udisks, upower) which you
+  will need in order to run this new version of KDE4.  You will find all of
+  these packages in the "deps" directory for your architecture.
+  A note about the PIM 4.6beta3 packages which accompany this KDE 4.6.RC1:
+  the developers have announced that they will not have a stable 4.6 version of
+  their PIM software ready when KDE 4.6.0 is released.  Instead, they have
+  created a stable 4.4.9 version which has been made fully compatible with
+  KDE 4.6.  If you don't like the kdepim 4.6beta3 package in my repository,
+  stick with the 4.4.9 version which is already part of slackware -current.
+  There is a slightly newer snapshot of k3b in here, which no longer shows the
+  "Make sure HAL daemon is running" text now that it no longer depends on HAL.
+  I re-added the kdevelop and kdevplatform packages which I forgot to bring
+  forward from the 4.5.85 build when I updated to 4.5.90.
+
++--------------------------+
+Tue Jan  4 14:39:52 UTC 2011
+kde/k3b:  updated to a newer git snapshot.  This fixes a crash bug at 100% when
+  burning a CD.  It also allowed me to disable HAL support in k3b entirely.
+
++--------------------------+
+Sun Jan  2 23:56:00 UTC 2011
+kde/kdebindings:  rebuilt because of the new perl in slackware-current.
+
++--------------------------+
+Thu Dec 23 09:48:53 UTC 2010
+Release of KDE 4.6.RC1 (aka 4.5.90) packages for Slackware-current.
+  This is the first release candidate for the upcoming KDE Software Compilation
+  4.6.0, use it at your own risk.
+  Several slackware packages need to be updated, and there are some entirely new
+  packages as well (grantlee, libatasmart, sg3-utils, udisks, upower) which you
+  will need in order to run this new version of KDE4.  You will find all of
+  these packages in the "deps" directory for your architecture.
+  The PIM software is finally available again, there are new packages for kdepim
+  and kdepim-runtime which replace the old 4.4.7 packages.  Note that the PIM
+  developers have announced that they will not have a stable 4.6 version ready
+  when KDE 4.6.0 is released.  Instead, they will have a stable 4.4.9 release
+  which has been made compatible with KDE 4.6.  If you don't like the kdepim
+  4.6beta3 package in my repository, stick with the 'old' 4.4.7 of slackware
+  -current.
+
++--------------------------+
+Fri Dec 17 12:24:46 UTC 2010
+deps/grantlee:  added. The kdelibs and kdepim packages enable additional
+  functionality when build against this package.
+kde/kdelibs:  rebuilt against grantlee (new package). Removed HAL support in
+  solid. It should be safe to disable HAL now (install my phonon-mplayer
+  package if your sound no longer works after disabling HAL).
+kde/kdepim:  rebuilt against grantlee (new package).
+kde/kdevplatform:  updated to 1.1.80. This update is required for KDE 4.6.
+kde/kdevelop:  updated to 4.1.80. This update is required for KDE 4.6.
+
++--------------------------+
+Sun Dec 12 15:07:20 UTC 2010
+Release of KDE 4.6.beta2 (aka 4.5.85) packages for Slackware-current.
+  This is still very much beta software, use it at your own risk.
+  Several slackware packages need to be updated, and there are some entirely new
+  packages as well (libatasmart, sg3-utils, udisks, upower) which you will need
+  in order to run this new version of KDE4.  You will find all of these packages
+  in the "deps" directory for your architecture.
+  The PIM software is finally available again, there are new packages for kdepim
+  and kdepim-runtime which replace the old 4.4.7 packages.
+
++--------------------------+
+Thu Nov  4 01:04:19 UTC 2010
+Release of KDE 4.5.3 packages for Slackware-current.  The packages install
+  cleanly on slackware-current (32-bit and 64-bit), no additional dependencies
+  are required.  If you installed KDE 4.5.1 before from slackware-current and
+  upgrade using my packages, you will keep the kdepim/kdepim-runtime packages
+  of slackware-current.  There *still* is no stable release of kdepim 4.5.
+
++--------------------------+
+Fri Oct  8 22:42:47 UTC 2010
+Release of KDE 4.5.2 packages for Slackware-current.  These packages install
+  cleanly on slackware-current (32-bit and 64-bit), no additional dependencies
+  are required.  If you installed KDE 4.5.1 before from slackware-current and
+  upgrade using my packages, you will keep the kdepim/kdepim-runtime packages
+  of slackware-current.  There still is no stable release of kdepim 4.5.
+
++--------------------------+
+Fri Sep  3 07:02:48 UTC 2010
+Release of KDE 4.5.1 packages for Slackware-current.  Please note, that you
+  have one additional dependency to install (libdbus-qt) and that the kdepim and
+  kdepim-runtime packages are still absent from this Software Compilation.
+  The PIM software is still considered too unstable (but not for much longer)
+  so please keep using the kdepim/kdepim-runtime packages for KDE 4.4.5.
+
++--------------------------+
+Fri Aug  6 20:28:34 UTC 2010
+This is the KDE Software Compilation 4.5.0 for Slackware-current.
+  Another milestone for the KDE project with numerous improvements to the
+  KDE 4.4 which we have in Slackware at the moment. Congratulations to everyone
+  who helped in making this release possible, delivering on time as planned.
+  NOTE:
+  KDE 4.5.0 does not contain kdepim and kdepim-runtime because te PIM project
+  was unable to deliver a stable version in time for release. You will have to
+  use the version 4.4.5 of the kdepim and kdepim-runtime packages which are
+  present in Slackware-current. In one of the future releases of KDE 4.5.x the
+  new kdepim will finally be added to the Software Compilation.
+
++--------------------------+
+Tue Jul 27 20:53:30 UTC 2010
+4.4.95/deps: re-added libdbusmenu-qt.  Obviously I had forgotten to upload
+  this required dependency to the repository. The KDE 4.4-rc packages were
+  built in its presence so there is nothing else for you to do than to run
+  "upgradepkg --install-new" on the package for your architecture.
+  Apologies for the mix-up and thanks to Tom who pointed this out on my blog.
+
++--------------------------+
+Mon Jul 26 20:05:49 UTC 2010
+KDE SC 4.4.95 (this is 4.5-rc3) packages for Slackware-current (32-bit and
+  64-bit).  There is also one updated dependency (soprano). Note that this
+  set of KDE packages no longer targets Slackware 13.1 now that -current is
+  moving too far away from 13.1.
+
++--------------------------+
+Fri Jul  9 08:40:02 UTC 2010
+KDE SC 4.4.92 (this is 4.5-rc2) packages for Slackware-13.1 (32-bit and 64-bit).
+  This comes with several updated dependencies (non-KDE Slackware packages),
+  most of which I already created for KDE 4.4.5.
+  People asked me if I could compile some of the extragear as well (amarok,
+  qtorrent, k3b) but there is simply no time for that, sorry.
+
++--------------------------+
+Wed Jul  7 21:59:46 UTC 2010
+4.4.5/deps/qt:  I thought I had grabbed a qt-4.6.3 source snapshot but I was
+  mistaken... and failed to notice that it actuall still was 4.6.2.
+  So thanks to some whispering in my ear, I have now updated the qt package
+  with a real 4.6.3 snapshot.
+
++--------------------------+
+Tue Jul  6 18:46:14 UTC 2010
+KDE SC 4.4.5 released for Slackware-13.1 (32-bit and 64-bit). Follow the
+  installation instructions in the README.  The koffice-2.2.0 packages which
+  I had built for KDE SC 4.4.4 are copied here as well.
+
++--------------------------+
+Sat Jun 26 23:44:29 UTC 2010
+KDE SC 4.4.90 (which is in fact 4.5-rc1) packages for Slackware-13.1 (32-bit
+  and 64-bit).  Help test this first release candidate so that we may see
+  another stellar release of KDE in august.  Report your bugs at bugs.kde.org.
+
++--------------------------+
+Sat Jun 12 22:05:42 UTC 2010
+KDE SC 4.4.4:  added koffice-2.2.0
+
++--------------------------+
+Fri Jun 11 09:55:37 UTC 2010
+KDE SC 4.4.85:  added the "kdei" sources and SlackBuild for people who want to
+  build a language pack. 
+
++--------------------------+
+Wed Jun  9 10:19:35 UTC 2010
+KDE SC 4.4.85 (better known as 4.5-beta2) released for Slackware-13.1 (32-bit
+  and 64-bit). This is only for people who want to help fixing bugs in the new
+  KDE!!! If you need a stable system, stick with KDE 4.4.4.
+  Expected release date of a stable KDE 4.5 is august 2010.
+
++--------------------------+
+Sun Jun  6 18:42:45 UTC 2010
+KDE SC 4.4.4 released for Slackware-13.1 (32-bit and 64-bit). Follow the
+  installation instructions in the README.
+
++--------------------------+
+Tue May  4 09:34:43 UTC 2010
+KDE SC 4.4.3 plus dependencies released for Slackware-current. Follow the
+  installation instructions in the README.
+
++--------------------------+
+Wed Apr 14 12:47:56 UTC 2010
+kde/kdebase-workspace-4.4.2-x86_64-2alien:  Patched critical vulnerability.
+  See See http://www.kde.org/info/security/advisory-20100413-1.txt
+
++--------------------------+
+Thu Apr  1 20:41:59 UTC 2010
+kde/k3b-1.91.0-x86_64-1alien:  Added.
+
++--------------------------+
+Thu Apr  1 08:40:26 UTC 2010
+KDE4.4.2 plus dependencies released for Slackware-current.
+
