@@ -1,5 +1,7 @@
 # sl-feeds
 
+![Go](https://github.com/vbatts/sl-feeds/workflows/Go/badge.svg)
+
 This is for proccessing Slackware ChangeLog.txt -> RSS feeds that folks can
 subscribed to.
 
