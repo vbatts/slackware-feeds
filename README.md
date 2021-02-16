@@ -8,7 +8,7 @@ Ultimately ending up at http://www.slackware.com/~vbatts/feeds/ or http://mirror
 ## Usage
 
 ```bash
-go get github.com/vbatts/sl-feeds
+go get github.com/vbatts/sl-feeds/cmd/sl-feeds
 ```
 
 Create a configuration from the sample
