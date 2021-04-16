@@ -1,9 +1,12 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 	"time"
@@ -34,6 +37,14 @@ func main() {
 			Usage: "Less output",
 		},
 		cli.BoolFlag{
+			Name:  "insecure",
+			Usage: "do not validate server certificate",
+		},
+		cli.StringFlag{
+			Name:  "ca",
+			Usage: "additional CA cert to use",
+		},
+		cli.BoolFlag{
 			Name:  "sample-config",
 			Usage: "Output sample config file to stdout",
 		},
@@ -41,6 +52,29 @@ func main() {
 
 	// This is the main/default application
 	app.Action = func(c *cli.Context) error {
+		rootCAs, _ := x509.SystemCertPool()
+		if c.String("ca") != "" {
+			if rootCAs == nil {
+				rootCAs = x509.NewCertPool()
+			}
+			// Read in the cert file
+			certs, err := ioutil.ReadFile(c.String("ca"))
+			if err != nil {
+				log.Fatalf("Failed to append %q to RootCAs: %v", c.String("ca"), err)
+			}
+
+			// Append our cert to the system pool
+			if ok := rootCAs.AppendCertsFromPEM(certs); !ok {
+				log.Println("No certs appended, using system certs only")
+			}
+		}
+		if c.Bool("insecure") {
+			config := &tls.Config{
+				InsecureSkipVerify: true,
+				RootCAs:            rootCAs,
+			}
+			http.DefaultTransport = &http.Transport{TLSClientConfig: config}
+		}
 		if c.Bool("sample-config") {
 			c := Config{
 				Dest:  "$HOME/public_html/feeds/",
