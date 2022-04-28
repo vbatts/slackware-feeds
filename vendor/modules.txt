@@ -1,10 +1,11 @@
-# github.com/BurntSushi/toml v0.3.1
+# github.com/BurntSushi/toml v1.1.0
 github.com/BurntSushi/toml
-# github.com/cpuguy83/go-md2man/v2 v2.0.0
+github.com/BurntSushi/toml/internal
+# github.com/cpuguy83/go-md2man/v2 v2.0.2
 github.com/cpuguy83/go-md2man/v2/md2man
 # github.com/gorilla/feeds v1.1.1
 github.com/gorilla/feeds
 # github.com/russross/blackfriday/v2 v2.1.0
 github.com/russross/blackfriday/v2
-# github.com/urfave/cli v1.22.5
+# github.com/urfave/cli v1.22.7
 github.com/urfave/cli
